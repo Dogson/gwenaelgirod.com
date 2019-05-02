@@ -1,12 +1,12 @@
 backend:
   name: github
-  repo: CampusFS/site-CFS
+  repo: Dogson/site-perso-v2
 
 media_folder: static/assets/images
 public_folder: assets/images
-logo_url: https://peaceful-johnson-580335.netlify.com/assets/logo/CFS.png
-site_url: https://peaceful-johnson-580335.netlify.com
-display_url: https://peaceful-johnson-580335.netlify.com
+logo_url: https://awesome-bartik-60dd8d.netlify.com/assets/logo/CFS.png
+site_url: https://awesome-bartik-60dd8d.netlify.com
+display_url: https://awesome-bartik-60dd8d.netlify.com
 
 slug:
   encoding: ascii
