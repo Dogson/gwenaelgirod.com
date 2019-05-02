@@ -1,0 +1,96 @@
+@import '../../styles/global';
+
+.footerContainer {
+  @extend .flexRow;
+  @extend .flexAlignCenter;
+  height: 180px;
+  background: $color-main;
+  //width: 100%;
+  z-index: 2;
+
+  .firstCol {
+    @extend .flexColumn;
+    @extend .flexCenter;
+
+    .logoContainer {
+      padding-left: calc((100vw - #{$containerWidth})/2);
+      @extend .flexRow;
+      @extend .flexAlignCenter;
+      justify-content: flex-end;
+      transform: skewX(30deg);
+      box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+      background: $background-primary;
+      height: 100px;
+      z-index: 3;
+      margin-left: -60px;
+      font-family: 'Lato', sans-serif;
+      padding-right: 60px;
+
+      .logoWrapper {
+        transform: skewX(-30deg);
+        @extend .flexRow;
+        @extend .flexAlignCenter;
+        cursor: pointer;
+
+        .imageContainer {
+          padding: 20px;
+        }
+      }
+
+      .logoName {
+        @extend .flexColumn;
+        justify-content: flex-start;
+        font-family: 'Lato', sans-serif;
+        color: $color-main;
+        text-transform: uppercase;
+        font-size: $size-big;
+      }
+
+      .light {
+        font-weight: $weight-light;
+      }
+    }
+
+    .copyright {
+      align-self: flex-end;
+      font-size: $size-smaller;
+      color: white;
+      padding-top: 15px;
+
+    }
+  }
+
+  .menusContainer {
+    padding-left: 50px;
+    margin-right: calc((100vw - #{$containerWidth})/2);
+
+    .menusWrapper {
+      @extend .flexRow;
+      @extend .flexCenter;
+
+      .menuContainer {
+        min-width: 150px;
+        @extend .flexColumn;
+        justify-content: flex-start;
+        padding: 20px;
+
+        .title, .item {
+          padding: 10px;
+          color: white;
+          font-size: $size-small;
+          font-weight: $weight-bold;
+
+          a {
+            color: white;
+          }
+        }
+
+        .title {
+          font-weight: $weight-light;
+        }
+      }
+    }
+
+
+  }
+}

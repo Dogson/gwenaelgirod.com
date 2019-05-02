@@ -1,0 +1,42 @@
+@import '../styles/global';
+
+.sectionContainer {
+  background-color: $background-primary;
+  @extend .flexRow;
+  @extend .flexCenter;
+
+  .sectionTitle {
+    margin-bottom: 30px;
+  }
+
+  .wrapper {
+    @extend .flexColumn;
+    padding: 30px 0;
+    width: $containerWidth;
+
+    .header {
+      @extend .flexRow;
+      @extend .flexSpaceBetween;
+    }
+  }
+}
+
+.sectionContainer.secondaryBackground {
+  background-color: rgba($background-secondary, 0.1);
+}
+
+.sectionContainer.withBorders {
+  background-color: $background-gray;
+
+  .wrapper {
+    background-color: $background-primary;
+    width: calc(#{$containerWidth} + 100px);
+  }
+}
+
+.sectionContainer.noPaddingTop {
+
+  .wrapper {
+    padding-top: 0;
+  }
+}

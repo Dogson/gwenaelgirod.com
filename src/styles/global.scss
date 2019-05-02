@@ -1,0 +1,125 @@
+/**
+  GLOBAL VARIABLES
+ */
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400');
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css");
+
+//layout
+$containerWidth: 1000px;
+$cardWidth: 300px;
+$cardHeight: 400px;
+
+//font weights :
+$weight-light: 300;
+$weight-regular: normal;
+$weight-bold: 500;
+
+//text size
+$size-smaller: 12px;
+$size-small: 15px;
+$size-normal: 18px;
+$size-big: 20px;
+$size-bigger: 24px;
+
+//colors
+$background-primary: white;
+$background-secondary: #96ADC8;
+$background-gray: #E5E5E5;
+
+$color-primary: black;
+$color-secondary: white;
+$color-main: #FB8D58;
+
+html {
+  font-family: 'Roboto', sans-serif;
+  font-weight: $weight-regular;
+  font-size: $size-normal;
+  background-color: $background-primary;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: $color-primary;
+}
+
+strong {
+  font-weight: $weight-regular;
+}
+
+.parallelogram {
+  transform: skewX(20deg);
+
+  span {
+    transform: skewX(-20deg);
+  }
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.flexSpaceBetween {
+  justify-content: space-between;
+}
+
+.flexCenter {
+  justify-content: center;
+}
+
+.flexAlignCenter {
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(4, 25%);
+}
+
+.sectionTitle {
+  @extend .parallelogram;
+  @extend .flexColumn;
+  @extend .flexAlignCenter;
+  background: $color-main;
+  color: $color-secondary;
+  text-transform: uppercase;
+  font-size: $size-bigger;
+  font-weight: $weight-bold;
+  align-self: flex-start;
+  padding: 15px 60px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.btnSecondary {
+  background-color: transparent;
+  border: 1px solid $color-main;
+  color: $color-main;
+  padding: 10px 30px;
+  border-radius: 5px;
+  font-weight: $weight-light;
+  font-size: $size-small;
+  cursor: pointer;
+  text-transform: uppercase;
+
+  &:hover{
+    box-shadow: none;
+    background-color: $color-main;
+    border: none;
+    color: white;
+  }
+}

@@ -1,0 +1,103 @@
+@import '../../styles/global';
+
+.headerContainer {
+  @extend .flexRow;
+  height: 210px;
+  background: $color-main;
+  //width: 100%;
+  z-index: 2;
+
+  .logoContainer {
+    @extend .flexRow;
+    @extend .flexAlignCenter;
+    transform: skewX(30deg);
+    justify-content: flex-end;
+    width: 39%;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+    background: $background-primary;
+    height: 220px;
+    z-index: 3;
+    margin-left: -65px;
+    font-family: 'Lato', sans-serif;
+    padding-right: 65px;
+
+    .logoWrapper {
+      transform: skewX(-30deg);
+      @extend .flexRow;
+      @extend .flexAlignCenter;
+      cursor: pointer;
+
+      .imageContainer {
+        padding: 30px;
+      }
+    }
+
+    .logoName {
+      @extend .flexColumn;
+      justify-content: flex-start;
+      font-family: 'Lato', sans-serif;
+      color: $color-main;
+      text-transform: uppercase;
+      font-size: $size-bigger;
+    }
+
+    .light {
+      font-weight: $weight-light;
+    }
+  }
+
+  .menuContainer {
+    padding-left: 50px;
+    width: 61%;
+
+    .menuWrapper {
+      @extend .flexColumn;
+      justify-content: space-between;
+      height: 100%;
+      width: 600px;
+    }
+
+    .menuSocialIcons {
+      align-self: flex-end;
+      @extend .flexRow;
+
+      .socialIcon {
+        box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+        margin: 10px;
+        border-radius: 50%;
+        opacity: 0.9;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+
+    .menuNav {
+      align-self: flex-start;
+      @extend .flexRow;
+
+      .menuLink {
+        width: 150px;
+        padding-bottom: 20px;
+        text-align: center;
+        color: $background-primary;
+        font-size: $size-normal;
+        border-bottom: 3px solid rgba(0, 0, 0, 0);
+        opacity: 0.9;
+
+        &:hover {
+          opacity: 1;
+          border-bottom: 3px solid $background-primary;
+        }
+      }
+
+      .menuLinkActive {
+        //font-weight: $font-regular;
+        border-bottom: 3px solid $background-primary;
+        opacity: 1;
+      }
+    }
+
+  }
+}
