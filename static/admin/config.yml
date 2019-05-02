@@ -4,7 +4,7 @@ backend:
 
 media_folder: static/assets/images
 public_folder: assets/images
-logo_url: https://awesome-bartik-60dd8d.netlify.com/assets/logo/CFS.png
+logo_url: https://awesome-bartik-60dd8d.netlify.com/assets/logo/GG.png
 site_url: https://awesome-bartik-60dd8d.netlify.com
 display_url: https://awesome-bartik-60dd8d.netlify.com
 

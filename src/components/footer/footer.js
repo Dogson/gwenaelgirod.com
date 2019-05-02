@@ -1,8 +1,7 @@
 import React from "react"
 import styles from "./footer.module.scss"
 import {Link} from "gatsby"
-import logo from "../../../static/assets/logo/CFS.png"
-import {SocialIcon} from 'react-social-icons';
+import logo from "../../../static/assets/logo/GG.png"
 
 const Footer = () => (
     <div className={styles.footerContainer}>
@@ -13,13 +12,12 @@ const Footer = () => (
                     <img src={logo} alt="Logo" width={80}/>
                 </span>
                     <div className={styles.logoName}>
-                        <span className={styles.light}>Campus</span>
-                        <span>Franco-</span>
-                        <span>Sénégalais</span>
+                        <span className={styles.light}>Gwenaël</span>
+                        <span>Girod</span>
                     </div>
                 </Link>
             </div>
-            <div className={styles.copyright}>© Campus Franco-Sénégalais, 2019</div>
+            <div className={styles.copyright}>© Gwenaël Girod, 2019</div>
         </div>
 
         <div className={styles.menusContainer}>

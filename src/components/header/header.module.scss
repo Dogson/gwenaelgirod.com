@@ -18,7 +18,6 @@
     height: 220px;
     z-index: 3;
     margin-left: -65px;
-    font-family: 'Lato', sans-serif;
     padding-right: 65px;
 
     .logoWrapper {
@@ -28,16 +27,17 @@
       cursor: pointer;
 
       .imageContainer {
-        padding: 30px;
+        padding: 15px;
       }
     }
 
     .logoName {
       @extend .flexColumn;
       justify-content: flex-start;
-      font-family: 'Lato', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       color: $color-main;
       text-transform: uppercase;
+      letter-spacing: 2px;
       font-size: $size-bigger;
     }
 

@@ -31,7 +31,7 @@ export default function ActuTemplate({
 
     function NewsImage() {
         let image;
-        image = frontmatter.image ? frontmatter.image : '/assets/logo/CFS.png';
+        image = frontmatter.image ? frontmatter.image : '/assets/logo/GG.png';
         return <img className={styles.backgroundImage} src={image}
                     alt={frontmatter.title} height="100%"
                     width="100%"/>
@@ -47,7 +47,7 @@ export default function ActuTemplate({
                             className={styles.date}>{moment(node.frontmatter.date).format('DD/MM/YYYY')}</div>
                         <div className={styles.title}>{node.frontmatter.title}</div>
                         <div className={styles.readMore}>
-                            <span></span>
+                            <span/>
                         </div>
                     </div>
                 </Link>

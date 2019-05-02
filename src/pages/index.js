@@ -32,7 +32,7 @@ const HomeCarousel = ({news}) => {
 
     const items = news.map((item) => {
         return {
-            image: item.node.frontmatter.image ? withPrefix(item.node.frontmatter.image) : withPrefix('/assets/logo/CFS.png'),
+            image: item.node.frontmatter.image ? withPrefix(item.node.frontmatter.image) : withPrefix('/assets/logo/GG.png'),
             title: item.node.frontmatter.title,
             tag: item.node.frontmatter.date,
             path: item.node.fileAbsolutePath,

@@ -18,7 +18,7 @@ class NewsPost extends React.Component {
     render() {
         const {odd, post} = this.props;
         const newsCardContainerClass = cx(styles.newsCardContainer, {[styles.odd]: odd});
-        const image = post.frontmatter.image ? withPrefix(post.frontmatter.image) : withPrefix('/assets/logo/CFS.png');
+        const image = post.frontmatter.image ? withPrefix(post.frontmatter.image) : withPrefix('/assets/logo/GG.png');
         const summary = post.frontmatter.summary || post.excerpt;
         return <Link
             to={`actualites/${post.fileAbsolutePath.substring(post.fileAbsolutePath.lastIndexOf('/') + 1).slice(0, -3)}`}>

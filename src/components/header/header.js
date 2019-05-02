@@ -1,7 +1,7 @@
 import React from "react"
 import styles from "./header.module.scss"
 import {Link} from "gatsby"
-import logo from "../../../static/assets/logo/CFS.png"
+import logo from "../../../static/assets/logo/GG.png"
 import {SocialIcon} from 'react-social-icons';
 
 const Header = () => (
@@ -12,9 +12,8 @@ const Header = () => (
                     <img src={logo} alt="Logo" width={140}/>
                 </span>
                 <div className={styles.logoName}>
-                    <span className={styles.light}>Campus</span>
-                    <span>Franco-</span>
-                    <span>Sénégalais</span>
+                    <span className={styles.light}>Gwenaël</span>
+                    <span>Girod</span>
                 </div>
             </Link>
         </div>
