@@ -21,7 +21,7 @@ class NewsPost extends React.Component {
         const image = post.frontmatter.image ? withPrefix(post.frontmatter.image) : withPrefix('/assets/logo/GG.png');
         const summary = post.frontmatter.summary || post.excerpt;
         return <Link
-            to={`actualites/${post.fileAbsolutePath.substring(post.fileAbsolutePath.lastIndexOf('/') + 1).slice(0, -3)}`}>
+            to={`posts/${post.fileAbsolutePath.substring(post.fileAbsolutePath.lastIndexOf('/') + 1).slice(0, -3)}`}>
             <div className={newsCardContainerClass}>
                 <div className={styles.dateContainer}>{post.frontmatter.date}</div>
                 <div className={styles.imageContainer}><img className={styles.image} src={image}

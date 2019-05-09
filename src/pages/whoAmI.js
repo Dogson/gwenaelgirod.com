@@ -2,12 +2,12 @@ import React from "react"
 import PageLayout from "../layouts/pageLayout";
 import SectionLayout from "../layouts/sectionLayout"
 
-const FormationsPage = () => (
+const WhoAmIPage = () => (
     <PageLayout>
-        <SectionLayout title="Formations" odd>
-            <div> Les formations </div>
+        <SectionLayout title="Qui suis-je ?" odd>
+            <div> C'est ça que je suis koh </div>
         </SectionLayout>
     </PageLayout>
 );
 
-export default FormationsPage;
+export default WhoAmIPage;

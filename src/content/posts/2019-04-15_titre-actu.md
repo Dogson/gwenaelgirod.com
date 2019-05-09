@@ -1,5 +1,5 @@
 ---
-type: news
+type: post
 date: '2017-04-11'
 image: ''
 priority: true

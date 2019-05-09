@@ -2,12 +2,12 @@ import React from "react"
 import PageLayout from "../layouts/pageLayout";
 import SectionLayout from "../layouts/sectionLayout"
 
-const CompanyPage = () => (
+const BlogPage = () => (
     <PageLayout>
-        <SectionLayout title="Entreprises" odd>
-            <div> Les entreprises </div>
+        <SectionLayout title="Blog" odd>
+            <div> Le blog </div>
         </SectionLayout>
     </PageLayout>
 );
 
-export default CompanyPage;
+export default BlogPage;

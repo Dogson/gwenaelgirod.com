@@ -21,11 +21,11 @@ export default function ActuTemplate({
         },
         {
             title: "Actualités",
-            path: '/actualites/'
+            path: '/posts/'
         },
         {
             title: frontmatter.title,
-            path: `actualites/${fileAbsolutePath.substring(fileAbsolutePath.lastIndexOf('/') + 1).slice(0, -3)}`
+            path: `posts/${fileAbsolutePath.substring(fileAbsolutePath.lastIndexOf('/') + 1).slice(0, -3)}`
         }
     ];
 
@@ -41,7 +41,7 @@ export default function ActuTemplate({
         return <div className={styles.otherNewsList}>
             {edges.map(({node, i}) =>
                 <Link key={i} className={styles.item}
-                      to={`actualites/${node.fileAbsolutePath.substring(node.fileAbsolutePath.lastIndexOf('/') + 1).slice(0, -3)}`}>
+                      to={`posts/${node.fileAbsolutePath.substring(node.fileAbsolutePath.lastIndexOf('/') + 1).slice(0, -3)}`}>
                     <div className={styles.content}>
                         <div
                             className={styles.date}>{moment(node.frontmatter.date).format('DD/MM/YYYY')}</div>
@@ -106,7 +106,7 @@ export const pageQuery = graphql`
         image
       }
     }
-    otherNews: allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}, filter: {id: {ne: $id}, frontmatter: {type: {eq: "news"}}}, limit: 5) {
+    otherNews: allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}, filter: {id: {ne: $id}, frontmatter: {type: {eq: "post"}}}, limit: 5) {
           edges {
             node {            
               fileAbsolutePath

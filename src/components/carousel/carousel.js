@@ -38,7 +38,7 @@ const Carousel = ({items, settings}) => {
                         <img className={styles.backgroundImage} src={item.image} alt={item.title} height="100%"
                              width="100%"/>
                         <div className={styles.carouselItemContainer}>
-                            <Link className={styles.titleContainer} to={`actualites/${item.path.substring(item.path.lastIndexOf('/') + 1).slice(0, -3)}`}>
+                            <Link className={styles.titleContainer} to={`posts/${item.path.substring(item.path.lastIndexOf('/') + 1).slice(0, -3)}`}>
                                 <div className={styles.tag}>
                                     {item.tag}
                                 </div>

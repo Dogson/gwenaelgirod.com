@@ -1,5 +1,5 @@
 ---
-type: news
+type: post
 date: '2019-04-15'
 image: /assets/images/carson-arias-197710-unsplash.jpg
 priority: true

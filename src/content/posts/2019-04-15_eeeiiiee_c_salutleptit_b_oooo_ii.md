@@ -1,5 +1,5 @@
 ---
-type: news
+type: post
 date: '2019-08-12'
 image: /assets/images/cody-davis-253928-unsplash.jpg
 priority: true

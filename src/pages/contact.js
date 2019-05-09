@@ -2,12 +2,12 @@ import React from "react"
 import PageLayout from "../layouts/pageLayout";
 import SectionLayout from "../layouts/sectionLayout"
 
-const SchoolPage = () => (
+const Contact = () => (
     <PageLayout>
-        <SectionLayout title="Etablissements" odd>
-            <div> Les établissements </div>
+        <SectionLayout title="Contact" odd>
+            <div> Formulaire de contact </div>
         </SectionLayout>
     </PageLayout>
 );
 
-export default SchoolPage;
+export default Contact;

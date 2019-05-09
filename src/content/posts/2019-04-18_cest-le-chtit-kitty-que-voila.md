@@ -1,5 +1,5 @@
 ---
-type: news
+type: post
 date: '2019-04-18'
 image: /assets/images/mvimg_20190401_154235.jpg
 priority: true

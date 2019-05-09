@@ -1,5 +1,5 @@
 ---
-type: news
+type: post
 date: '2021-01-15'
 image: ''
 title: fdfdfdfdffdfd

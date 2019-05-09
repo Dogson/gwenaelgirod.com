@@ -1,7 +1,7 @@
 ---
 date: '2019-04-22'
 title: Fronchement
-type: news
+type: post
 ---
 Ceci est une actualité.
 

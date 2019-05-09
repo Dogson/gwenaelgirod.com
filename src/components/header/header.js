@@ -30,9 +30,9 @@ const Header = () => (
                 </span>
                 <div className={styles.menuNav}>
                     <MenuLink route="/" name="Accueil"/>
-                    <MenuLink route="/formations/" name="Étudiants"/>
-                    <MenuLink route="/etablissements/" name="Établissements"/>
-                    <MenuLink route="/entreprises/" name="Entreprises"/>
+                    <MenuLink route="/blog/" name="Blog"/>
+                    <MenuLink route="/whoAmI/" name="Qui suis-je ?"/>
+                    <MenuLink route="/contact/" name="Contact"/>
                 </div>
             </div>
         </div>
