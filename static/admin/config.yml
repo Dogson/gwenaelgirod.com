@@ -13,48 +13,56 @@ slug:
   clean_accents: true
 
 collections:
-#  Actualités
-- name: posts
-  label: Posts
-  folder: src/content/posts
-  create: true
-  slug: "{{date}}_{{slug}}"
-  fields:
-  - { name: "type", widget: "hidden", label: "Type", default: "posts" }
-  - { name: date, label: Date de publication, widget: date, format: "YYYY-MM-DD" }
-  - { name: image, label: Image, widget: image, required: false, hint: "Cette image apparaîtra directement sur la page d'accueil." }
-  - { name: title, label: Titre, pattern: ["^.{0,80}$", "Le titre ne doit pas excéder 80 caractères."] }
-  - { name: summary,
-      label: Résumé,
-      hint: "Ce texte apparaitra en tant que résumé de l'actualité dans la listes des actualités sur la page d'accueil. Les sauts de ligne ne sont pas pris en compte.",
-      widget: text,
-      pattern: ["^(.|\\s){0,300}$", "Le résumé ne doit pas excéder 300 caractères."],
-      required: false}
-  - { name: body,
-      label: Description,
-      widget: markdown,
-      buttons: ['bold', 'italic', 'link', 'heading-one', 'heading-two', 'quote', 'bulleted-list', 'numbered-list']}
+  #  Actualités
+  - name: posts
+    label: Posts
+    folder: src/content/posts
+    create: true
+    slug: "{{date}}_{{slug}}"
+    fields:
+      - { name: "type", widget: "hidden", label: "Type", default: "posts" }
+      - { name: date, label: Date de publication, widget: date, format: "YYYY-MM-DD" }
+      - { name: category,
+            label: "Catégorie",
+            widget: "select",
+            options:[{ label: "Jeux vidéo", value: "gaming" },
+                     { label: "Films", value: "movies" },
+                     { label: "Séries", value: "tv" },
+                     { label: "Livres", value: "books" },
+                     { label: "Musique", value: "music" }]}
+      - { name: image, label: Image, widget: image, required: false, hint: "Cette image apparaîtra directement sur la page d'accueil." }
+      - { name: title, label: Titre, pattern: ["^.{0,80}$", "Le titre ne doit pas excéder 80 caractères."] }
+      - { name: summary,
+          label: Résumé,
+          hint: "Ce texte apparaitra en tant que résumé de l'actualité dans la listes des actualités sur la page d'accueil. Les sauts de ligne ne sont pas pris en compte.",
+          widget: text,
+          pattern: ["^(.|\\s){0,300}$", "Le résumé ne doit pas excéder 300 caractères."],
+          required: false}
+      - { name: body,
+          label: Description,
+          widget: markdown,
+          buttons: ['bold', 'italic', 'link', 'heading-one', 'heading-two', 'quote', 'bulleted-list', 'numbered-list']}
 
 
-# Pages
-- label: Pages
-  name: pages
-  files:
-  #Page d'accueil : encadré descriptif du CFS
-#  - label: Description du site
-#    description: "Contenu de l'encadré sur la page d'accueil décrivant succintement le CFS."
-#    name: descriptionSite
-#    file: src/content/pages/descriptionSite.md
-#    fields:
-#    - { name: "type", widget: "hidden", label: "Type", default: "descriptionCFS" }
-#    - { name: title,
-#        label: "Titre",
-#        hint: "Mettre entre double asterisques la partie du titre à colorer. Ex : **Texte à colorer**",
-#        pattern: ["^.{0,50}$", "Le titre ne doit pas excéder 50 caractères."],
-#    }
-#    - { name: body,
-#        label: Corps,
-#        widget: text,
-#        pattern: ["^(.|\\s){0,700}$", "Le résumé ne doit pas excéder 700 caractères."],
-#        required: false
-#    }
+#  # Pages
+#  - label: Pages
+#    name: pages
+#    files:
+#    #Page d'accueil : encadré descriptif du CFS
+##  - label: Description du site
+##    description: "Contenu de l'encadré sur la page d'accueil décrivant succintement le CFS."
+##    name: descriptionSite
+##    file: src/content/pages/descriptionSite.md
+##    fields:
+##    - { name: "type", widget: "hidden", label: "Type", default: "descriptionCFS" }
+##    - { name: title,
+##        label: "Titre",
+##        hint: "Mettre entre double asterisques la partie du titre à colorer. Ex : **Texte à colorer**",
+##        pattern: ["^.{0,50}$", "Le titre ne doit pas excéder 50 caractères."],
+##    }
+##    - { name: body,
+##        label: Corps,
+##        widget: text,
+##        pattern: ["^(.|\\s){0,700}$", "Le résumé ne doit pas excéder 700 caractères."],
+##        required: false
+##    }

@@ -1,10 +1,10 @@
 import React from "react"
 import {Link, withPrefix} from "gatsby"
 import Dotdotdot from 'react-dotdotdot'
-import styles from "./newsPost.module.scss"
+import styles from "./post.module.scss"
 import cx from "classnames"
 
-class NewsPost extends React.Component {
+class Post extends React.Component {
     constructor(props) {
         super(props);
         this.titleContainerRef = React.createRef();
@@ -44,4 +44,4 @@ class NewsPost extends React.Component {
     }
 }
 
-export default NewsPost;
+export default Post;

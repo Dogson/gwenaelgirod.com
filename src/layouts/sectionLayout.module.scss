@@ -10,14 +10,18 @@
   }
 
   .wrapper {
-    @extend .flexColumn;
-    padding: 30px 0;
     width: $containerWidth;
 
-    .header {
-      @extend .flexRow;
-      @extend .flexSpaceBetween;
+    .body {
+      @extend .flexColumn;
+      padding: 30px 0;
+
+      .header {
+        @extend .flexRow;
+        @extend .flexSpaceBetween;
+      }
     }
+
   }
 }
 
@@ -36,7 +40,7 @@
 
 .sectionContainer.noPaddingTop {
 
-  .wrapper {
+  .body {
     padding-top: 0;
   }
 }

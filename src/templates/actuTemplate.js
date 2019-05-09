@@ -4,8 +4,9 @@ import 'moment/locale/fr'
 import {graphql, Link} from "gatsby"
 import PageLayout from "../layouts/pageLayout"
 import SectionLayout from "../layouts/sectionLayout"
-import styles from "./actuTemplate.module.scss";
+import styles from "./templates.module.scss";
 import NavigationPath from "../components/navigationPath/navigationPath";
+import {CATEGORY_NAME} from "../helpers/const";
 
 export default function ActuTemplate({
                                          data // this prop will be injected by the GraphQL query below.
@@ -20,8 +21,12 @@ export default function ActuTemplate({
             path: '/'
         },
         {
-            title: "Actualités",
-            path: '/posts/'
+            title: "Blog",
+            path: '/blog/'
+        },
+        {
+            title: CATEGORY_NAME[frontmatter.category].name,
+            path: CATEGORY_NAME[frontmatter.category].path
         },
         {
             title: frontmatter.title,
@@ -59,7 +64,7 @@ export default function ActuTemplate({
         <PageLayout>
             <div className={styles.newsHeader}>
                 <div className={styles.newsSectionTitle}>
-                    <span>ACTUALITÉS</span>
+                    <span>{frontmatter.title}</span>
                 </div>
                 <NewsImage/>
             </div>
@@ -103,7 +108,8 @@ export const pageQuery = graphql`
       frontmatter {
         date
         title
-        image
+        image,
+        category
       }
     }
     otherNews: allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}, filter: {id: {ne: $id}, frontmatter: {type: {eq: "post"}}}, limit: 5) {
@@ -112,7 +118,8 @@ export const pageQuery = graphql`
               fileAbsolutePath
               frontmatter {
                 date
-                title  
+                title,
+                category
               }
             }
           }

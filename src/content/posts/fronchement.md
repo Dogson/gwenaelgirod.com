@@ -2,6 +2,7 @@
 date: '2019-04-22'
 title: Fronchement
 type: post
+category: gaming
 ---
 Ceci est une actualité.
 
