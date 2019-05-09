@@ -32,7 +32,7 @@ const HomeCarousel = ({posts}) => {
 
     const items = posts.map((item) => {
         return {
-            image: item.node.frontmatter.image ? withPrefix(item.node.frontmatter.image) : withPrefix('/assets/logo/GG.png'),
+            image: item.node.frontmatter.image ? withPrefix(item.node.frontmatter.image) : withPrefix(MEDIA_CATEGORIES[item.node.frontmatter.category].image),
             title: item.node.frontmatter.title,
             path: item.node.fileAbsolutePath,
             category: item.node.frontmatter.category

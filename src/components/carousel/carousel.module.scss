@@ -32,34 +32,15 @@
         z-index: 1;
         box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
         font-size: $size-small;
-        width: 170px;
+        width: 150px;
         text-align: center;
 
         .icon {
           opacity: 1;
           position: absolute;
-          left: 75px;
           font-size: 20px;
           top: 8px;
-          transition: all 0.3s ease-in-out 0.1s;
-        }
-
-        .text {
-          opacity: 0;
-          transition: all 0.3s ease-in-out;
-        }
-
-        &:hover {
-          .text {
-            opacity: 1;
-            transition: all 0.3s ease-in-out 0.1s;
-          }
-
-          .icon {
-            left: 20px;
-            transition: all 0.3s ease-in-out;
-          }
-
+          left: 13px;
         }
 
         &.gaming {

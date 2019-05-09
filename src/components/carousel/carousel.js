@@ -33,7 +33,6 @@ const Carousel = ({items, settings}) => {
 
 
     function Tag({item}) {
-        console.log(item);
         const classNames = cx(styles.tag, styles[item.category]);
         return <div className={classNames}>
             <span className={styles.icon}>{MEDIA_CATEGORIES[item.category].icon}</span>

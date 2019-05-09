@@ -19,7 +19,7 @@ class Post extends React.Component {
     render() {
         const {post} = this.props;
         const newsCardContainerClass = cx(styles.newsCardContainer, styles[post.frontmatter.category]);
-        const image = post.frontmatter.image ? withPrefix(post.frontmatter.image) : withPrefix('/assets/logo/GG.png');
+        const image = post.frontmatter.image ? withPrefix(post.frontmatter.image) : withPrefix(MEDIA_CATEGORIES[post.frontmatter.category].image);
         const summary = post.frontmatter.summary || post.excerpt;
         return <div className={newsCardContainerClass}>
             <Link to={MEDIA_CATEGORIES[post.frontmatter.category].path}>

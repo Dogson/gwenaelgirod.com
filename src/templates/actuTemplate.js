@@ -35,12 +35,22 @@ export default function ActuTemplate({
         }
     ];
 
-    function NewsImage() {
+    function HeaderNewsImage() {
         let image;
-        image = frontmatter.image ? frontmatter.image : '/assets/logo/GG.png';
+        image = frontmatter.image ? frontmatter.image : MEDIA_CATEGORIES[frontmatter.category].image;
         return <img className={styles.backgroundImage} src={image}
                     alt={frontmatter.title} height="100%"
                     width="100%"/>
+    }
+
+    function BodyNewsImage() {
+      if (frontmatter.image) {
+          return <img className={styles.backgroundImage} src={frontmatter.image}
+                      alt={frontmatter.title} height="100%"
+                      width="100%"/>
+      }
+      return null;
+
     }
 
     function OtherNewsPanel() {
@@ -72,7 +82,7 @@ export default function ActuTemplate({
                 <div className={styles.newsSectionTitle}>
                     <span>{frontmatter.title}</span>
                 </div>
-                <NewsImage/>
+                <HeaderNewsImage/>
             </div>
             <SectionLayout withBorders noPaddingTop>
                 <div className={styles.newsWrapper}>
@@ -83,7 +93,7 @@ export default function ActuTemplate({
                                 {moment(frontmatter.date).format('LL')}
                             </div>
                             <div className={styles.imgContainer}>
-                                <NewsImage/>
+                                <BodyNewsImage/>
                             </div>
                         </div>
                         <div className={styles.newsContent}>
