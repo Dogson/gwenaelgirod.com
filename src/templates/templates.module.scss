@@ -25,6 +25,36 @@ $newsInfosWidth: 240px;
     opacity: 0.6;
     z-index: 2;
   }
+
+  &.movies {
+    .newsSectionTitle {
+      background-color: $color-movies;
+    }
+  }
+
+  &.gaming {
+    .newsSectionTitle {
+      background-color: $color-gaming;
+    }
+  }
+
+  &.tv {
+    .newsSectionTitle {
+      background-color: $color-tv;
+    }
+  }
+
+  &.books {
+    .newsSectionTitle {
+      background-color: $color-books;
+    }
+  }
+
+  &.music {
+    .newsSectionTitle {
+      background-color: $color-music;
+    }
+  }
 }
 
 .newsWrapper {
@@ -154,20 +184,12 @@ $newsInfosWidth: 240px;
             content: "";
             width: 150px;
             display: block;
-            transition: all 0.1s ease-in-out 0.1s;
+            transition: all 0.2s ease-in-out;
           }
 
           &:nth-child(even) {
             .content {
               background-color: white;
-            }
-
-            .readMore {
-              color: $background-secondary;
-            }
-
-            &:before {
-              border-bottom: 3px solid $background-secondary;
             }
           }
 
@@ -175,13 +197,60 @@ $newsInfosWidth: 240px;
             .content {
               background-color: rgba($background-secondary, 0.1);
             }
+          }
+
+          &.gaming {
 
             .readMore {
-              color: $color-main;
+              color: $color-gaming;
             }
 
             &:before {
-              border-bottom: 3px solid $color-main;
+              border-bottom: 3px solid $color-gaming;
+            }
+          }
+
+          &.movies {
+
+            .readMore {
+              color: $color-movies;
+            }
+
+            &:before {
+              border-bottom: 3px solid $color-movies;
+            }
+          }
+
+          &.tv {
+
+            .readMore {
+              color: $color-tv;
+            }
+
+            &:before {
+              border-bottom: 3px solid $color-tv;
+            }
+          }
+
+          &.music {
+
+            .readMore {
+              color: $color-music;
+            }
+
+            &:before {
+              border-bottom: 3px solid $color-music;
+            }
+          }
+
+          &.books {
+
+            .readMore {
+              color: $color-books;
+            }
+
+            &:before {
+              border-bottom: 3px solid $color-books;
             }
           }
 
@@ -190,13 +259,65 @@ $newsInfosWidth: 240px;
             text-align: left;
             position: relative;
 
-            .date {
+            .category {
+              @extend .flexRow;
+              @extend .flexAlignCenter;
               cursor: pointer;
-              font-size: $size-smaller;
-              color: #7a7a7a;
+              color: white;
               font-weight: $weight-light;
-              font-style: italic;
-              padding: 5px 0;
+              opacity: 0.8;
+              font-size: $size-smaller;
+
+              .icon {
+              @extend .flexRow;
+              @extend .flexAlignCenter;
+              @extend .flexCenter;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                color: white;
+                font-size: 16px;
+                margin-right: 5px;
+              }
+
+              &.gaming {
+                color: $color-gaming;
+                .icon {
+                  background-color: $color-gaming;
+                }
+              }
+
+              &.movies {
+                color: $color-movies;
+
+                .icon {
+                  background-color: $color-movies;
+                }
+              }
+
+              &.tv {
+                color: $color-tv;
+
+                .icon {
+                  background-color: $color-tv;
+                }
+              }
+
+              &.music {
+                color: $color-music;
+
+                .icon {
+                  background-color: $color-music;
+                }
+              }
+
+              &.books {
+                color: $color-books;
+
+                .icon {
+                  background-color: $color-books;
+                }
+              }
             }
 
             .title {
@@ -207,14 +328,18 @@ $newsInfosWidth: 240px;
           }
 
           &:hover {
+            .category {
+              opacity: 1;
+            }
+
             &:before {
               width: 100%;
-              transition: all 0.1s ease-in-out;
+              transition: all 0.2s ease-in-out;
             }
 
             .readMore {
               opacity: 1;
-              transition: all 0.1s ease-in-out 0.1s;
+              transition: all 0.2s ease-in-out;
 
               span {
                 &:after {
@@ -231,7 +356,7 @@ $newsInfosWidth: 240px;
             top: 0;
             right: 0;
             width: 60px;
-            transition: all 0.1s ease-in-out;
+            transition: all 0.2s ease-in-out;
             font-size: $size-small;
             @extend .flexColumn;
             @extend .flexCenter;
@@ -246,4 +371,5 @@ $newsInfosWidth: 240px;
       }
     }
   }
+
 }

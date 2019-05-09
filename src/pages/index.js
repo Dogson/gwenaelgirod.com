@@ -1,14 +1,15 @@
 import React from "react"
 import {graphql, Link, withPrefix} from "gatsby"
 import cx from 'classnames';
-import {FaGamepad, FaFilm, FaTv, FaBook, FaCompactDisc, FaCode} from "react-icons/fa";
-
-import Post from "../components/newsPost/newsPost"
+import {FaCode} from "react-icons/fa";
+import Post from "../components/newsPost/post"
+import Carousel from "../components/carousel/carousel";
 import PageLayout from "../layouts/pageLayout";
 import SectionLayout from "../layouts/sectionLayout"
 
 import styles from "./index.module.scss";
-import Carousel from "../components/carousel/carousel";
+import {MEDIA_CATEGORIES} from "../helpers/const";
+
 
 /**
  * PAGE D'ACCUEIL DU SITE
@@ -33,8 +34,8 @@ const HomeCarousel = ({posts}) => {
         return {
             image: item.node.frontmatter.image ? withPrefix(item.node.frontmatter.image) : withPrefix('/assets/logo/GG.png'),
             title: item.node.frontmatter.title,
-            tag: item.node.frontmatter.date,
             path: item.node.fileAbsolutePath,
+            category: item.node.frontmatter.category
         };
     });
     const settings = {
@@ -82,6 +83,14 @@ class DescriptionSection extends React.Component {
     }
 
     render() {
+        const btnClassNames = {
+            gaming: cx(styles.btnSecondary, styles.gaming),
+            movies: cx(styles.btnSecondary, styles.movies),
+            tv: cx(styles.btnSecondary, styles.tv),
+            music: cx(styles.btnSecondary, styles.music),
+            books: cx(styles.btnSecondary, styles.books),
+        };
+
         return <SectionLayout odd>
             <div className={styles.descriptionContainer}>
                 <div className={styles.descriptionTextContainer}>
@@ -102,25 +111,42 @@ class DescriptionSection extends React.Component {
                             littérature.</p>
 
                         <p> Et ce, bien sûr, de manière totalement {this.renderSubjObj()}</p>
-                        <p>Je suis également développeur web et mobile, spécialisé dans les technologies javascript front-end (ReactJS & Native).</p>
+                        <p>Je suis également développeur web et mobile, spécialisé dans les technologies javascript
+                            front-end (ReactJS & Native).</p>
                     </div>
                 </div>
                 <div className={styles.navigationPanelContainer}>
                     <div className={styles.titleContainer}><span>Accès</span></div>
                     <div className={styles.navigationPanel}>
                         <div className={styles.title}>
-                           Mes billets par <strong>média</strong> :
+                            Mes billets par <strong>média</strong> :
                         </div>
-                        <Link className={styles.btnSecondary} to={"/actualites/"}><span className={styles.icon}><FaGamepad/></span>Jeux vidéo</Link>
-                        <Link className={styles.btnSecondary} to={"/actualites/"}><span className={styles.icon}><FaFilm/></span>Films</Link>
-                        <Link className={styles.btnSecondary} to={"/actualites/"}><span className={styles.icon}><FaTv/></span>Séries TV</Link>
-                        <Link className={styles.btnSecondary} to={"/actualites/"}><span className={styles.icon}><FaCompactDisc/></span>Musique</Link>
-                        <Link className={styles.btnSecondary} to={"/actualites/"}><span className={styles.icon}><FaBook/></span>Livres</Link>
+                        <Link className={btnClassNames.gaming} to={MEDIA_CATEGORIES["gaming"].path}>
+                            <span
+                                className={styles.icon}>{MEDIA_CATEGORIES["gaming"].icon}</span>{MEDIA_CATEGORIES["gaming"].name}
+                        </Link>
+                        <Link className={btnClassNames.movies} to={MEDIA_CATEGORIES["movies"].path}>
+                            <span
+                                className={styles.icon}>{MEDIA_CATEGORIES["movies"].icon}</span>{MEDIA_CATEGORIES["movies"].name}
+                        </Link>
+                        <Link className={btnClassNames.tv} to={MEDIA_CATEGORIES["tv"].path}>
+                            <span
+                                className={styles.icon}>{MEDIA_CATEGORIES["tv"].icon}</span>{MEDIA_CATEGORIES["tv"].name}
+                        </Link>
+                        <Link className={btnClassNames.music} to={MEDIA_CATEGORIES["music"].path}>
+                            <span
+                                className={styles.icon}>{MEDIA_CATEGORIES["music"].icon}</span>{MEDIA_CATEGORIES["music"].name}
+                        </Link>
+                        <Link className={btnClassNames.books} to={MEDIA_CATEGORIES["books"].path}>
+                            <span
+                                className={styles.icon}>{MEDIA_CATEGORIES["books"].icon}</span>{MEDIA_CATEGORIES["books"].name}
+                        </Link>
 
                         <div className={styles.title} style={{marginTop: '20px'}}>
                             Vous cherchez un <strong>développeur web</strong> ?
                         </div>
-                        <Link className={styles.btnSecondary} to={"/whoAmI/"}><span className={styles.icon}><FaCode/></span>Mon profil pro</Link>
+                        <Link className={styles.btnSecondary} to={"/whoAmI/"}><span
+                            className={styles.icon}><FaCode/></span>Mon profil pro</Link>
                     </div>
                 </div>
             </div>
@@ -138,10 +164,10 @@ class DescriptionSection extends React.Component {
  */
 const BlogSection = ({posts}) => {
     const Posts = posts
-        .map((post, i) => <Post odd={i % 2} key={post.node.id} post={post.node}/>);
+        .map((post) => <Post key={post.node.id} post={post.node}/>);
 
     const action = {
-        title: "Voir toutes les billets",
+        title: "Voir tous les billets",
         path: '/blog/'
     };
 
@@ -169,6 +195,7 @@ export const pageQuery = graphql`
                 title
                 summary
                 image
+                category
               }
             }
           }

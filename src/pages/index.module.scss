@@ -8,11 +8,11 @@
   @extend .flexRow;
   @extend .flexSpaceBetween;
 
-  .descriptionTextContainer {
+  strong {
+    color: $color-main;
+  }
 
-    strong {
-      color: $color-main;
-    }
+  .descriptionTextContainer {
 
     @extend .flexAlignCenter;
     @extend .flexColumn;
@@ -79,10 +79,6 @@
     flex: 0.3;
     margin-left: 15px;
 
-    strong {
-      color: $background-secondary;
-    }
-
     .titleContainer {
       @extend .sectionTitle;
       justify-content: center;
@@ -92,7 +88,7 @@
       left: 20px;
       font-size: $size-big;
       padding: 0 40px;
-      background-color: $background-secondary;
+      background-color: $color-main;
       color: white;
       text-transform: uppercase;
       box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
@@ -103,7 +99,7 @@
       @extend .flexColumn;
       @extend .flexSpaceBetween;
       margin-top: 20px;
-      border: 1px solid $background-secondary;
+      border: 1px solid $color-main;
       border-radius: 5px;
       padding: 30px;
       width: 100%;
@@ -116,8 +112,6 @@
       }
 
       .btnSecondary {
-        color: $background-secondary;
-        border: 1px solid $background-secondary;
         position: relative;
         .icon {
           font-size: 18px;
@@ -129,10 +123,60 @@
           position: absolute;
           right: 10px;
         }
-        &:hover {
-          background-color: $background-secondary;
-          color: white;
-          box-shadow: none;
+
+        &.gaming {
+          color: $color-gaming;
+          border: 1px solid $color-gaming;
+
+          &:hover {
+            background-color: $color-gaming;
+            color: white;
+            box-shadow: none;
+          }
+        }
+
+        &.movies {
+          color: $color-movies;
+          border: 1px solid $color-movies;
+
+          &:hover {
+            background-color: $color-movies;
+            color: white;
+            box-shadow: none;
+          }
+        }
+
+        &.tv {
+          color: $color-tv;
+          border: 1px solid $color-tv;
+
+          &:hover {
+            background-color: $color-tv;
+            color: white;
+            box-shadow: none;
+          }
+        }
+
+        &.music {
+          color: $color-music;
+          border: 1px solid $color-music;
+
+          &:hover {
+            background-color: $color-music;
+            color: white;
+            box-shadow: none;
+          }
+        }
+
+        &.books {
+          color: $color-books;
+          border: 1px solid $color-books;
+
+          &:hover {
+            background-color: $color-books;
+            color: white;
+            box-shadow: none;
+          }
         }
       }
     }

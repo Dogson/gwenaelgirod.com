@@ -1,0 +1,242 @@
+@import '../../styles/global';
+
+.newsCardContainer {
+  @extend .flexColumn;
+  position: relative;
+  height: $cardHeight;
+  width: $cardWidth;
+  border: 1px solid $background-secondary;
+  border-radius: 5px;
+  float: left;
+  margin: 30px calc(((#{$containerWidth} - #{$cardWidth} * 3) / 6) - 1px);
+  cursor: pointer;
+
+  .categoryContainer {
+    position: absolute;
+    background-color: $background-secondary;
+    color: white;
+    top: -20px;
+    left: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    font-size: $size-small;
+    height: 40px;
+    width: 90px;
+    overflow: hidden;
+    text-align: center;
+
+    .categoryName, .categoryIcon {
+      @extend .flexRow;
+      @extend .flexAlignCenter;
+      @extend .flexCenter;
+      height: 40px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .categoryIcon {
+      font-size: 22px;
+    }
+
+    &:hover {
+      .categoryName {
+        transform: translateY(-40px);
+        transition: all 0.2s ease-in-out;
+      }
+
+      .categoryIcon {
+        transform: translateY(-40px);
+        transition: all 0.2s ease-in-out;
+      }
+    }
+
+
+  }
+
+  .imageContainer {
+    width: $cardWidth;
+    height: 170px;
+
+    .image {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+    }
+  }
+
+
+  .postLink {
+    flex: 1;
+    &:hover {
+      .readMore {
+        height: 40px;
+        transition: all 0.2s ease-in-out;
+      }
+    }
+  }
+
+  .bodyContainer {
+    margin: 10px 15px;
+    @extend .flexColumn;
+
+    .titleContainer {
+
+      font-size: $size-big;
+      font-weight: $weight-bold;
+
+      &:after {
+        content: "";
+        width: 150px;
+        border-bottom: 3px solid $background-secondary;
+        display: block;
+        padding-top: 5px;
+      }
+    }
+
+    .summary {
+      font-size: $size-small;
+      font-weight: $weight-light;
+      height: 50px;
+    }
+
+    .readMore {
+      height: 0;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      transition: all 0.2s ease-in-out;
+      background-color: $background-secondary;
+      color: white;
+      font-size: $size-small;
+      text-align: right;
+
+
+      span {
+        position: absolute;
+        top: 12px;
+        right: 20px;
+      }
+    }
+  }
+}
+
+.newsCardContainer.music {
+  border: 1px solid $color-music;
+
+  .categoryContainer {
+    background-color: $color-music;
+  }
+
+  .bodyContainer {
+    .titleContainer {
+      &:after {
+        border-bottom: 3px solid $color-music;
+      }
+    }
+
+    .readMore {
+      background-color: $color-music;
+    }
+  }
+}
+
+.newsCardContainer.gaming {
+  border: 1px solid $color-gaming;
+
+  .categoryContainer {
+    background-color: $color-gaming;
+  }
+
+  .bodyContainer {
+    .titleContainer {
+      &:after {
+        border-bottom: 3px solid $color-gaming;
+      }
+    }
+
+    .readMore {
+      background-color: $color-gaming;
+    }
+  }
+}
+
+.newsCardContainer.movies {
+  border: 1px solid $color-movies;
+
+  .categoryContainer {
+    background-color: $color-movies;
+  }
+
+  .bodyContainer {
+    .titleContainer {
+      &:after {
+        border-bottom: 3px solid $color-movies;
+      }
+    }
+
+    .readMore {
+      background-color: $color-movies;
+    }
+  }
+}
+
+.newsCardContainer.tv {
+  border: 1px solid $color-tv;
+
+  .categoryContainer {
+    background-color: $color-tv;
+  }
+
+  .bodyContainer {
+    .titleContainer {
+      &:after {
+        border-bottom: 3px solid $color-tv;
+      }
+    }
+
+    .readMore {
+      background-color: $color-tv;
+    }
+  }
+}
+
+.newsCardContainer.music {
+  border: 1px solid $color-music;
+
+  .categoryContainer {
+    background-color: $color-music;
+  }
+
+  .bodyContainer {
+    .titleContainer {
+      &:after {
+        border-bottom: 3px solid $color-music;
+      }
+    }
+
+    .readMore {
+      background-color: $color-music;
+    }
+  }
+}
+
+.newsCardContainer.books {
+  border: 1px solid $color-books;
+
+  .categoryContainer {
+    background-color: $color-books;
+  }
+
+  .bodyContainer {
+    .titleContainer {
+      &:after {
+        border-bottom: 3px solid $color-books;
+      }
+    }
+
+    .readMore {
+      background-color: $color-books;
+    }
+  }
+}

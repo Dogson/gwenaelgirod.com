@@ -33,6 +33,12 @@ $color-primary: black;
 $color-secondary: white;
 $color-main: #FB8D58;
 
+$color-gaming: #fb6a2e;
+$color-movies: #003366;
+$color-tv: #007a69;
+$color-music: #FF1C4A;
+$color-books: #5f91c8;
+
 html {
   font-family: 'Roboto', sans-serif;
   font-weight: $weight-regular;
@@ -119,7 +125,7 @@ strong {
   cursor: pointer;
   text-transform: uppercase;
 
-  &:hover{
+  &:hover {
     box-shadow: none;
     background-color: $color-main;
     color: white;

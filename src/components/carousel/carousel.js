@@ -1,7 +1,9 @@
 import Slider from "react-slick";
 import React from "react";
+import cx from "classnames";
 import styles from "./carousel.module.scss";
 import {Link} from "gatsby"
+import {MEDIA_CATEGORIES} from "../../helpers/const";
 
 const Carousel = ({items, settings}) => {
     const config = {
@@ -30,6 +32,15 @@ const Carousel = ({items, settings}) => {
     };
 
 
+    function Tag({item}) {
+        console.log(item);
+        const classNames = cx(styles.tag, styles[item.category]);
+        return <div className={classNames}>
+            <span className={styles.icon}>{MEDIA_CATEGORIES[item.category].icon}</span>
+            <span className={styles.text}>{MEDIA_CATEGORIES[item.category].name}</span>
+        </div>
+    }
+
     return (
         <Slider {...config}>
             {items.map((item, i) =>
@@ -38,10 +49,9 @@ const Carousel = ({items, settings}) => {
                         <img className={styles.backgroundImage} src={item.image} alt={item.title} height="100%"
                              width="100%"/>
                         <div className={styles.carouselItemContainer}>
-                            <Link className={styles.titleContainer} to={`posts/${item.path.substring(item.path.lastIndexOf('/') + 1).slice(0, -3)}`}>
-                                <div className={styles.tag}>
-                                    {item.tag}
-                                </div>
+                            <Link className={styles.titleContainer}
+                                  to={`posts/${item.path.substring(item.path.lastIndexOf('/') + 1).slice(0, -3)}`}>
+                                <Tag item={item}/>
                                 <div className={styles.title}>
                                     <span>{item.title}</span>
                                     <span className={styles.details}>{settings.clickText}</span>

@@ -41,7 +41,8 @@ const Header = () => (
 
 const MenuLink = (props) => {
     const {route, name} = props;
-    return <Link to={route} className={styles.menuLink} activeClassName={styles.menuLinkActive}>
+    return <Link to={route} className={styles.menuLink} activeClassName={styles.menuLinkActive}
+                 partiallyActive={route !== "/"}>
         {name}
     </Link>
 };
