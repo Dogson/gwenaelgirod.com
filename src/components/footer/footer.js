@@ -25,21 +25,21 @@ const Footer = () => (
                 <div className={styles.menuContainer}>
                     <div className={styles.title}>Nous suivre</div>
                     <div className={styles.item}>
-                        <a href="https://twitter.com" target="_blank">Twitter</a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
                     </div>
                     <div className={styles.item}>
-                        <a href="https://facebook.com" target="_blank">Facebook</a>
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
                     </div>
                 </div>
 
                 <div className={styles.menuContainer}>
                     <div className={styles.title}>Sites annexes</div>
                     <div className={styles.item}>
-                        <a href="https://TODO.com" target="_blank">Plateforme de la coopération
+                        <a href="https://TODO.com" target="_blank" rel="noopener noreferrer">Plateforme de la coopération
                             universitaire</a>
                     </div>
                     <div className={styles.item}>
-                        <a href="https://TODO.com" target="_blank">Plateforme d'offre d'emploi</a>
+                        <a href="https://TODO.com" target="_blank" rel="noopener noreferrer">Plateforme d'offre d'emploi</a>
                     </div>
                 </div>
 

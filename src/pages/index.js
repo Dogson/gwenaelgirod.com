@@ -83,6 +83,14 @@ class DescriptionSection extends React.Component {
     }
 
     render() {
+        const btnClassNames = {
+            gaming: cx(styles.btnSecondary, styles.gaming),
+            movies: cx(styles.btnSecondary, styles.movies),
+            tv: cx(styles.btnSecondary, styles.tv),
+            music: cx(styles.btnSecondary, styles.music),
+            books: cx(styles.btnSecondary, styles.books),
+        };
+
         return <SectionLayout odd>
             <div className={styles.descriptionContainer}>
                 <div className={styles.descriptionTextContainer}>
@@ -103,35 +111,42 @@ class DescriptionSection extends React.Component {
                             littérature.</p>
 
                         <p> Et ce, bien sûr, de manière totalement {this.renderSubjObj()}</p>
-                        <p>Je suis également développeur web et mobile, spécialisé dans les technologies javascript front-end (ReactJS & Native).</p>
+                        <p>Je suis également développeur web et mobile, spécialisé dans les technologies javascript
+                            front-end (ReactJS & Native).</p>
                     </div>
                 </div>
                 <div className={styles.navigationPanelContainer}>
                     <div className={styles.titleContainer}><span>Accès</span></div>
                     <div className={styles.navigationPanel}>
                         <div className={styles.title}>
-                           Mes billets par <strong>média</strong> :
+                            Mes billets par <strong>média</strong> :
                         </div>
-                        <Link className={styles.btnSecondary} to={MEDIA_CATEGORIES["gaming"].path}>
-                            <span className={styles.icon}>{MEDIA_CATEGORIES["gaming"].icon}</span>{MEDIA_CATEGORIES["gaming"].name}
+                        <Link className={btnClassNames.gaming} to={MEDIA_CATEGORIES["gaming"].path}>
+                            <span
+                                className={styles.icon}>{MEDIA_CATEGORIES["gaming"].icon}</span>{MEDIA_CATEGORIES["gaming"].name}
                         </Link>
-                        <Link className={styles.btnSecondary} to={MEDIA_CATEGORIES["movies"].path}>
-                            <span className={styles.icon}>{MEDIA_CATEGORIES["movies"].icon}</span>{MEDIA_CATEGORIES["movies"].name}
+                        <Link className={btnClassNames.movies} to={MEDIA_CATEGORIES["movies"].path}>
+                            <span
+                                className={styles.icon}>{MEDIA_CATEGORIES["movies"].icon}</span>{MEDIA_CATEGORIES["movies"].name}
                         </Link>
-                        <Link className={styles.btnSecondary} to={MEDIA_CATEGORIES["tv"].path}>
-                            <span className={styles.icon}>{MEDIA_CATEGORIES["tv"].icon}</span>{MEDIA_CATEGORIES["tv"].name}
+                        <Link className={btnClassNames.tv} to={MEDIA_CATEGORIES["tv"].path}>
+                            <span
+                                className={styles.icon}>{MEDIA_CATEGORIES["tv"].icon}</span>{MEDIA_CATEGORIES["tv"].name}
                         </Link>
-                        <Link className={styles.btnSecondary} to={MEDIA_CATEGORIES["music"].path}>
-                            <span className={styles.icon}>{MEDIA_CATEGORIES["music"].icon}</span>{MEDIA_CATEGORIES["music"].name}
+                        <Link className={btnClassNames.music} to={MEDIA_CATEGORIES["music"].path}>
+                            <span
+                                className={styles.icon}>{MEDIA_CATEGORIES["music"].icon}</span>{MEDIA_CATEGORIES["music"].name}
                         </Link>
-                        <Link className={styles.btnSecondary} to={MEDIA_CATEGORIES["books"].path}>
-                            <span className={styles.icon}>{MEDIA_CATEGORIES["books"].icon}</span>{MEDIA_CATEGORIES["books"].name}
+                        <Link className={btnClassNames.books} to={MEDIA_CATEGORIES["books"].path}>
+                            <span
+                                className={styles.icon}>{MEDIA_CATEGORIES["books"].icon}</span>{MEDIA_CATEGORIES["books"].name}
                         </Link>
 
                         <div className={styles.title} style={{marginTop: '20px'}}>
                             Vous cherchez un <strong>développeur web</strong> ?
                         </div>
-                        <Link className={styles.btnSecondary} to={"/whoAmI/"}><span className={styles.icon}><FaCode/></span>Mon profil pro</Link>
+                        <Link className={styles.btnSecondary} to={"/whoAmI/"}><span
+                            className={styles.icon}><FaCode/></span>Mon profil pro</Link>
                     </div>
                 </div>
             </div>

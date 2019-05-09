@@ -25,6 +25,36 @@ $newsInfosWidth: 240px;
     opacity: 0.6;
     z-index: 2;
   }
+
+  &.movies {
+    .newsSectionTitle {
+      background-color: $color-movies;
+    }
+  }
+
+  &.gaming {
+    .newsSectionTitle {
+      background-color: $color-gaming;
+    }
+  }
+
+  &.tv {
+    .newsSectionTitle {
+      background-color: $color-tv;
+    }
+  }
+
+  &.books {
+    .newsSectionTitle {
+      background-color: $color-books;
+    }
+  }
+
+  &.music {
+    .newsSectionTitle {
+      background-color: $color-music;
+    }
+  }
 }
 
 .newsWrapper {

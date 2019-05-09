@@ -1,5 +1,6 @@
 import React from "react"
 import 'moment/locale/fr'
+import cx from "classnames";
 import {MEDIA_CATEGORIES} from "../helpers/const";
 import {graphql} from "gatsby"
 import PageLayout from "../layouts/pageLayout"
@@ -28,8 +29,10 @@ export default function PostsByCategoryTemplate(props) {
         }
     ];
 
+    const newsHeaderClasses = cx(styles.newsHeader, styles[category]);
+
     return <PageLayout>
-        <div className={styles.newsHeader}>
+        <div className={newsHeaderClasses}>
             <div className={styles.newsSectionTitle}>
                 <span>{MEDIA_CATEGORIES[category].name}</span>
             </div>
