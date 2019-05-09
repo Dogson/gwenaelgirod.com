@@ -149,7 +149,7 @@ class DescriptionSection extends React.Component {
  */
 const BlogSection = ({posts}) => {
     const Posts = posts
-        .map((post, i) => <Post odd={i % 2} key={post.node.id} post={post.node}/>);
+        .map((post) => <Post key={post.node.id} post={post.node}/>);
 
     const action = {
         title: "Voir tous les billets",

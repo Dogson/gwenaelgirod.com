@@ -17,8 +17,8 @@ class Post extends React.Component {
     }
 
     render() {
-        const {odd, post} = this.props;
-        const newsCardContainerClass = cx(styles.newsCardContainer, {[styles.odd]: odd});
+        const {post} = this.props;
+        const newsCardContainerClass = cx(styles.newsCardContainer, styles[post.frontmatter.category]);
         const image = post.frontmatter.image ? withPrefix(post.frontmatter.image) : withPrefix('/assets/logo/GG.png');
         const summary = post.frontmatter.summary || post.excerpt;
         return <div className={newsCardContainerClass}>
@@ -28,9 +28,9 @@ class Post extends React.Component {
                     <div className={styles.categoryName}>{MEDIA_CATEGORIES[post.frontmatter.category].name}</div>
                 </div>
             </Link>
-            <Link
+            <Link className={styles.postLink}
                 to={`posts/${post.fileAbsolutePath.substring(post.fileAbsolutePath.lastIndexOf('/') + 1).slice(0, -3)}`}>
-                <div className={styles.newsCardWrapper}>
+                <div>
                     <div className={styles.imageContainer}>
                         <img className={styles.image} src={image}
                              alt={post.frontmatter.title}/>

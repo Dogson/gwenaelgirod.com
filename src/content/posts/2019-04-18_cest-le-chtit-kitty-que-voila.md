@@ -1,7 +1,7 @@
 ---
 type: post
 date: '2019-04-18'
-category: tv
+category: music
 image: /assets/images/mvimg_20190401_154235.jpg
 priority: true
 title: C'est le chtit kitty que voilà !

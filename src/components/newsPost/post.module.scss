@@ -65,7 +65,8 @@
   }
 
 
-  .newsCardWrapper {
+  .postLink {
+    flex: 1;
     &:hover {
       .readMore {
         height: 40px;
@@ -120,22 +121,122 @@
   }
 }
 
-.newsCardContainer.odd {
-  border: 1px solid $color-main;
+.newsCardContainer.music {
+  border: 1px solid $color-music;
 
   .categoryContainer {
-    background-color: $color-main;
+    background-color: $color-music;
   }
 
   .bodyContainer {
     .titleContainer {
       &:after {
-        border-bottom: 3px solid $color-main;
+        border-bottom: 3px solid $color-music;
       }
     }
 
     .readMore {
-      background-color: $color-main;
+      background-color: $color-music;
+    }
+  }
+}
+
+.newsCardContainer.gaming {
+  border: 1px solid $color-gaming;
+
+  .categoryContainer {
+    background-color: $color-gaming;
+  }
+
+  .bodyContainer {
+    .titleContainer {
+      &:after {
+        border-bottom: 3px solid $color-gaming;
+      }
+    }
+
+    .readMore {
+      background-color: $color-gaming;
+    }
+  }
+}
+
+.newsCardContainer.movies {
+  border: 1px solid $color-movies;
+
+  .categoryContainer {
+    background-color: $color-movies;
+  }
+
+  .bodyContainer {
+    .titleContainer {
+      &:after {
+        border-bottom: 3px solid $color-movies;
+      }
+    }
+
+    .readMore {
+      background-color: $color-movies;
+    }
+  }
+}
+
+.newsCardContainer.tv {
+  border: 1px solid $color-tv;
+
+  .categoryContainer {
+    background-color: $color-tv;
+  }
+
+  .bodyContainer {
+    .titleContainer {
+      &:after {
+        border-bottom: 3px solid $color-tv;
+      }
+    }
+
+    .readMore {
+      background-color: $color-tv;
+    }
+  }
+}
+
+.newsCardContainer.music {
+  border: 1px solid $color-music;
+
+  .categoryContainer {
+    background-color: $color-music;
+  }
+
+  .bodyContainer {
+    .titleContainer {
+      &:after {
+        border-bottom: 3px solid $color-music;
+      }
+    }
+
+    .readMore {
+      background-color: $color-music;
+    }
+  }
+}
+
+.newsCardContainer.books {
+  border: 1px solid $color-books;
+
+  .categoryContainer {
+    background-color: $color-books;
+  }
+
+  .bodyContainer {
+    .titleContainer {
+      &:after {
+        border-bottom: 3px solid $color-books;
+      }
+    }
+
+    .readMore {
+      background-color: $color-books;
     }
   }
 }
