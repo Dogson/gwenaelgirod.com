@@ -14,7 +14,7 @@ slug:
 
 collections:
   #  Actualités
-  - name: posts
+  - name: post
     label: Posts
     folder: src/content/posts
     create: true
