@@ -24,9 +24,7 @@ exports.createPages = ({actions, graphql}) => {
         if (errors) {
             return Promise.reject(errors);
         }
-console.log(edges);
         edges.forEach(({node}) => {
-            console.log(node);
             createPage({
                 path: `posts/${node.fileAbsolutePath.substring(node.fileAbsolutePath.lastIndexOf('/')+1).slice(0, -3)}`,
                 component: actuTemplate,

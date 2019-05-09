@@ -107,6 +107,8 @@ strong {
 }
 
 .btnSecondary {
+  @extend .flexRow;
+  @extend .flexCenter;
   background-color: transparent;
   border: 1px solid $color-main;
   color: $color-main;
@@ -120,7 +122,6 @@ strong {
   &:hover{
     box-shadow: none;
     background-color: $color-main;
-    border: none;
     color: white;
   }
 }

@@ -1,6 +1,7 @@
 import React from "react"
-import {graphql, withPrefix} from "gatsby"
+import {graphql, Link, withPrefix} from "gatsby"
 import cx from 'classnames';
+import {FaGamepad, FaFilm, FaTv, FaBook, FaCompactDisc, FaCode} from "react-icons/fa";
 
 import Post from "../components/newsPost/newsPost"
 import PageLayout from "../layouts/pageLayout";
@@ -101,11 +102,31 @@ class DescriptionSection extends React.Component {
                             littérature.</p>
 
                         <p> Et ce, bien sûr, de manière totalement {this.renderSubjObj()}</p>
+                        <p>Je suis également développeur web et mobile, spécialisé dans les technologies javascript front-end (ReactJS & Native).</p>
                     </div>
                 </div>
-                <div>
+                <div className={styles.navigationPanelContainer}>
+                    <div className={styles.titleContainer}><span>Accès</span></div>
+                    <div className={styles.navigationPanel}>
+                        <div className={styles.title}>
+                           Mes billets par <strong>média</strong> :
+                        </div>
+                        <Link className={styles.btnSecondary} to={"/actualites/"}><span className={styles.icon}><FaGamepad/></span>Jeux vidéo</Link>
+                        <Link className={styles.btnSecondary} to={"/actualites/"}><span className={styles.icon}><FaFilm/></span>Films</Link>
+                        <Link className={styles.btnSecondary} to={"/actualites/"}><span className={styles.icon}><FaTv/></span>Séries TV</Link>
+                        <Link className={styles.btnSecondary} to={"/actualites/"}><span className={styles.icon}><FaCompactDisc/></span>Musique</Link>
+                        <Link className={styles.btnSecondary} to={"/actualites/"}><span className={styles.icon}><FaBook/></span>Livres</Link>
 
+                        <div className={styles.title} style={{marginTop: '20px'}}>
+                            Vous cherchez un <strong>développeur web</strong> ?
+                        </div>
+                        <Link className={styles.btnSecondary} to={"/whoAmI/"}><span className={styles.icon}><FaCode/></span>Mon profil pro</Link>
+                    </div>
                 </div>
+            </div>
+
+            <div>
+
             </div>
         </SectionLayout>
     }
