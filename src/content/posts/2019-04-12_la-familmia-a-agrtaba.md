@@ -1,8 +1,8 @@
 ---
 type: post
 date: '2019-04-15'
+category: movies
 image: /assets/images/carson-arias-197710-unsplash.jpg
-priority: true
 title: Nouvelles formations en philosophie à l'université Cheick Anta Diop
 ---
 # Titre majeur
@@ -28,13 +28,13 @@ _In hac habitasse platea dictumst. Mauris blandit non sapien vel vehicula. Sed v
 * Déja faut faire ça
 * **En plus faut faire ça en gras**
 * _En plus faut faire ça en italic_
-* _**En plus faut faire ça en gras ET italic**_
+* **_En plus faut faire ça en gras ET italic_**
 
 kek
 
 1. Déja faut faire ça
 2. **En plus faut faire ça en gras**
 3. _En plus faut faire ça en italic_
-4. _**En plus faut faire ça en gras ET italic**_
+4. **_En plus faut faire ça en gras ET italic_**
 
 ![Thought catalog](/assets/images/thought-catalog-214785-unsplash.jpg "Image si si !")
