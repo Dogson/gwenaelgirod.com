@@ -1,4 +1,5 @@
-import React from "react"
+import React from "react";
+import cx from "classnames";
 import moment from "moment";
 import 'moment/locale/fr'
 import {graphql, Link} from "gatsby"
@@ -44,18 +45,23 @@ export default function ActuTemplate({
 
     function OtherNewsPanel() {
         return <div className={styles.otherNewsList}>
-            {edges.map(({node, i}) =>
-                <Link key={i} className={styles.item}
-                      to={`posts/${node.fileAbsolutePath.substring(node.fileAbsolutePath.lastIndexOf('/') + 1).slice(0, -3)}`}>
-                    <div className={styles.content}>
-                        <div
-                            className={styles.date}>{moment(node.frontmatter.date).format('DD/MM/YYYY')}</div>
-                        <div className={styles.title}>{node.frontmatter.title}</div>
-                        <div className={styles.readMore}>
-                            <span/>
+            {edges.map(({node, i}) => {
+                    const linkClassName = cx(styles.item, styles[node.frontmatter.category]);
+                    const categoryClassName = cx(styles.category, styles[node.frontmatter.category]);
+                    return <Link key={i} className={linkClassName}
+                                 to={`posts/${node.fileAbsolutePath.substring(node.fileAbsolutePath.lastIndexOf('/') + 1).slice(0, -3)}`}>
+                        <div className={styles.content}>
+                            <div className={categoryClassName}>
+                                <div className={styles.icon}>{MEDIA_CATEGORIES[node.frontmatter.category].icon}</div>
+                                <div>{MEDIA_CATEGORIES[node.frontmatter.category].name}</div>
+                            </div>
+                            <div className={styles.title}>{node.frontmatter.title}</div>
+                            <div className={styles.readMore}>
+                                <span/>
+                            </div>
                         </div>
-                    </div>
-                </Link>
+                    </Link>
+                }
             )}
         </div>
     }
@@ -86,9 +92,9 @@ export default function ActuTemplate({
                         </div>
                         <div className={styles.otherNews}>
                             <div className={styles.otherNewsTitle}>
-                                <strong>Billets</strong>
+                                <strong>Un dernier billet</strong>
                                 <br/>
-                                récents
+                                pour la route ?
                             </div>
                             <OtherNewsPanel/>
                         </div>

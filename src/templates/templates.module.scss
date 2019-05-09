@@ -191,27 +191,66 @@ $newsInfosWidth: 240px;
             .content {
               background-color: white;
             }
-
-            .readMore {
-              color: $background-secondary;
-            }
-
-            &:before {
-              border-bottom: 3px solid $background-secondary;
-            }
           }
 
           &:nth-child(odd) {
             .content {
               background-color: rgba($background-secondary, 0.1);
             }
+          }
+
+          &.gaming {
 
             .readMore {
-              color: $color-main;
+              color: $color-gaming;
             }
 
             &:before {
-              border-bottom: 3px solid $color-main;
+              border-bottom: 3px solid $color-gaming;
+            }
+          }
+
+          &.movies {
+
+            .readMore {
+              color: $color-movies;
+            }
+
+            &:before {
+              border-bottom: 3px solid $color-movies;
+            }
+          }
+
+          &.tv {
+
+            .readMore {
+              color: $color-tv;
+            }
+
+            &:before {
+              border-bottom: 3px solid $color-tv;
+            }
+          }
+
+          &.music {
+
+            .readMore {
+              color: $color-music;
+            }
+
+            &:before {
+              border-bottom: 3px solid $color-music;
+            }
+          }
+
+          &.books {
+
+            .readMore {
+              color: $color-books;
+            }
+
+            &:before {
+              border-bottom: 3px solid $color-books;
             }
           }
 
@@ -220,13 +259,65 @@ $newsInfosWidth: 240px;
             text-align: left;
             position: relative;
 
-            .date {
+            .category {
+              @extend .flexRow;
+              @extend .flexAlignCenter;
               cursor: pointer;
-              font-size: $size-smaller;
-              color: #7a7a7a;
+              color: white;
               font-weight: $weight-light;
-              font-style: italic;
-              padding: 5px 0;
+              opacity: 0.8;
+              font-size: $size-smaller;
+
+              .icon {
+              @extend .flexRow;
+              @extend .flexAlignCenter;
+              @extend .flexCenter;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                color: white;
+                font-size: 16px;
+                margin-right: 5px;
+              }
+
+              &.gaming {
+                color: $color-gaming;
+                .icon {
+                  background-color: $color-gaming;
+                }
+              }
+
+              &.movies {
+                color: $color-movies;
+
+                .icon {
+                  background-color: $color-movies;
+                }
+              }
+
+              &.tv {
+                color: $color-tv;
+
+                .icon {
+                  background-color: $color-tv;
+                }
+              }
+
+              &.music {
+                color: $color-music;
+
+                .icon {
+                  background-color: $color-music;
+                }
+              }
+
+              &.books {
+                color: $color-books;
+
+                .icon {
+                  background-color: $color-books;
+                }
+              }
             }
 
             .title {
@@ -237,6 +328,10 @@ $newsInfosWidth: 240px;
           }
 
           &:hover {
+            .category {
+              opacity: 1;
+            }
+
             &:before {
               width: 100%;
               transition: all 0.2s ease-in-out;
@@ -276,4 +371,5 @@ $newsInfosWidth: 240px;
       }
     }
   }
+
 }
