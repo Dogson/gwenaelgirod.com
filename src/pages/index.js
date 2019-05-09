@@ -9,6 +9,7 @@ import SectionLayout from "../layouts/sectionLayout"
 
 import styles from "./index.module.scss";
 import {MEDIA_CATEGORIES} from "../helpers/const";
+import {Helmet} from "react-helmet";
 
 
 /**
@@ -19,6 +20,10 @@ import {MEDIA_CATEGORIES} from "../helpers/const";
  */
 const IndexPage = ({data: {posts}}) => {
     return <PageLayout>
+        <Helmet>
+            <meta charSet="utf-8" />
+            <title>GG - Gwenaël GIROD</title>
+        </Helmet>
         <HomeCarousel posts={posts.edges.slice(0, 5)}/>
         <DescriptionSection/>
         <BlogSection posts={posts.edges}/>

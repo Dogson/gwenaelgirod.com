@@ -7,6 +7,7 @@ import PageLayout from "../layouts/pageLayout"
 import SectionLayout from "../layouts/sectionLayout"
 import Post from "../components/newsPost/post"
 import styles from "./templates.module.scss";
+import {Helmet} from "react-helmet";
 
 export default function PostsByCategoryTemplate(props) {
     const {data: {posts}, pageContext: {category}} = props;
@@ -32,6 +33,10 @@ export default function PostsByCategoryTemplate(props) {
     const newsHeaderClasses = cx(styles.newsHeader, styles[category]);
 
     return <PageLayout>
+        <Helmet>
+            <meta charSet="utf-8" />
+            <title>GG - {MEDIA_CATEGORIES[category].name}</title>
+        </Helmet>
         <div className={newsHeaderClasses}>
             <div className={styles.newsSectionTitle}>
                 <span>{MEDIA_CATEGORIES[category].name}</span>

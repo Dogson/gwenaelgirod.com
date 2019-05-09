@@ -8,6 +8,7 @@ import SectionLayout from "../layouts/sectionLayout"
 import styles from "./templates.module.scss";
 import NavigationPath from "../components/navigationPath/navigationPath";
 import {MEDIA_CATEGORIES} from "../helpers/const";
+import {Helmet} from "react-helmet";
 
 export default function ActuTemplate({
                                          data // this prop will be injected by the GraphQL query below.
@@ -78,6 +79,10 @@ export default function ActuTemplate({
 
     return (
         <PageLayout>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>{frontmatter.title}</title>
+            </Helmet>
             <div className={styles.newsHeader}>
                 <div className={styles.newsSectionTitle}>
                     <span>{frontmatter.title}</span>
