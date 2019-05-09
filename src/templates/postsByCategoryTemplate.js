@@ -1,6 +1,6 @@
 import React from "react"
 import 'moment/locale/fr'
-import {CATEGORY_NAME} from "../helpers/const";
+import {MEDIA_CATEGORIES} from "../helpers/const";
 import {graphql} from "gatsby"
 import PageLayout from "../layouts/pageLayout"
 import SectionLayout from "../layouts/sectionLayout"
@@ -23,18 +23,18 @@ export default function PostsByCategoryTemplate(props) {
             path: '/blog/'
         },
         {
-            title: CATEGORY_NAME[category].name,
-            path: CATEGORY_NAME[category].path
+            title: MEDIA_CATEGORIES[category].name,
+            path: MEDIA_CATEGORIES[category].path
         }
     ];
 
     return <PageLayout>
         <div className={styles.newsHeader}>
             <div className={styles.newsSectionTitle}>
-                <span>{CATEGORY_NAME[category].name}</span>
+                <span>{MEDIA_CATEGORIES[category].name}</span>
             </div>
-            <img className={styles.backgroundImage} src={CATEGORY_NAME[category].image}
-                 alt={CATEGORY_NAME[category].name} height="100%"
+            <img className={styles.backgroundImage} src={MEDIA_CATEGORIES[category].image}
+                 alt={MEDIA_CATEGORIES[category].name} height="100%"
                  width="100%"/>
         </div>
         <SectionLayout navigationPath={navigationItems} noPaddingTop>
@@ -58,6 +58,7 @@ query($category: String!) {
                 title
                 summary
                 image
+                category
               }
             }
           }

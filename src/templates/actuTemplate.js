@@ -6,7 +6,7 @@ import PageLayout from "../layouts/pageLayout"
 import SectionLayout from "../layouts/sectionLayout"
 import styles from "./templates.module.scss";
 import NavigationPath from "../components/navigationPath/navigationPath";
-import {CATEGORY_NAME} from "../helpers/const";
+import {MEDIA_CATEGORIES} from "../helpers/const";
 
 export default function ActuTemplate({
                                          data // this prop will be injected by the GraphQL query below.
@@ -25,8 +25,8 @@ export default function ActuTemplate({
             path: '/blog/'
         },
         {
-            title: CATEGORY_NAME[frontmatter.category].name,
-            path: CATEGORY_NAME[frontmatter.category].path
+            title: MEDIA_CATEGORIES[frontmatter.category].name,
+            path: MEDIA_CATEGORIES[frontmatter.category].path
         },
         {
             title: frontmatter.title,
@@ -86,9 +86,9 @@ export default function ActuTemplate({
                         </div>
                         <div className={styles.otherNews}>
                             <div className={styles.otherNewsTitle}>
-                                <strong>Actualités</strong>
+                                <strong>Billets</strong>
                                 <br/>
-                                du moment
+                                récents
                             </div>
                             <OtherNewsPanel/>
                         </div>

@@ -154,7 +154,7 @@ $newsInfosWidth: 240px;
             content: "";
             width: 150px;
             display: block;
-            transition: all 0.1s ease-in-out 0.1s;
+            transition: all 0.2s ease-in-out;
           }
 
           &:nth-child(even) {
@@ -209,12 +209,12 @@ $newsInfosWidth: 240px;
           &:hover {
             &:before {
               width: 100%;
-              transition: all 0.1s ease-in-out;
+              transition: all 0.2s ease-in-out;
             }
 
             .readMore {
               opacity: 1;
-              transition: all 0.1s ease-in-out 0.1s;
+              transition: all 0.2s ease-in-out;
 
               span {
                 &:after {
@@ -231,7 +231,7 @@ $newsInfosWidth: 240px;
             top: 0;
             right: 0;
             width: 60px;
-            transition: all 0.1s ease-in-out;
+            transition: all 0.2s ease-in-out;
             font-size: $size-small;
             @extend .flexColumn;
             @extend .flexCenter;

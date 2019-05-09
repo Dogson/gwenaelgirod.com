@@ -1,15 +1,14 @@
 import React from "react"
 import {graphql, Link, withPrefix} from "gatsby"
 import cx from 'classnames';
-import {FaGamepad, FaFilm, FaTv, FaBook, FaCompactDisc, FaCode} from "react-icons/fa";
-
+import {FaCode} from "react-icons/fa";
 import Post from "../components/newsPost/post"
 import Carousel from "../components/carousel/carousel";
 import PageLayout from "../layouts/pageLayout";
 import SectionLayout from "../layouts/sectionLayout"
 
 import styles from "./index.module.scss";
-import {CATEGORY_NAME} from "../helpers/const";
+import {MEDIA_CATEGORIES} from "../helpers/const";
 
 
 /**
@@ -113,11 +112,21 @@ class DescriptionSection extends React.Component {
                         <div className={styles.title}>
                            Mes billets par <strong>média</strong> :
                         </div>
-                        <Link className={styles.btnSecondary} to={CATEGORY_NAME["gaming"].path}><span className={styles.icon}><FaGamepad/></span>{CATEGORY_NAME["gaming"].name}</Link>
-                        <Link className={styles.btnSecondary} to={CATEGORY_NAME["movies"].path}><span className={styles.icon}><FaFilm/></span>{CATEGORY_NAME["movies"].name}</Link>
-                        <Link className={styles.btnSecondary} to={CATEGORY_NAME["tv"].path}><span className={styles.icon}><FaTv/></span>{CATEGORY_NAME["tv"].name}</Link>
-                        <Link className={styles.btnSecondary} to={CATEGORY_NAME["music"].path}><span className={styles.icon}><FaCompactDisc/></span>{CATEGORY_NAME["music"].name}</Link>
-                        <Link className={styles.btnSecondary} to={CATEGORY_NAME["books"].path}><span className={styles.icon}><FaBook/></span>{CATEGORY_NAME["books"].name}</Link>
+                        <Link className={styles.btnSecondary} to={MEDIA_CATEGORIES["gaming"].path}>
+                            <span className={styles.icon}>{MEDIA_CATEGORIES["gaming"].icon}</span>{MEDIA_CATEGORIES["gaming"].name}
+                        </Link>
+                        <Link className={styles.btnSecondary} to={MEDIA_CATEGORIES["movies"].path}>
+                            <span className={styles.icon}>{MEDIA_CATEGORIES["movies"].icon}</span>{MEDIA_CATEGORIES["movies"].name}
+                        </Link>
+                        <Link className={styles.btnSecondary} to={MEDIA_CATEGORIES["tv"].path}>
+                            <span className={styles.icon}>{MEDIA_CATEGORIES["tv"].icon}</span>{MEDIA_CATEGORIES["tv"].name}
+                        </Link>
+                        <Link className={styles.btnSecondary} to={MEDIA_CATEGORIES["music"].path}>
+                            <span className={styles.icon}>{MEDIA_CATEGORIES["music"].icon}</span>{MEDIA_CATEGORIES["music"].name}
+                        </Link>
+                        <Link className={styles.btnSecondary} to={MEDIA_CATEGORIES["books"].path}>
+                            <span className={styles.icon}>{MEDIA_CATEGORIES["books"].icon}</span>{MEDIA_CATEGORIES["books"].name}
+                        </Link>
 
                         <div className={styles.title} style={{marginTop: '20px'}}>
                             Vous cherchez un <strong>développeur web</strong> ?
@@ -143,7 +152,7 @@ const BlogSection = ({posts}) => {
         .map((post, i) => <Post odd={i % 2} key={post.node.id} post={post.node}/>);
 
     const action = {
-        title: "Voir toutes les billets",
+        title: "Voir tous les billets",
         path: '/blog/'
     };
 
@@ -171,6 +180,7 @@ export const pageQuery = graphql`
                 title
                 summary
                 image
+                category
               }
             }
           }
