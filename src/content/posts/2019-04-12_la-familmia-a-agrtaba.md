@@ -1,6 +1,5 @@
 ---
 type: post
-category: movies
 date: '2019-04-15'
 category: movies
 image: /assets/images/carson-arias-197710-unsplash.jpg
