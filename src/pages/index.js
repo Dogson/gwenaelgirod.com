@@ -27,7 +27,6 @@ const IndexPage = ({data: {posts}}) => {
         <HomeCarousel posts={posts.edges.slice(0, 5)}/>
         <DescriptionSection/>
         <BlogSection posts={posts.edges}/>
-        <TwitterSection/>
     </PageLayout>
 };
 
@@ -182,10 +181,6 @@ const BlogSection = ({posts}) => {
         </div>
     </SectionLayout>
 };
-
-const TwitterSection = () => (
-    <SectionLayout title="Réseaux Sociaux" odd>list of tweets</SectionLayout>
-);
 
 export const pageQuery = graphql`
   query {
