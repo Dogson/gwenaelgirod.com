@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import cx from "classnames";
-import {FaJsSquare, FaGlobe, FaToolbox} from 'react-icons/fa';
+import {FaJsSquare, FaGlobe, FaToolbox, FaCertificate, FaCoffee} from 'react-icons/fa';
 import styles from "./skillsCard.module.scss"
 
 export class SkillsCard extends Component {
@@ -27,7 +27,7 @@ export class SkillsCard extends Component {
                 return <div className={styles.skill} key={i}>{skill}</div>
             }
             return <div className={styles.skill} key={i}>{skill}
-                <div className={styles.separatorIcon}>&#9830;&#xFE0E;</div>
+                <div className={styles.separatorIcon}><FaCoffee/></div>
             </div>
         })
     }

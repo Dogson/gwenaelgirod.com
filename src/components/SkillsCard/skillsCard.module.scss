@@ -71,8 +71,10 @@
   }
 
   .separatorIcon {
-text-align: center;
+    text-align: center;
     color: $color-main;
+    padding: 5px;
+   font-size: $size-smaller;
   }
 }
 
