@@ -148,7 +148,7 @@ const SkillsSection2 = ({isVisible}) => {
     let classNames = cx(styles.bodySection, styles.bodySection2, {[styles.visible]: isVisible});
     return <div className={classNames}>
         <SkillsCard title="web"
-                    skills={["Firebase", "HTML 5 + SASS/LESS", "Flexbox", "Responsive", "Bootstrap"]}/>
+                    skills={[ "HTML 5 + SASS/LESS", "Firebase", "GraphQL", "MongoDB", "JAMstack"]}/>
     </div>;
 };
 
@@ -156,7 +156,7 @@ const SkillsSection3 = ({isVisible}) => {
     let classNames = cx(styles.bodySection, styles.bodySection3, {[styles.visible]: isVisible});
     return <div className={classNames}>
         <SkillsCard title="outils"
-                    skills={["Git (& SVN)", "NPM", "Babel", "Grunt", "IntelliJ"]}/>
+                    skills={["Git (& SVN)", "NPM", "Webpack", "Grunt", "Gatsby + CMS"]}/>
     </div>;
 };
 
