@@ -183,42 +183,46 @@ const SkillsSection3 = ({isVisible}) => {
 
 
 const ContactBody = ({isVisible}) => {
-    let classNames = cx(styles.contactContainer, {[styles.visible]: isVisible});
+    let classNames = cx(styles.mainContactContainer, {[styles.visible]: isVisible});
     return <div className={classNames}>
+        <div className={styles.subtitle}>
+            <span>Une suggestion ?</span> <span>Un projet ? </span>
+            <span style={{display: "block"}}><strong>Retrouvez-moi sur les plateformes suivantes :</strong></span>
+        </div>
+        <div className={styles.contactContainer}>
+            <a className={styles.contactIconContainer} href="https://www.linkedin.com/in/ggirod/" target="_blank"
+               rel="noopener noreferrer">
+                <div className={styles.wrapper}>
+                    <FaLinkedin className={styles.contactIcon}/>
+                </div>
+                <div className={styles.description}>LINKEDIN</div>
+            </a>
 
-        <a className={styles.contactIconContainer} href="https://www.linkedin.com/in/ggirod/" target="_blank"
-           rel="noopener noreferrer">
-            <div className={styles.wrapper}>
-                <FaLinkedin className={styles.contactIcon}/>
-            </div>
-            <div className={styles.description}>LINKEDIN</div>
-        </a>
+            <a className={styles.contactIconContainer} href="https://github.com/Dogson/" target="_blank"
+               rel="noopener noreferrer">
+                <div className={styles.wrapper}>
+                    <FaGithub className={styles.contactIcon}/>
+                </div>
+                <div className={styles.description}>GITHUB</div>
+            </a>
 
-        <a className={styles.contactIconContainer} href="https://github.com/Dogson/" target="_blank"
-           rel="noopener noreferrer">
-            <div className={styles.wrapper}>
-                <FaGithub className={styles.contactIcon}/>
-            </div>
-            <div className={styles.description}>GITHUB</div>
-        </a>
+            <a className={styles.contactIconContainer} href="https://www.malt.fr/profile/gwenaelgirod" target="_blank"
+               rel="noopener noreferrer">
+                <div className={styles.wrapper}>
+                    <img className={styles.contactIcon} src={"/assets/logo/malt.png"} alt="Malt"/>
+                </div>
+                <div className={styles.description}>MALT</div>
+            </a>
 
-        <a className={styles.contactIconContainer} href="https://www.malt.fr/profile/gwenaelgirod" target="_blank"
-           rel="noopener noreferrer">
-            <div className={styles.wrapper}>
-                <img className={styles.contactIcon} src={"/assets/logo/malt.png"} alt="Malt"/>
-            </div>
-            <div className={styles.description}>MALT</div>
-        </a>
-
-        <a className={styles.contactIconContainer} href="mailto:gwenael.girod@gmail.com?subject=[Professionnel]"
-           target="_blank"
-           rel="noopener noreferrer">
-            <div className={styles.wrapper}>
-                <FaEnvelope className={styles.contactIcon}/>
-            </div>
-            <div className={styles.description}>COURRIEL</div>
-        </a>
-
+            <a className={styles.contactIconContainer} href="mailto:gwenael.girod@gmail.com?subject=[Professionnel]"
+               target="_blank"
+               rel="noopener noreferrer">
+                <div className={styles.wrapper}>
+                    <FaEnvelope className={styles.contactIcon}/>
+                </div>
+                <div className={styles.description}>COURRIEL</div>
+            </a>
+        </div>
     </div>
 };
 
