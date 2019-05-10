@@ -54,6 +54,20 @@
       width: 100%;
       transition: all 0.8s linear;
     }
+
+    .bodySection1 {
+      transition: all 0.7s ease-in-out;
+    }
+
+    .bodySection2 {
+      transition: all 0.7s ease-in-out 0.4s;
+    }
+
+    .bodySection {
+      transform: translateX(0px);
+      margin-right: 0;
+      opacity: 1;
+    }
   }
 
   .descriptionWrapper {
@@ -128,11 +142,7 @@
     justify-content: space-between;
     margin: 20px 0 20px 0;
 
-    &.visible {
-      transform: translateX(0px);
-      margin-right: 0;
-      opacity: 1;
-    }
+
 
     p {
       font-weight: $weight-light;
@@ -144,18 +154,10 @@
 
   .bodySection1 {
     transform: translateX(100px);
-
-    &.visible {
-      transition: all 0.7s ease-in-out;
-    }
   }
 
   .bodySection2 {
     transform: translateX(-100px);
-
-    &.visible {
-      transition: all 0.7s ease-in-out 0.4s;
-    }
 
     p {
       text-align-last: right;
@@ -256,3 +258,131 @@
 }
 
 
+.contactContainer {
+  @extend .flexRow;
+  @extend .flexCenter;
+  @extend .flexAlignCenter;
+
+
+  .contactIconContainer {
+    @extend .flexColumn;
+    @extend .flexAlignCenter;
+    @extend .flexCenter;
+    opacity: 0;
+
+    &:first-child {
+      transform: translateX(-200px);
+
+      .wrapper {
+        background-color: #3399C1;
+      }
+
+      .description {
+        color: #3399C1;
+      }
+    }
+
+    &:nth-child(2) {
+      transform: translateX(-350px);
+
+      .wrapper {
+        background-color: #4183C4;
+      }
+
+      .description {
+        color: #4183C4;
+      }
+    }
+
+    &:nth-child(3) {
+      transform: translateX(-500px);
+
+      .wrapper {
+        background-color: #FF4967;
+
+        .contactIcon {
+          height: 40px;
+          width: 40px;
+        }
+      }
+
+      .description {
+        color: #FF4967;
+      }
+    }
+
+    &:nth-child(4) {
+      transform: translateX(-650px);
+
+      .wrapper {
+        background-color: #FF5700;
+      }
+
+      .description {
+        color: #FF5700;
+      }
+    }
+
+    .description {
+      transform: translateY(-20px);
+      z-index: -1;
+      transition: all 0.1s ease-in-out;
+      text-transform: uppercase;
+      font-size: $size-small;
+      font-weight: $weight-regular;
+    }
+
+    &:hover {
+      .description {
+        transform: translateY(10px);
+        transition: all 0.2s ease-in-out 0.1s;
+      }
+
+      .wrapper {
+        transform: scale(1.2);
+        transition: all 0.2s ease-in-out;
+      }
+    }
+
+    .wrapper {
+      @extend .flexColumn;
+      @extend .flexAlignCenter;
+      @extend .flexCenter;
+
+      height: 70px;
+      width: 70px;
+      margin: 0 40px;
+      transition: all 0.1s ease-in-out;
+
+      .contactIcon {
+        font-size: 40px;
+        color: white;
+      }
+    }
+  }
+
+  &.visible {
+
+    .contactIconContainer {
+      transform: translateX(0);
+      opacity: 0.8;
+
+      &:first-child {
+        transition: all 0.21s linear;
+      }
+
+      &:nth-child(2) {
+        transition: all 0.35s linear;
+      }
+
+      &:nth-child(3) {
+        transition: all 0.5s linear;
+
+      }
+
+      &:nth-child(4) {
+        transition: all 0.62s linear;
+      }
+    }
+  }
+}

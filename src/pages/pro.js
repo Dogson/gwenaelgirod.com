@@ -2,7 +2,7 @@ import React from "react"
 import PageLayout from "../layouts/pageLayout";
 import SectionLayout from "../layouts/sectionLayout"
 import TrackVisibility from 'react-on-screen';
-import {FaGlobeAfrica, FaReact} from 'react-icons/fa';
+import {FaEnvelope, FaGithub, FaGlobeAfrica, FaLinkedin, FaReact} from 'react-icons/fa';
 import styles from "./pro.module.scss"
 import cx from "classnames";
 import {SkillsCard} from "../components/SkillsCard/skillsCard";
@@ -45,6 +45,16 @@ const ProfessionalProfile = () => {
                 </div>
             </div>
         </SectionLayout>
+
+        <SectionLayout title="Contact">
+            <div className={styles.skillsContainer}>
+                <div className="wrapper">
+                    <TrackVisibility once>
+                        <ContactBody/>
+                    </TrackVisibility>
+                </div>
+            </div>
+        </SectionLayout>
     </PageLayout>
 };
 
@@ -80,14 +90,14 @@ const DescriptionBody = ({isVisible}) => {
     let classNames = cx(styles.bodyWrapper, {[styles.visible]: isVisible});
     return <div className={classNames}>
         <div className={styles.body}>
-            <DescriptionSection1 isVisible={isVisible}/>
-            <DescriptionSection2 isVisible={isVisible}/>
+            <DescriptionSection1/>
+            <DescriptionSection2/>
         </div>
     </div>
 };
 
-const DescriptionSection1 = ({isVisible}) => {
-    let classNames = cx(styles.bodySection, styles.bodySection1, {[styles.visible]: isVisible});
+const DescriptionSection1 = () => {
+    let classNames = cx(styles.bodySection, styles.bodySection1);
     return <div className={classNames}>
         <div>
             <FaReact className={styles.descriptionIcon}/>
@@ -112,8 +122,8 @@ const DescriptionSection1 = ({isVisible}) => {
     </div>;
 };
 
-const DescriptionSection2 = ({isVisible}) => {
-    let classNames = cx(styles.bodySection, styles.bodySection2, {[styles.visible]: isVisible});
+const DescriptionSection2 = () => {
+    let classNames = cx(styles.bodySection, styles.bodySection2);
     return <div className={classNames}>
         <div className={styles.transparent}><FaGlobeAfrica className={styles.descriptionIcon}/></div>
         <div><p>
@@ -170,5 +180,47 @@ const SkillsSection3 = ({isVisible}) => {
                     skills={["Git (& SVN)", "NPM", "Webpack", "Grunt", "Gatsby + CMS"]}/>
     </div>;
 };
+
+
+const ContactBody = ({isVisible}) => {
+    let classNames = cx(styles.contactContainer, {[styles.visible]: isVisible});
+    return <div className={classNames}>
+
+        <a className={styles.contactIconContainer} href="https://www.linkedin.com/in/ggirod/" target="_blank"
+           rel="noopener noreferrer">
+            <div className={styles.wrapper}>
+                <FaLinkedin className={styles.contactIcon}/>
+            </div>
+            <div className={styles.description}>LINKEDIN</div>
+        </a>
+
+        <a className={styles.contactIconContainer} href="https://github.com/Dogson/" target="_blank"
+           rel="noopener noreferrer">
+            <div className={styles.wrapper}>
+                <FaGithub className={styles.contactIcon}/>
+            </div>
+            <div className={styles.description}>GITHUB</div>
+        </a>
+
+        <a className={styles.contactIconContainer} href="https://www.malt.fr/profile/gwenaelgirod" target="_blank"
+           rel="noopener noreferrer">
+            <div className={styles.wrapper}>
+                <img className={styles.contactIcon} src={"/assets/logo/malt.png"} alt="Malt"/>
+            </div>
+            <div className={styles.description}>MALT</div>
+        </a>
+
+        <a className={styles.contactIconContainer} href="mailto:gwenael.girod@gmail.com?subject=[Professionnel]"
+           target="_blank"
+           rel="noopener noreferrer">
+            <div className={styles.wrapper}>
+                <FaEnvelope className={styles.contactIcon}/>
+            </div>
+            <div className={styles.description}>COURRIEL</div>
+        </a>
+
+    </div>
+};
+
 
 export default ProfessionalProfile;
