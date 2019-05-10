@@ -6,6 +6,46 @@
   @extend .flexColumn;
   background-color: $background-secondary;
 
+  &.gaming {
+    background-color: rgba($color-gaming, 0.5);
+
+    .tag {
+      background-color: $color-gaming;
+    }
+  }
+
+  &.movies {
+    background-color: rgba($color-movies, 0.5);
+
+    .tag {
+      background-color: $color-movies;
+    }
+  }
+
+  &.tv {
+    background-color: rgba($color-tv, 0.5);
+
+    .tag {
+      background-color: $color-tv;
+    }
+  }
+
+  &.music {
+    background-color: rgba($color-music, 0.5);
+
+    .tag {
+      background-color: $color-music;
+    }
+  }
+
+  &.books {
+    background-color: rgba($color-books, 0.5);
+
+    .tag {
+      background-color: $color-books;
+    }
+  }
+
   .backgroundImage {
     opacity: 0.6;
     object-fit: cover;
@@ -43,26 +83,6 @@
           font-size: 20px;
           top: 8px;
           left: 13px;
-        }
-
-        &.gaming {
-          background-color: $color-gaming;
-        }
-
-        &.movies {
-          background-color: $color-movies;
-        }
-
-        &.tv {
-          background-color: $color-tv;
-        }
-
-        &.music {
-          background-color: $color-music;
-        }
-
-        &.books {
-          background-color: $color-books;
         }
 
       }
