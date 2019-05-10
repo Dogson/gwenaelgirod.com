@@ -1,0 +1,173 @@
+@import "../styles/global";
+
+.descriptionHeader {
+  height: 300px;
+  background-color: $background-secondary;
+  opacity: 1;
+  position: relative;
+  @extend .flexColumn;
+  @extend .flexCenter;
+
+  .descriptionSectionTitle {
+    @extend .sectionTitle;
+    align-self: center;
+    z-index: 3;
+  }
+
+  .descriptionBackgroundImage {
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    opacity: 0.6;
+    z-index: 2;
+  }
+}
+
+.descriptionContainer {
+  @extend .flexRow;
+
+  strong {
+    color: $color-main;
+    font-weight: $weight-regular;
+  }
+
+  .descriptionLeftPanel {
+    width: 200px;
+    transition: all 0.7s ease-in-out;
+    opacity: 0;
+    transform: translateX(200px);
+    z-index: 1;
+
+    &.visible {
+      opacity: 1;
+      transition: all 0.7s ease-in-out 0.7s;
+      transform: translateX(0px);
+    }
+
+    .title {
+      @extend .flexRow;
+      @extend .flexCenter;
+      @extend .flexAlignCenter;
+      background-color: $background-secondary;
+      color: white;
+      height: 100px;
+    }
+
+    .image {
+      object-fit: cover;
+    }
+  }
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    flex: 1;
+    margin-left: 20px;
+    margin-right: 20px;
+
+    // workaround for space evenly on IE
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+    }
+  }
+
+  // workaround for IE
+  .bodyWrapper {
+    z-index: 3;
+    flex: 1;
+    flex-direction: row;
+    background-color: white;
+    transition: all 0.7s ease-in-out 0.7s;
+
+    &.visible {
+      background-color: #EEEEEE;
+      transition: all 0.7s ease-in-out 0.7s;
+    }
+  }
+
+  .bodySection {
+    opacity: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0 20px 0;
+
+    &.visible {
+      transform: translateX(0px);
+      margin-right: 0;
+      opacity: 1;
+    }
+
+    p {
+      font-weight: $weight-light;
+      text-align: justify;
+      max-width: 600px;
+    }
+  }
+
+
+  .bodySection1 {
+    transform: translateX(100px);
+
+    &.visible {
+      transition: all 0.7s ease-in-out;
+    }
+  }
+
+  .bodySection2 {
+    transform: translateX(-100px);
+
+    &.visible {
+      transition: all 0.7s ease-in-out 0.4s;
+    }
+
+    p {
+      text-align-last: right;
+    }
+  }
+
+  .descriptionIcon {
+    width: 3.8em;
+    height: 3.8em;
+    margin: 0 20px 0 20px;
+    color: $color-main;
+  }
+
+  .transparent {
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .descriptionContainer {
+    .bodySection {
+      flex-direction: column;
+      text-align: left;
+    }
+
+    .bodySection2 {
+      flex-direction: column-reverse;
+
+      p {
+        text-align-last: left;
+      }
+    }
+
+    .descriptionIcon {
+      width: 2em;
+      height: 2em;
+    }
+
+    .transparent {
+      width: 0;
+      height: 0;
+    }
+  }
+}
