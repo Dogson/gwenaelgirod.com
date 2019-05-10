@@ -5,7 +5,6 @@ import TrackVisibility from 'react-on-screen';
 import {FaGlobeAfrica, FaReact} from 'react-icons/fa';
 import styles from "./whoAmI.module.scss"
 import cx from "classnames";
-import {MEDIA_CATEGORIES} from "../helpers/const";
 import {SkillsCard} from "../components/SkillsCard/skillsCard";
 
 
@@ -70,12 +69,8 @@ const DescriptionBody = ({isVisible}) => {
     let classNames = cx(styles.bodyWrapper, {[styles.visible]: isVisible});
     return <div className={classNames}>
         <div className={styles.body}>
-            <TrackVisibility partialVisibility={true}>
-                <DescriptionSection1/>
-            </TrackVisibility>
-            <TrackVisibility partialVisibility={true}>
-                <DescriptionSection2/>
-            </TrackVisibility>
+            <DescriptionSection1 isVisible={isVisible}/>
+            <DescriptionSection2 isVisible={isVisible}/>
         </div>
     </div>
 };
