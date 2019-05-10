@@ -31,8 +31,8 @@ const Header = () => (
                 <div className={styles.menuNav}>
                     <MenuLink route="/" name="Accueil"/>
                     <MenuLink route="/blog/" name="Blog"/>
-                    <MenuLink route="/whoAmI/" name="Qui suis-je ?"/>
-                    <MenuLink route="/contact/" name="Contact"/>
+                    <MenuLink route="/pro/" name="Profil pro"/>
+                    {/*<MenuLink route="/contact/" name="Contact"/>*/}
                 </div>
             </div>
         </div>

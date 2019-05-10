@@ -78,13 +78,16 @@
       @extend .flexRow;
 
       .menuLink {
-        width: 150px;
+        width: 200px;
         padding-bottom: 20px;
         text-align: center;
         color: $background-primary;
         font-size: $size-normal;
         border-bottom: 3px solid rgba(0, 0, 0, 0);
         opacity: 0.9;
+        text-transform: uppercase;
+        font-weight: $weight-light;
+        letter-spacing: 1px;
 
         &:hover {
           opacity: 1;
@@ -93,7 +96,7 @@
       }
 
       .menuLinkActive {
-        //font-weight: $font-regular;
+        font-weight: $weight-regular;
         border-bottom: 3px solid $background-primary;
         opacity: 1;
       }
