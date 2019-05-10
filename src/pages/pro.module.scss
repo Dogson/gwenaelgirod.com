@@ -25,7 +25,41 @@
 }
 
 .descriptionContainer {
-  @extend .flexRow;
+  @extend .flexColumn;
+  @extend .flexAlignCenter;
+
+  &:before {
+    content: "";
+    width: 0;
+    display: block;
+    transition: all 0.8s linear;
+    border-bottom: 2px solid $color-main;
+  }
+
+  &:after {
+    content: "";
+    width: 0;
+    display: block;
+    transition: all 0.8s linear;
+    border-bottom: 2px solid $color-main;
+  }
+
+  &.visible {
+    &:before {
+      width: 100%;
+      transition: all 0.8s linear;
+    }
+
+    &:after {
+      width: 100%;
+      transition: all 0.8s linear;
+    }
+  }
+
+  .descriptionWrapper {
+    padding: 40px 0;
+    @extend .flexRow;
+  }
 
   strong {
     color: $color-main;
@@ -59,6 +93,15 @@
     }
   }
 
+  // workaround for IE
+  .bodyWrapper {
+    z-index: 3;
+    flex: 1;
+    flex-direction: row;
+    background-color: white;
+    transition: all 0.7s ease-in-out 0.7s;
+  }
+
   .body {
     display: flex;
     flex-direction: column;
@@ -74,21 +117,6 @@
     &:after {
       content: '';
       display: block;
-    }
-  }
-
-  // workaround for IE
-  .bodyWrapper {
-    padding: 40px 0;
-    z-index: 3;
-    flex: 1;
-    flex-direction: row;
-    background-color: white;
-    transition: all 0.7s ease-in-out 0.7s;
-
-    &.visible {
-      background-color: #EEEEEE;
-      transition: all 0.7s ease-in-out 0.7s;
     }
   }
 

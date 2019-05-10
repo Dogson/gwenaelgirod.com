@@ -34,16 +34,7 @@ const ProfessionalProfile = () => {
         </div>
         <SectionLayout noPaddingTop navigationPath={navigationItems}>
             <TrackVisibility partialVisibility={true}>
-                <div className={styles.descriptionContainer}>
-                    <TrackVisibility partialVisibility={true}>
-                        <DescriptionLeftPanel/>
-                    </TrackVisibility>
-                    <div style={{zIndex: 3}}>
-                        <TrackVisibility partialVisibility={true}>
-                            <DescriptionBody/>
-                        </TrackVisibility>
-                    </div>
-                </div>
+                <DescriptionContainer/>
             </TrackVisibility>
         </SectionLayout>
 
@@ -55,6 +46,22 @@ const ProfessionalProfile = () => {
             </div>
         </SectionLayout>
     </PageLayout>
+};
+
+const DescriptionContainer = ({isVisible}) => {
+    let classNames = cx(styles.descriptionContainer, {[styles.visible]: isVisible});
+    return <div className={classNames}>
+        <div className={styles.descriptionWrapper}>
+            <TrackVisibility partialVisibility={true}>
+                <DescriptionLeftPanel/>
+            </TrackVisibility>
+            <div style={{zIndex: 3, backgroundColor: 'white'}}>
+                <TrackVisibility partialVisibility={true}>
+                    <DescriptionBody/>
+                </TrackVisibility>
+            </div>
+        </div>
+    </div>
 };
 
 const DescriptionLeftPanel = ({isVisible}) => {
@@ -152,7 +159,7 @@ const SkillsSection2 = ({isVisible}) => {
     let classNames = cx(styles.bodySection, styles.bodySection2, {[styles.visible]: isVisible});
     return <div className={classNames}>
         <SkillsCard title="web"
-                    skills={[ "HTML 5 + SASS/LESS", "Firebase", "GraphQL", "MongoDB", "JAMstack"]}/>
+                    skills={["HTML 5 + SASS/LESS", "Firebase", "GraphQL", "MongoDB", "JAMstack"]}/>
     </div>;
 };
 

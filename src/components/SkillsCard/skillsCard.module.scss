@@ -16,12 +16,12 @@
   cursor: default;
 
   &.shadowed {
-    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
     transition: box-shadow 0.1s ease-in-out;
   }
 
   .shadowed {
-    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
     transition: box-shadow 0.1s ease-in-out;
   }
 
