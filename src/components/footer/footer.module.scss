@@ -3,9 +3,7 @@
 .footerContainer {
   @extend .flexRow;
   @extend .flexAlignCenter;
-  height: 180px;
   background: $color-main;
-  //width: 100%;
   z-index: 2;
 
   .firstCol {
@@ -75,7 +73,7 @@
         padding: 20px;
 
         .title, .item {
-          padding: 10px;
+          padding: 6px;
           color: white;
           font-size: $size-small;
           font-weight: $weight-bold;

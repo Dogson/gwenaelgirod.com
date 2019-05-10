@@ -23,23 +23,27 @@ const Footer = () => (
         <div className={styles.menusContainer}>
             <div className={styles.menusWrapper}>
                 <div className={styles.menuContainer}>
-                    <div className={styles.title}>Nous suivre</div>
+                    <div className={styles.title}>Me suivre</div>
                     <div className={styles.item}>
-                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+                        <a href="https://github.com/Dogson" target="_blank" rel="noopener noreferrer">Github</a>
                     </div>
                     <div className={styles.item}>
-                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+                        <a href="https://www.senscritique.com/HDogson" target="_blank" rel="noopener noreferrer">SensCritique</a>
+                    </div>
+                    <div className={styles.item}>
+                        <a href="https://soundcloud.com/gwena-l-dogson" target="_blank" rel="noopener noreferrer">Soundcloud</a>
+                    </div>
+                    <div className={styles.item}>
+                        <a href="https://www.linkedin.com/in/ggirod/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                     </div>
                 </div>
-
                 <div className={styles.menuContainer}>
-                    <div className={styles.title}>Sites annexes</div>
+                    <div className={styles.title}>Contact</div>
                     <div className={styles.item}>
-                        <a href="https://TODO.com" target="_blank" rel="noopener noreferrer">Plateforme de la coopération
-                            universitaire</a>
+                        <a href="mailto:gwenael.girod@gmail.com?subject=[gwenaelgirod.com]" target="_blank" rel="noopener noreferrer">Remarque ou suggestion</a>
                     </div>
                     <div className={styles.item}>
-                        <a href="https://TODO.com" target="_blank" rel="noopener noreferrer">Plateforme d'offre d'emploi</a>
+                        <a href="mailto:gwenael.girod@gmail.com?subject=[Professionnel]" target="_blank" rel="noopener noreferrer">Proposer un projet web/mobile</a>
                     </div>
                 </div>
 
