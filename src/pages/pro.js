@@ -33,7 +33,7 @@ const ProfessionalProfile = () => {
                  width="100%"/>
         </div>
         <SectionLayout noPaddingTop navigationPath={navigationItems}>
-            <TrackVisibility partialVisibility={true}>
+            <TrackVisibility once partialVisibility={true}>
                 <DescriptionContainer/>
             </TrackVisibility>
         </SectionLayout>
@@ -52,11 +52,11 @@ const DescriptionContainer = ({isVisible}) => {
     let classNames = cx(styles.descriptionContainer, {[styles.visible]: isVisible});
     return <div className={classNames}>
         <div className={styles.descriptionWrapper}>
-            <TrackVisibility partialVisibility={true}>
+            <TrackVisibility once partialVisibility={true}>
                 <DescriptionLeftPanel/>
             </TrackVisibility>
             <div style={{zIndex: 3, backgroundColor: 'white'}}>
-                <TrackVisibility partialVisibility={true}>
+                <TrackVisibility once partialVisibility={true}>
                     <DescriptionBody/>
                 </TrackVisibility>
             </div>
@@ -135,13 +135,13 @@ const DescriptionSection2 = ({isVisible}) => {
 
 const SkillsBody = () => {
     return <div className={styles.body}>
-        <TrackVisibility partialVisibility={true}>
+        <TrackVisibility once partialVisibility={true}>
             <SkillsSection1/>
         </TrackVisibility>
-        <TrackVisibility partialVisibility={true}>
+        <TrackVisibility once partialVisibility={true}>
             <SkillsSection2/>
         </TrackVisibility>
-        <TrackVisibility partialVisibility={true}>
+        <TrackVisibility once partialVisibility={true}>
             <SkillsSection3/>
         </TrackVisibility>
     </div>
