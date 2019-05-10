@@ -6,6 +6,7 @@ import {FaGlobeAfrica, FaReact} from 'react-icons/fa';
 import styles from "./whoAmI.module.scss"
 import cx from "classnames";
 import {MEDIA_CATEGORIES} from "../helpers/const";
+import {SkillsCard} from "../components/SkillsCard/skillsCard";
 
 
 const WhoAmIPage = () => {
@@ -41,6 +42,14 @@ const WhoAmIPage = () => {
                     </div>
                 </div>
             </TrackVisibility>
+        </SectionLayout>
+
+        <SectionLayout odd title="Compétences">
+            <div className={styles.skillsContainer}>
+                <div className="wrapper">
+                    <SkillsBody/>
+                </div>
+            </div>
         </SectionLayout>
     </PageLayout>
 };
@@ -115,6 +124,44 @@ const DescriptionSection2 = ({isVisible}) => {
                 vous conviennent. </p>
         </div>
         <div><FaGlobeAfrica className={styles.descriptionIcon}/></div>
+    </div>;
+};
+
+const SkillsBody = () => {
+    return <div className={styles.body}>
+        <TrackVisibility partialVisibility={true}>
+            <SkillsSection1/>
+        </TrackVisibility>
+        <TrackVisibility partialVisibility={true}>
+            <SkillsSection2/>
+        </TrackVisibility>
+        <TrackVisibility partialVisibility={true}>
+            <SkillsSection3/>
+        </TrackVisibility>
+    </div>
+};
+
+const SkillsSection1 = ({isVisible}) => {
+    let classNames = cx(styles.bodySection, styles.bodySection1, {[styles.visible]: isVisible});
+    return <div className={classNames}>
+        <SkillsCard title="javascript"
+                    skills={["ReactJS + Redux", "React Native", "AngularJS", "NodeJS + Express", "TypeScript"]}/>
+    </div>;
+};
+
+const SkillsSection2 = ({isVisible}) => {
+    let classNames = cx(styles.bodySection, styles.bodySection2, {[styles.visible]: isVisible});
+    return <div className={classNames}>
+        <SkillsCard title="web"
+                    skills={["Firebase", "HTML 5 + SASS/LESS", "Flexbox", "Responsive", "Bootstrap"]}/>
+    </div>;
+};
+
+const SkillsSection3 = ({isVisible}) => {
+    let classNames = cx(styles.bodySection, styles.bodySection3, {[styles.visible]: isVisible});
+    return <div className={classNames}>
+        <SkillsCard title="outils"
+                    skills={["Git (& SVN)", "NPM", "Babel", "Grunt", "IntelliJ"]}/>
     </div>;
 };
 

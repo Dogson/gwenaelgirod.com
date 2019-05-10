@@ -1,0 +1,79 @@
+@import '../../styles/global';
+
+.cardContainer {
+  @extend .flexColumn;
+  @extend .flexAlignCenter;
+  border: 2px solid $color-main;
+  border-radius: 10px;
+  margin: 30px;
+  transition: all 0.1s ease-in-out;
+  padding-left: 8px;
+  padding-right: 8px;
+  max-height: 55vh;
+  height: 350px;
+  min-width: 250px;
+  max-width: 320px;
+  cursor: default;
+
+  &.shadowed {
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: box-shadow 0.1s ease-in-out;
+  }
+
+  .shadowed {
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: box-shadow 0.1s ease-in-out;
+  }
+
+  .cardTitle {
+    font-weight: $weight-light;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: $color-main;
+  }
+
+  .cardIcon {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: -40px;
+    color: $color-main;
+    border: 2px solid $color-main;
+    padding: 12px;
+    border-radius: 50%;
+    transition: all 0.1s ease-in-out;
+    background-color: white;
+
+    &.big {
+      top: -45px;
+      width: 60px;
+      height: 60px;
+      transition: all 0.1s ease-in-out;
+      margin-bottom: -10px;
+    }
+  }
+
+  .cardBody {
+    @extend .flexColumn;
+    @extend .flexAlignCenter;
+    margin-bottom: 30px;
+    margin-top: -25px;
+
+    .skillsContainer {
+      @extend .flexColumn;
+      @extend .flexAlignCenter;
+    }
+
+    .skill {
+      letter-spacing: 1px;
+    }
+  }
+
+  .separatorIcon {
+text-align: center;
+    color: $color-main;
+  }
+}
+
+
