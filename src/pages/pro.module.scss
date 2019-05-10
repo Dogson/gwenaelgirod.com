@@ -33,7 +33,7 @@
   }
 
   .descriptionLeftPanel {
-    width: 200px;
+    width: 250px;
     transition: all 0.7s ease-in-out;
     opacity: 0;
     transform: translateX(200px);
@@ -175,6 +175,8 @@
 
 
 .skillsContainer {
+
+  margin: 30px 0;
 
   .body {
     display: flex;

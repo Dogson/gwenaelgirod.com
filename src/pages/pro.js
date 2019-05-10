@@ -3,26 +3,30 @@ import PageLayout from "../layouts/pageLayout";
 import SectionLayout from "../layouts/sectionLayout"
 import TrackVisibility from 'react-on-screen';
 import {FaGlobeAfrica, FaReact} from 'react-icons/fa';
-import styles from "./whoAmI.module.scss"
+import styles from "./pro.module.scss"
 import cx from "classnames";
 import {SkillsCard} from "../components/SkillsCard/skillsCard";
+import {Helmet} from "react-helmet";
 
 
-const WhoAmIPage = () => {
+const ProfessionalProfile = () => {
     const navigationItems = [
         {
             title: "Accueil",
             path: '/'
         },
         {
-            title: "Qui suis-je ?",
-            path: '/whoAmI/'
+            title: "Profil professionnel",
+            path: '/pro/'
         }
     ];
     return <PageLayout>
+        <Helmet>
+            <title>Gwenaël GIROD - Développeur web</title>
+        </Helmet>
         <div className={styles.descriptionHeader}>
             <div className={styles.descriptionSectionTitle}>
-                <span>Qui suis-je ?</span>
+                <span>Mon profil professionnel</span>
             </div>
             <img className={styles.descriptionBackgroundImage} src={"/assets/images/moi-cover.jpg"}
                  alt="Je suis un paysage Casamançais" height="100%"
@@ -160,4 +164,4 @@ const SkillsSection3 = ({isVisible}) => {
     </div>;
 };
 
-export default WhoAmIPage;
+export default ProfessionalProfile;

@@ -149,7 +149,7 @@ class DescriptionSection extends React.Component {
                         <div className={styles.title} style={{marginTop: '20px'}}>
                             Vous cherchez un <strong>développeur web</strong> ?
                         </div>
-                        <Link className={styles.btnSecondary} to={"/whoAmI/"}><span
+                        <Link className={styles.btnSecondary} to={"/pro/"}><span
                             className={styles.icon}><FaCode/></span>Mon profil pro</Link>
                     </div>
                 </div>
