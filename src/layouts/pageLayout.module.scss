@@ -2,4 +2,61 @@
 
 .pageContainer {
   width: 100%;
+
+  .sidebarContainer {
+    display: none;
+
+    .sidebarButton {
+      position: absolute;
+      left: 15px;
+      top: 15px;
+      z-index: 4;
+      color: $color-main;
+
+      .icon {
+        width: 25px;
+        height: 25px;
+      }
+    }
+
+    .menuNavMobile {
+      @extend .flexColumn;
+      @extend .flexAlignCenter;
+
+      .menuMobileLink {
+        @extend .flexRow;
+        text-transform: uppercase;
+        border-bottom: 1px solid $color-main;
+        font-weight: $weight-light;
+        padding: 15px 40px;
+        width: 100%;
+
+        &:before {
+          content: '';
+          display: block;
+          width: 20px;
+        }
+
+        &:hover {
+          color: white;
+          background-color: $color-main;
+        }
+      }
+
+      .menuMobileLinkActive {
+        color: white;
+        background-color: $color-main;
+        font-weight: $weight-regular;
+
+      }
+    }
+  }
+}
+
+@media #{$media-phone} {
+  .pageContainer {
+    .sidebarContainer {
+      display: flex;
+    }
+  }
 }

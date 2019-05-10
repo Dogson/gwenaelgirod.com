@@ -1,4 +1,5 @@
 import React from "react"
+import Sidebar from "react-sidebar";
 import styles from "./header.module.scss"
 import {Link} from "gatsby"
 import logo from "../../../static/assets/logo/GG.png"
