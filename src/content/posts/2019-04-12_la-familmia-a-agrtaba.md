@@ -1,7 +1,7 @@
 ---
 type: post
 date: '2019-04-15'
-category: movies
+category: gaming
 image: /assets/images/carson-arias-197710-unsplash.jpg
 title: Nouvelles formations en philosophie à l'université Cheick Anta Diop
 ---

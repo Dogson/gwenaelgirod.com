@@ -373,3 +373,13 @@ $newsInfosWidth: 240px;
   }
 
 }
+
+
+@media #{$media-tablet} {
+  .postsContainer {
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}

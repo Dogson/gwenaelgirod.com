@@ -46,7 +46,7 @@ export default function PostsByCategoryTemplate(props) {
                  width="100%"/>
         </div>
         <SectionLayout navigationPath={navigationItems} noPaddingTop>
-            <div>
+            <div className={styles.postsContainer}>
                 {Posts}
             </div>
         </SectionLayout>
