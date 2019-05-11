@@ -4,7 +4,7 @@ import Footer from "../components/footer/footer";
 import styles from "./pageLayout.module.scss";
 import Sidebar from "react-sidebar";
 import {Link} from "gatsby";
-import {FaBars, FaHamburger} from "react-icons/fa";
+import {FaBars} from "react-icons/fa";
 
 export default ({children}) => (
     <div className={styles.pageContainer}>
@@ -35,10 +35,10 @@ class DrawerNav extends React.Component {
                 sidebar={<MenuNavMobile/>}
                 open={this.state.sidebarOpen}
                 onSetOpen={this.onSetSidebarOpen}
-                styles={{sidebar: {background: "white", zIndex: 30}}}
+                styles={{sidebar: {background: "white", zIndex: 30, height: "100%"}}}
             >
                 <div className={styles.sidebarButton} onClick={() => this.onSetSidebarOpen(true)}>
-                   <FaBars className={styles.icon}/>
+                   <FaBars className={styles.icon}/>ba
                 </div>
             </Sidebar>
         </div>
@@ -51,7 +51,7 @@ const MenuNavMobile = () => {
         <MenuMobileLink route="/blog/" name="Blog"/>
         <MenuMobileLink route="/pro/" name="Profil pro"/>
     </div>
-}
+};
 
 const MenuMobileLink = (props) => {
     const {route, name} = props;
