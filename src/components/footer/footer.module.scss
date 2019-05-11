@@ -11,7 +11,7 @@
     @extend .flexCenter;
 
     .logoContainer {
-      padding-left: calc((100vw - #{$containerWidth})/2);
+      padding-left: calc(((100vw - #{$containerWidth}) / 2) + 60px);
       @extend .flexRow;
       @extend .flexAlignCenter;
       justify-content: flex-end;
@@ -60,7 +60,7 @@
 
   .menusContainer {
     padding-left: 50px;
-    margin-right: calc((100vw - #{$containerWidth})/2);
+    margin-right: calc((100vw - #{$containerWidth}) / 2);
 
     .menusWrapper {
       @extend .flexRow;
@@ -92,3 +92,61 @@
 
   }
 }
+
+
+@media #{$media-tablet} {
+  .footerContainer {
+    .firstCol {
+
+      .logoContainer {
+        padding-left: 70px;
+        padding-right: 30px;
+
+        .logoName {
+          display: none;
+        }
+      }
+    }
+
+    .menusContainer {
+      flex: 1;
+      padding: 0;
+      margin: 0;
+
+      .menusWrapper {
+        margin: 0 30px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .menuContainer {
+          padding: 10px 5px;
+          min-width: 0;
+          justify-content: flex-start;
+        }
+      }
+    }
+  }
+}
+
+@media #{$media-phone} {
+  .footerContainer {
+    .firstCol {
+      display: none;
+    }
+    .menusContainer {
+      .menusWrapper {
+        margin-left: 0;
+        &:after {
+          content: "© Gwenaël Girod, 2019";
+          align-self: flex-end;
+          font-size: $size-smaller;
+          color: white;
+          padding: 15px 10px;
+          position: absolute;
+          right: 0;
+        }
+      }
+    }
+  }
+}
+
