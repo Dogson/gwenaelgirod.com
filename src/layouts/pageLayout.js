@@ -38,7 +38,7 @@ class DrawerNav extends React.Component {
                 styles={{sidebar: {background: "white", zIndex: 30, height: "100%"}}}
             >
                 <div className={styles.sidebarButton} onClick={() => this.onSetSidebarOpen(true)}>
-                   <FaBars className={styles.icon}/>ba
+                   <FaBars className={styles.icon}/>
                 </div>
             </Sidebar>
         </div>

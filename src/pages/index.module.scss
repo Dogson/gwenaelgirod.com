@@ -182,3 +182,9 @@
     }
   }
 }
+
+@media #{$media-phone} {
+  .carouselContainer {
+    display: none;
+  }
+}

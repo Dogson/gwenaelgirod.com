@@ -24,7 +24,7 @@ const IndexPage = ({data: {posts}}) => {
             <meta charSet="utf-8" />
             <title>GG - Gwenaël GIROD</title>
         </Helmet>
-        <HomeCarousel posts={posts.edges.slice(0, 5)}/>
+        <div className={styles.carouselContainer}><HomeCarousel posts={posts.edges.slice(0, 5)}/></div>
         <DescriptionSection/>
         <BlogSection posts={posts.edges}/>
     </PageLayout>
