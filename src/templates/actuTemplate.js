@@ -10,33 +10,35 @@ import NavigationPath from "../components/navigationPath/navigationPath";
 import {MEDIA_CATEGORIES} from "../helpers/const";
 import {Helmet} from "react-helmet";
 
-export default function ActuTemplate({
-                                         data // this prop will be injected by the GraphQL query below.
-                                     }) {
-    const {currentNewsPost, otherNews} = data; // data.markdownRemark holds our post data
-    const {frontmatter, html, fileAbsolutePath} = currentNewsPost;
-    const {edges} = otherNews;
-    moment.locale('fr');
-    const navigationItems = [
-        {
-            title: "Accueil",
-            path: '/'
-        },
-        {
-            title: "Blog",
-            path: '/blog/'
-        },
-        {
-            title: MEDIA_CATEGORIES[frontmatter.category].name,
-            path: MEDIA_CATEGORIES[frontmatter.category].path
-        },
-        {
-            title: frontmatter.title,
-            path: `posts/${fileAbsolutePath.substring(fileAbsolutePath.lastIndexOf('/') + 1).slice(0, -3)}`
-        }
-    ];
+class ActuTemplate extends React.Component {
+    constructor(props) {
+        super(props);
 
-    function HeaderNewsImage() {
+        this.state = {
+            collapse: false
+        }
+    }
+
+    componentDidMount() {
+        window.addEventListener("resize", this.resize.bind(this));
+        this.resize();
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener("resize", this.resize.bind(this));
+    }
+
+
+    resize() {
+        let collapse = (window.innerWidth <= 1020 && window.innerWidth >= 600);
+        if (collapse !== this.state.collapse) {
+            this.setState({collapse: collapse});
+        }
+    }
+
+    renderHeaderNewsImage() {
+        const {currentNewsPost} = this.props.data; // data.markdownRemark holds our post data
+        const {frontmatter} = currentNewsPost;
         let image;
         image = frontmatter.image ? frontmatter.image : MEDIA_CATEGORIES[frontmatter.category].image;
         return <img className={styles.backgroundImage} src={image}
@@ -44,81 +46,118 @@ export default function ActuTemplate({
                     width="100%"/>
     }
 
-    function BodyNewsImage() {
-      if (frontmatter.image) {
-          return <img className={styles.backgroundImage} src={frontmatter.image}
-                      alt={frontmatter.title} height="100%"
-                      width="100%"/>
-      }
-      return null;
-
+    renderBodyNewsImage() {
+        const {currentNewsPost} = this.props.data; // data.markdownRemark holds our post data
+        const {frontmatter} = currentNewsPost;
+        if (frontmatter.image) {
+            return <img className={styles.backgroundImage} src={frontmatter.image}
+                        alt={frontmatter.title} height="100%"
+                        width="100%"/>
+        }
+        return null;
     }
 
-    function OtherNewsPanel() {
-        return <div className={styles.otherNewsList}>
-            {edges.map(({node, i}) => {
-                    const linkClassName = cx(styles.item, styles[node.frontmatter.category]);
-                    const categoryClassName = cx(styles.category, styles[node.frontmatter.category]);
-                    return <Link key={i} className={linkClassName}
-                                 to={`posts/${node.fileAbsolutePath.substring(node.fileAbsolutePath.lastIndexOf('/') + 1).slice(0, -3)}`}>
-                        <div className={styles.content}>
-                            <div className={categoryClassName}>
-                                <div className={styles.icon}>{MEDIA_CATEGORIES[node.frontmatter.category].icon}</div>
-                                <div>{MEDIA_CATEGORIES[node.frontmatter.category].name}</div>
+    renderOtherNewsPanel() {
+        const {otherNews} = this.props.data; // data.markdownRemark holds our post data
+        const {edges} = otherNews;
+
+        return <div className={styles.otherNews}>
+            <div className={styles.otherNewsTitle}>
+                <strong>Un dernier billet</strong>
+                <br/>
+                pour la route ?
+            </div>
+            <div className={styles.otherNewsList}>
+                {edges.map(({node, i}) => {
+                        const linkClassName = cx(styles.item, styles[node.frontmatter.category]);
+                        const categoryClassName = cx(styles.category, styles[node.frontmatter.category]);
+                        return <Link key={i} className={linkClassName}
+                                     to={`posts/${node.fileAbsolutePath.substring(node.fileAbsolutePath.lastIndexOf('/') + 1).slice(0, -3)}`}>
+                            <div className={styles.content}>
+                                <div className={categoryClassName}>
+                                    <div className={styles.icon}>{MEDIA_CATEGORIES[node.frontmatter.category].icon}</div>
+                                    <div>{MEDIA_CATEGORIES[node.frontmatter.category].name}</div>
+                                </div>
+                                <div className={styles.title}>{node.frontmatter.title}</div>
+                                <div className={styles.readMore}>
+                                    <span/>
+                                </div>
                             </div>
-                            <div className={styles.title}>{node.frontmatter.title}</div>
-                            <div className={styles.readMore}>
-                                <span/>
-                            </div>
-                        </div>
-                    </Link>
-                }
-            )}
+                        </Link>
+                    }
+                )}
+            </div>
         </div>
     }
 
-    return (
-        <PageLayout>
-            <Helmet>
-                <meta charSet="utf-8" />
-                <title>{frontmatter.title}</title>
-            </Helmet>
-            <div className={styles.newsHeader}>
-                <div className={styles.newsSectionTitle}>
-                    <span>{frontmatter.title}</span>
+    render() {
+        const {currentNewsPost, otherNews} = this.props.data; // data.markdownRemark holds our post data
+        const {frontmatter, html, fileAbsolutePath} = currentNewsPost;
+        const {edges} = otherNews;
+        moment.locale('fr');
+        const navigationItems = [
+            {
+                title: "Accueil",
+                path: '/'
+            },
+            {
+                title: "Blog",
+                path: '/blog/'
+            },
+            {
+                title: MEDIA_CATEGORIES[frontmatter.category].name,
+                path: MEDIA_CATEGORIES[frontmatter.category].path
+            },
+            {
+                title: frontmatter.title,
+                path: `posts/${fileAbsolutePath.substring(fileAbsolutePath.lastIndexOf('/') + 1).slice(0, -3)}`
+            }
+        ];
+
+        return (
+            <PageLayout>
+                <Helmet>
+                    <meta charSet="utf-8"/>
+                    <title>{frontmatter.title}</title>
+                </Helmet>
+                <div className={styles.newsHeader}>
+                    <div className={styles.newsSectionTitle}>
+                        <span>{frontmatter.title}</span>
+                    </div>
+                    {this.renderHeaderNewsImage()}
                 </div>
-                <HeaderNewsImage/>
-            </div>
-            <SectionLayout withBorders noPaddingTop>
-                <div className={styles.newsWrapper}>
-                    <NavigationPath navigationItems={navigationItems}/>
-                    <div className={styles.newsPostContainer}>
-                        <div className={styles.newsInfos}>
-                            <div className={styles.dateContainer}>
-                                {moment(frontmatter.date).format('LL')}
+                <SectionLayout withBorders noPaddingTop>
+                    <div className={styles.newsWrapper}>
+                        <NavigationPath navigationItems={navigationItems}/>
+                        <div className={styles.newsPostContainer}>
+                            <div className={styles.newsPost}>
+                                <div className={styles.newsInfosContainer}>
+                                    <div className={styles.newsInfos}>
+                                        <div className={styles.dateContainer}>
+                                            {moment(frontmatter.date).format('LL')}
+                                        </div>
+                                        <div className={styles.imgContainer}>
+                                            {this.renderBodyNewsImage()}
+                                        </div>
+                                    </div>
+                                    {this.state.collapse ? this.renderOtherNewsPanel() : null}
+                                </div>
+                                <div className={styles.newsContent}>
+                                    <div className={styles.newsTitle}> {frontmatter.title} </div>
+                                    <div className={styles.newsBody} dangerouslySetInnerHTML={{__html: html}}/>
+                                </div>
                             </div>
-                            <div className={styles.imgContainer}>
-                                <BodyNewsImage/>
-                            </div>
-                        </div>
-                        <div className={styles.newsContent}>
-                            <div className={styles.newsTitle}> {frontmatter.title} </div>
-                            <div className={styles.newsBody} dangerouslySetInnerHTML={{__html: html}}/>
-                        </div>
-                        <div className={styles.otherNews}>
-                            <div className={styles.otherNewsTitle}>
-                                <strong>Un dernier billet</strong>
-                                <br/>
-                                pour la route ?
-                            </div>
-                            <OtherNewsPanel/>
+
+                            {!this.state.collapse ? this.renderOtherNewsPanel() : null}
                         </div>
                     </div>
-                </div>
-            </SectionLayout>
-        </PageLayout>
-    )
+                </SectionLayout>
+            </PageLayout>
+        )
+    }
 }
+
+export default ActuTemplate;
 
 // noinspection JSUnusedGlobalSymbols
 export const pageQuery = graphql`
