@@ -44,3 +44,11 @@
     padding-top: 0;
   }
 }
+
+@media #{$media-tablet} {
+  .sectionContainer {
+    .btnSecondary {
+      margin-right: 5px;
+    }
+  }
+}

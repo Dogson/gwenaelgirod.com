@@ -135,3 +135,17 @@ strong {
     color: white;
   }
 }
+
+@media #{$media-tablet} {
+  .sectionTitle {
+    margin-left: 20px;
+  }
+}
+
+@media #{$media-phone} {
+    .sectionTitle {
+      padding: 8px 30px;
+      font-size: $size-big;
+      font-weight: $weight-regular;
+    }
+}

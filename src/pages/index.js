@@ -176,7 +176,7 @@ const BlogSection = ({posts}) => {
     };
 
     return <SectionLayout title="Billets" action={action}>
-        <div>
+        <div className={styles.postsContainer}>
             {Posts}
         </div>
     </SectionLayout>

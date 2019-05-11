@@ -18,7 +18,6 @@
     @extend .flexColumn;
     font-weight: $weight-light;
     flex: 0.7;
-    margin-right: 15px;
 
     .titleContainer {
       position: relative;
@@ -113,11 +112,13 @@
 
       .btnSecondary {
         position: relative;
+
         .icon {
           font-size: 18px;
           position: absolute;
           left: 10px;
         }
+
         &:after {
           content: '>';
           position: absolute;
@@ -183,8 +184,63 @@
   }
 }
 
+@media #{$media-tablet} {
+
+  .descriptionContainer {
+
+    flex-direction: column;
+    align-items: center;
+    margin: 0 5px;
+
+    .navigationPanelContainer {
+
+      .navigationPanel {
+
+        .btnSecondary {
+          margin: 10px;
+        }
+      }
+    }
+  }
+
+  .postsContainer {
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
 @media #{$media-phone} {
   .carouselContainer {
     display: none;
+  }
+  .descriptionContainer {
+
+    .descriptionTextContainer {
+      margin: 0;
+    }
+
+    .navigationPanelContainer {
+      width: 100%;
+      margin: 0;
+
+      .navigationPanel {
+        align-items: center;
+
+        .btnSecondary {
+          width: 150px;
+          height: 30px;
+          margin: 10px;
+          align-items: center;
+        }
+      }
+    }
+  }
+
+  .postsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
