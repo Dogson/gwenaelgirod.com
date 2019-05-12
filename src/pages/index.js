@@ -24,7 +24,7 @@ const IndexPage = ({data: {posts}}) => {
             <meta charSet="utf-8" />
             <title>GG - Gwenaël GIROD</title>
         </Helmet>
-        <HomeCarousel posts={posts.edges.slice(0, 5)}/>
+        <div className={styles.carouselContainer}><HomeCarousel posts={posts.edges.slice(0, 5)}/></div>
         <DescriptionSection/>
         <BlogSection posts={posts.edges}/>
     </PageLayout>
@@ -114,7 +114,7 @@ class DescriptionSection extends React.Component {
                             œuvres que j'affectionne dans les univers de jeux vidéo, cinéma, télévision, musique et
                             littérature.</p>
 
-                        <p> Et ce, bien sûr, de manière totalement {this.renderSubjObj()}</p>
+                        <span> Et ce, bien sûr, de manière totalement {this.renderSubjObj()}</span>
                         <p>Je suis également développeur web et mobile, spécialisé dans les technologies javascript
                             front-end (ReactJS & Native).</p>
                     </div>
@@ -176,7 +176,7 @@ const BlogSection = ({posts}) => {
     };
 
     return <SectionLayout title="Billets" action={action}>
-        <div>
+        <div className={styles.postsContainer}>
             {Posts}
         </div>
     </SectionLayout>

@@ -54,12 +54,13 @@
       @extend .flexColumn;
       justify-content: space-between;
       height: 100%;
-      width: 600px;
     }
 
     .menuSocialIcons {
-      align-self: flex-end;
+      width: 100%;
+      max-width: 600px;
       @extend .flexRow;
+      justify-content: flex-end;
 
       .socialIcon {
         box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
@@ -76,9 +77,11 @@
     .menuNav {
       align-self: flex-start;
       @extend .flexRow;
+      width: 100%;
+      max-width: 600px;
 
       .menuLink {
-        width: 200px;
+        flex: 0.33;
         padding-bottom: 20px;
         text-align: center;
         color: $background-primary;
@@ -102,5 +105,69 @@
       }
     }
 
+    .menuNavMobile {
+      display: none;
+    }
   }
+}
+
+@media #{$media-tablet} {
+  .headerContainer {
+    .logoContainer {
+      .logoWrapper {
+        flex-direction: column;
+
+        .imageContainer {
+          padding: 0;
+
+          img {
+            width: 100px;
+          }
+        }
+      }
+    }
+  }
+
+  @media #{$media-phone} {
+    .headerContainer {
+      height: 60px;
+
+      .logoContainer {
+        transform: skewX(0deg);
+        width: auto;
+        flex: 1;
+        padding: 0;
+        margin: 0;
+        justify-content: center;
+        height: 100%;
+
+        .logoWrapper {
+          flex-direction: row;
+          transform: skewX(0deg);
+
+          .imageContainer {
+            padding: 5px;
+
+            img {
+              width: 40px;
+            }
+          }
+        }
+
+        .logoName {
+          font-size: $size-big;
+          flex-direction: row;
+          letter-spacing: 1px;
+          span {
+            padding: 3px;
+          }
+        }
+      }
+
+      .menuContainer {
+        display: none;
+      }
+    }
+  }
+
 }

@@ -26,7 +26,7 @@ exports.createPages = ({actions, graphql}) => {
         const {blogPosts} = data;
         blogPosts.edges.forEach(({node}) => {
             createPage({
-                path: `posts/${node.fileAbsolutePath.substring(node.fileAbsolutePath.lastIndexOf('/')+1).slice(0, -3)}`,
+                path: `/posts/${node.fileAbsolutePath.substring(node.fileAbsolutePath.lastIndexOf('/')+1).slice(0, -3)}`,
                 component: actuTemplate,
                 context: {id: node.id}, // additional data can be passed via context
             })

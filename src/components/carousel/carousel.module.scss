@@ -81,7 +81,7 @@
         text-transform: uppercase;
 
         span {
-            padding: 0 5px;
+          padding: 0 5px;
         }
 
         .icon {
@@ -146,3 +146,54 @@
 
   }
 }
+
+@media #{$media-tablet} {
+
+  .carouselItemWrapper {
+    height: 300px;
+
+    .carouselItemContainer {
+      width: 100%;
+
+      .titleContainer {
+        top: 120px;
+        left: 30px;
+        width: 400px;
+
+        .title {
+          font-size: $size-small;
+
+          .details {
+            font-size: $size-smaller;
+          }
+        }
+      }
+    }
+  }
+
+  .customDotsWrapper {
+    width: 100%;
+
+    .customDotsContainer {
+      width: 100%;
+      margin-right: 30px;
+
+      .customDots {
+        padding: 3px 5px;
+
+        ul {
+
+          li {
+            margin: 0;
+
+            button::before {
+              font-size: 8px;
+            }
+          }
+        }
+      }
+    }
+
+  }
+}
+

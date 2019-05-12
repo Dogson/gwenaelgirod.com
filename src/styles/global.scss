@@ -39,6 +39,10 @@ $color-tv: #007a69;
 $color-music: #FF1C4A;
 $color-books: #5f91c8;
 
+//media sizes
+$media-tablet: "screen and (max-width : 1020px)";
+$media-phone: "screen and (max-width : 600px)";
+
 html {
   font-family: 'Roboto', sans-serif;
   font-weight: $weight-regular;
@@ -130,4 +134,18 @@ strong {
     background-color: $color-main;
     color: white;
   }
+}
+
+@media #{$media-tablet} {
+  .sectionTitle {
+    margin-left: 20px;
+  }
+}
+
+@media #{$media-phone} {
+    .sectionTitle {
+      padding: 8px 30px;
+      font-size: $size-big;
+      font-weight: $weight-regular;
+    }
 }

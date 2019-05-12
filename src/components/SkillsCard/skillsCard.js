@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import cx from "classnames";
-import {FaJsSquare, FaGlobe, FaToolbox, FaCertificate, FaCoffee} from 'react-icons/fa';
+import {FaJsSquare, FaGlobe, FaToolbox, FaCoffee} from 'react-icons/fa';
 import styles from "./skillsCard.module.scss"
 
 export class SkillsCard extends Component {
@@ -18,6 +18,8 @@ export class SkillsCard extends Component {
                 return <FaGlobe className={classNames}/>;
             case 'outils' :
                 return <FaToolbox className={classNames}/>;
+            default:
+                return null;
         }
     }
 
