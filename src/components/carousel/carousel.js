@@ -39,7 +39,7 @@ const Carousel = ({items, settings}) => {
                  width="100%"/>
             <div className={styles.carouselItemContainer}>
                 <Link className={styles.titleContainer}
-                      to={`posts/${item.path.substring(item.path.lastIndexOf('/') + 1).slice(0, -3)}`}>
+                      to={`/posts/${item.path.substring(item.path.lastIndexOf('/') + 1).slice(0, -3)}`}>
                     <div className={styles.tag}>
                         <span className={styles.icon}>{MEDIA_CATEGORIES[item.category].icon}</span>
                         <span className={styles.text}>{MEDIA_CATEGORIES[item.category].name}</span>

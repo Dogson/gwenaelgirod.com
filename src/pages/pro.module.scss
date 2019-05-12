@@ -175,33 +175,6 @@
   }
 }
 
-@media screen and (max-width: 1000px) {
-  .descriptionContainer {
-    .bodySection {
-      flex-direction: column;
-      text-align: left;
-    }
-
-    .bodySection2 {
-      flex-direction: column-reverse;
-
-      p {
-        text-align-last: left;
-      }
-    }
-
-    .descriptionIcon {
-      width: 2em;
-      height: 2em;
-    }
-
-    .transparent {
-      width: 0;
-      height: 0;
-    }
-  }
-}
-
 
 .skillsContainer {
 
@@ -420,6 +393,133 @@
       &:nth-child(4) {
         transform: translateX(0);
         transition: all 0.62s linear 1.2s;
+      }
+    }
+  }
+}
+
+@media #{$media-tablet} {
+  .descriptionContainer {
+    .descriptionWrapper {
+      flex-direction: column;
+
+      .descriptionLeftPanel {
+        max-width: 600px;
+        width: 100%;
+        margin: 20px;
+
+        .image {
+          height: 300px;
+          object-position: 0 -240px;
+        }
+      }
+
+      .bodySection {
+        flex-direction: column;
+        text-align: left;
+      }
+
+      .bodySection2 {
+        flex-direction: column-reverse;
+
+        p {
+          text-align-last: left;
+        }
+      }
+
+      .descriptionIcon {
+        width: 2em;
+        height: 2em;
+      }
+
+      .transparent {
+        width: 0;
+        height: 0;
+      }
+    }
+  }
+}
+
+@media #{$media-phone} {
+  .descriptionHeader {
+    .descriptionSectionTitle {
+      font-size: $size-normal;
+    }
+  }
+  .descriptionContainer {
+    .descriptionWrapper {
+      flex-direction: column;
+
+      .descriptionLeftPanel {
+        max-width: 600px;
+        width: auto;
+        margin: 0;
+
+        .title {
+          height: 70px;
+        }
+
+        .image {
+          height: 300px;
+          object-position: 0 30%;
+        }
+      }
+    }
+  }
+  .mainContactContainer {
+    .contactContainer {
+      flex-direction: column;
+
+      .contactIconContainer {
+        .description {
+          transform: translateY(-40px);
+        }
+
+        &:first-child {
+          transform: translateX(-200px);
+        }
+
+        &:nth-child(2) {
+          transform: translateX(-200px);
+        }
+
+        &:nth-child(3) {
+          transform: translateX(-200px);
+          }
+
+        &:nth-child(4) {
+          transform: translateX(-200px);
+        }
+
+        &:hover {
+          .description {
+            transform: translateY(-40px) translateX(80px);
+            transition: all 0.2s ease-in-out 0.1s;
+          }
+        }
+      }
+    }
+
+    &.visible {
+      .contactContainer {
+        flex-direction: column;
+
+        .contactIconContainer {
+          &:first-child {
+            transform: translateX(0px);
+          }
+          &:nth-child(2) {
+            transform: translateX(0px);
+          }
+
+          &:nth-child(3) {
+            transform: translateX(0px);
+          }
+
+          &:nth-child(4) {
+            transform: translateX(0px);
+          }
+        }
       }
     }
   }

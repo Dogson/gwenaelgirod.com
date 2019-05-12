@@ -114,7 +114,7 @@ class DescriptionSection extends React.Component {
                             œuvres que j'affectionne dans les univers de jeux vidéo, cinéma, télévision, musique et
                             littérature.</p>
 
-                        <p> Et ce, bien sûr, de manière totalement {this.renderSubjObj()}</p>
+                        <span> Et ce, bien sûr, de manière totalement {this.renderSubjObj()}</span>
                         <p>Je suis également développeur web et mobile, spécialisé dans les technologies javascript
                             front-end (ReactJS & Native).</p>
                     </div>

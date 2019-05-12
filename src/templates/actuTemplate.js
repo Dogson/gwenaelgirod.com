@@ -68,22 +68,26 @@ class ActuTemplate extends React.Component {
                 pour la route ?
             </div>
             <div className={styles.otherNewsList}>
-                {edges.map(({node, i}) => {
+                {edges.map(({node}, i) => {
+                    console.log(i);
                         const linkClassName = cx(styles.item, styles[node.frontmatter.category]);
                         const categoryClassName = cx(styles.category, styles[node.frontmatter.category]);
-                        return <Link key={i} className={linkClassName}
-                                     to={`posts/${node.fileAbsolutePath.substring(node.fileAbsolutePath.lastIndexOf('/') + 1).slice(0, -3)}`}>
-                            <div className={styles.content}>
-                                <div className={categoryClassName}>
-                                    <div className={styles.icon}>{MEDIA_CATEGORIES[node.frontmatter.category].icon}</div>
-                                    <div>{MEDIA_CATEGORIES[node.frontmatter.category].name}</div>
+                        return <div key={i}>
+                            <Link className={linkClassName}
+                                  to={`/posts/${node.fileAbsolutePath.substring(node.fileAbsolutePath.lastIndexOf('/') + 1).slice(0, -3)}`}>
+                                <div className={styles.content}>
+                                    <div className={categoryClassName}>
+                                        <div
+                                            className={styles.icon}>{MEDIA_CATEGORIES[node.frontmatter.category].icon}</div>
+                                        <div>{MEDIA_CATEGORIES[node.frontmatter.category].name}</div>
+                                    </div>
+                                    <div className={styles.title}>{node.frontmatter.title}</div>
+                                    <div className={styles.readMore}>
+                                        <span/>
+                                    </div>
                                 </div>
-                                <div className={styles.title}>{node.frontmatter.title}</div>
-                                <div className={styles.readMore}>
-                                    <span/>
-                                </div>
-                            </div>
-                        </Link>
+                            </Link>
+                        </div>
                     }
                 )}
             </div>
@@ -91,9 +95,8 @@ class ActuTemplate extends React.Component {
     }
 
     render() {
-        const {currentNewsPost, otherNews} = this.props.data; // data.markdownRemark holds our post data
+        const {currentNewsPost} = this.props.data; // data.markdownRemark holds our post data
         const {frontmatter, html, fileAbsolutePath} = currentNewsPost;
-        const {edges} = otherNews;
         moment.locale('fr');
         const navigationItems = [
             {
@@ -110,7 +113,7 @@ class ActuTemplate extends React.Component {
             },
             {
                 title: frontmatter.title,
-                path: `posts/${fileAbsolutePath.substring(fileAbsolutePath.lastIndexOf('/') + 1).slice(0, -3)}`
+                path: `/posts/${fileAbsolutePath.substring(fileAbsolutePath.lastIndexOf('/') + 1).slice(0, -3)}`
             }
         ];
 
@@ -118,6 +121,7 @@ class ActuTemplate extends React.Component {
             <PageLayout>
                 <Helmet>
                     <meta charSet="utf-8"/>
+                    z
                     <title>{frontmatter.title}</title>
                 </Helmet>
                 <div className={styles.newsHeader}>

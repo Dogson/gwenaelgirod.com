@@ -29,7 +29,7 @@ class Post extends React.Component {
                 </div>
             </Link>
             <Link className={styles.postLink}
-                to={`posts/${post.fileAbsolutePath.substring(post.fileAbsolutePath.lastIndexOf('/') + 1).slice(0, -3)}`}>
+                to={`/posts/${post.fileAbsolutePath.substring(post.fileAbsolutePath.lastIndexOf('/') + 1).slice(0, -3)}`}>
                 <div>
                     <div className={styles.imageContainer}>
                         <img className={styles.image} src={image}
