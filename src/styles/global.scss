@@ -64,6 +64,7 @@ a {
 
 strong {
   font-weight: $weight-regular;
+  color: $color-main;
 }
 
 .parallelogram {
@@ -116,7 +117,7 @@ strong {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.btnSecondary {
+.btnPrimary {
   @extend .flexRow;
   @extend .flexCenter;
   background-color: transparent;
@@ -130,9 +131,44 @@ strong {
   text-transform: uppercase;
 
   &:hover {
-    box-shadow: none;
     background-color: $color-main;
     color: white;
+  }
+}
+
+.btnSecondary {
+  @extend .btnPrimary;
+  border: none;
+  font-weight: $weight-regular;
+  padding: 0;
+
+  &:hover {
+    background-color: transparent;
+    color: $color-main;
+  }
+}
+
+.newsHeader {
+  height: 300px;
+  background-color: $background-secondary;
+  opacity: 1;
+  position: relative;
+  @extend .flexColumn;
+  @extend .flexCenter;
+
+  .newsSectionTitle {
+    @extend .sectionTitle;
+    align-self: center;
+    z-index: 3;
+  }
+
+  .backgroundImage {
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    opacity: 0.6;
+    z-index: 2;
   }
 }
 

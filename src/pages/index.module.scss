@@ -8,10 +8,6 @@
   @extend .flexRow;
   @extend .flexSpaceBetween;
 
-  strong {
-    color: $color-main;
-  }
-
   .descriptionTextContainer {
 
     @extend .flexAlignCenter;
@@ -110,7 +106,7 @@
         font-size: $size-normal;
       }
 
-      .btnSecondary {
+      .btnPrimary {
         position: relative;
 
         .icon {
@@ -196,7 +192,7 @@
 
       .navigationPanel {
 
-        .btnSecondary {
+        .btnPrimary {
           margin: 10px;
         }
       }
@@ -228,7 +224,7 @@
       .navigationPanel {
         align-items: center;
 
-        .btnSecondary {
+        .btnPrimary {
           width: 150px;
           height: 30px;
           margin: 10px;

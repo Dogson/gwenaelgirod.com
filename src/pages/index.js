@@ -88,11 +88,11 @@ class DescriptionSection extends React.Component {
 
     render() {
         const btnClassNames = {
-            gaming: cx(styles.btnSecondary, styles.gaming),
-            movies: cx(styles.btnSecondary, styles.movies),
-            tv: cx(styles.btnSecondary, styles.tv),
-            music: cx(styles.btnSecondary, styles.music),
-            books: cx(styles.btnSecondary, styles.books),
+            gaming: cx(styles.btnPrimary, styles.gaming),
+            movies: cx(styles.btnPrimary, styles.movies),
+            tv: cx(styles.btnPrimary, styles.tv),
+            music: cx(styles.btnPrimary, styles.music),
+            books: cx(styles.btnPrimary, styles.books),
         };
 
         return <SectionLayout odd>
@@ -149,7 +149,7 @@ class DescriptionSection extends React.Component {
                         <div className={styles.title} style={{marginTop: '20px'}}>
                             Vous cherchez un <strong>développeur web</strong> ?
                         </div>
-                        <Link className={styles.btnSecondary} to={"/pro/"}><span
+                        <Link className={styles.btnPrimary} to={"/pro/"}><span
                             className={styles.icon}><FaCode/></span>Mon profil pro</Link>
                     </div>
                 </div>

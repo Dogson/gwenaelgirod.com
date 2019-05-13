@@ -75,11 +75,6 @@
     @extend .flexRow;
   }
 
-  strong {
-    color: $color-main;
-    font-weight: $weight-regular;
-  }
-
   .descriptionLeftPanel {
     width: 250px;
     transition: all 0.7s ease-in-out;
@@ -239,10 +234,6 @@
     span {
       opacity: 0;
       margin: 10px 3px;
-    }
-
-    strong {
-      color: $color-main;
     }
   }
 

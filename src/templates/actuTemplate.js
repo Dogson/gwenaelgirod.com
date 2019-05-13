@@ -69,7 +69,6 @@ class ActuTemplate extends React.Component {
             </div>
             <div className={styles.otherNewsList}>
                 {edges.map(({node}, i) => {
-                    console.log(i);
                         const linkClassName = cx(styles.item, styles[node.frontmatter.category]);
                         const categoryClassName = cx(styles.category, styles[node.frontmatter.category]);
                         return <div key={i}>

@@ -31,6 +31,11 @@ export const MEDIA_CATEGORIES = {
         path: "/blog/musique/",
         image: "/assets/categories/music.jpg",
         icon: <FaCompactDisc/>
+    },
+    all: {
+        name: "Blog",
+        path: "/blog",
+        image: "/assets/categories/blog.jpg"
     }
 
 };

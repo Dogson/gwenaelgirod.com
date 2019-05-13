@@ -9,17 +9,18 @@ import Post from "../components/newsPost/post"
 import styles from "./templates.module.scss";
 import {Helmet} from "react-helmet";
 import MediaFilters from "../components/mediaFilters/mediaFilters";
+import NoPosts from "../components/noPosts/noPosts";
 
 const Posts = ({posts}) => {
     if (posts.edges.length) {
         return posts.edges
             .map((post, i) => <Post odd={i % 2} key={post.node.id} post={post.node}/>);
     }
-    return <div className={styles.noPosts}>Aucun billet n'a encore été écrit dans cette catégorie.</div>
+    return <NoPosts/>
 };
 
-export default function PostsByCategoryTemplate(props) {
-    const {data: {posts}, pageContext: {category}} = props;
+export default function BlogTemplate(props) {
+    const {data: {posts, allPosts}, pageContext: {category}} = props;
 
     const navigationItems = [
         {
@@ -29,12 +30,15 @@ export default function PostsByCategoryTemplate(props) {
         {
             title: "Blog",
             path: '/blog/'
-        },
-        {
-            title: MEDIA_CATEGORIES[category].name,
-            path: MEDIA_CATEGORIES[category].path
         }
     ];
+
+    if (category !== "all") {
+        navigationItems.push({
+            title: MEDIA_CATEGORIES[category].name,
+            path: MEDIA_CATEGORIES[category].path
+        })
+    }
 
     const newsHeaderClasses = cx(styles.newsHeader, styles[category]);
 
@@ -54,7 +58,7 @@ export default function PostsByCategoryTemplate(props) {
         <SectionLayout navigationPath={navigationItems} noPaddingTop>
             <MediaFilters/>
             <div className={styles.postsContainer}>
-                <Posts posts={posts}/>
+                <Posts posts={category === "all" ? allPosts : posts}/>
             </div>
         </SectionLayout>
     </PageLayout>
@@ -63,6 +67,22 @@ export default function PostsByCategoryTemplate(props) {
 export const blogCategoryQuery = graphql`
 query($category: String!) {
     posts: allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}, filter: {frontmatter: {type: {eq: "post"}, category: {eq: $category}}}) {
+          edges {
+            node {            
+              id
+              excerpt(pruneLength: 250)
+              fileAbsolutePath
+              frontmatter {
+                date
+                title
+                summary
+                image
+                category
+              }
+            }
+          }
+      },
+       allPosts: allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}, filter: {frontmatter: {type: {eq: "post"}}}) {
           edges {
             node {            
               id
