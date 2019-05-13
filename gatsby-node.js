@@ -1,3 +1,30 @@
+const MEDIA_CATEGORIES = {
+    movies: {
+        name: "Films",
+        path: "/blog/films/",
+    },
+    gaming: {
+        name: "Jeux vidéo",
+        path: "/blog/jeux-video/",
+    },
+    tv: {
+        name: "Séries TV",
+        path: "/blog/series-tv/",
+    },
+    books: {
+        name: "Littérature",
+        path: "/blog/litterature/",
+    },
+    music: {
+        name: "Musique",
+        path: "/blog/musique/",
+    },
+    all: {
+        name: "Blog",
+        path: "/blog/",
+    }
+};
+
 const path = require("path");
 
 exports.createPages = ({actions, graphql}) => {
@@ -13,99 +40,79 @@ exports.createPages = ({actions, graphql}) => {
       node {
         id
         fileAbsolutePath
+        frontmatter {
+            category
+        }
       }
     }
   }
-}
-
-  `).then(result => {
+  }`).then(result => {
+        console.log("bite");
         const {errors, data} = result;
+        console.log(data);
         if (errors) {
-            return Promise.reject(errors);
+            throw errors;
         }
         const {blogPosts} = data;
         const postsPerPage = 3;
-        const numPages = Math.ceil(blogPosts.edges.length / postsPerPage);
+        let nbPostsByCategory = {
+            movies: 0,
+            gaming: 0,
+            tv: 0,
+            music: 0,
+            books: 0,
+        };
         blogPosts.edges.forEach(({node}) => {
+            nbPostsByCategory[node.frontmatter.category]++;
             createPage({
                 path: `/posts/${node.fileAbsolutePath.substring(node.fileAbsolutePath.lastIndexOf('/') + 1).slice(0, -3)}`,
                 component: actuTemplate,
                 context: {id: node.id}, // additional data can be passed via context
             })
         });
-        Array.from({length: numPages}).forEach((_, i) => {
-            createPage({
-                path: i === 0 ? `/blog/` : `/blog/${i + 1}`,
-                component: blogTemplate,
-                context: {
-                    limit: postsPerPage,
-                    skip: i * postsPerPage,
-                    numPages,
-                    currentPage: i + 1,
-                    category: "all",
-                    title: "Blog"
-                },
+
+        const numPages = {
+            all: Math.ceil(blogPosts.edges.length / postsPerPage),
+            movies: Math.ceil(nbPostsByCategory.movies / postsPerPage),
+            gaming: Math.ceil(nbPostsByCategory.gaming / postsPerPage),
+            tv: Math.ceil(nbPostsByCategory.tv / postsPerPage),
+            music: Math.ceil(nbPostsByCategory.music / postsPerPage),
+            books: Math.ceil(nbPostsByCategory.books / postsPerPage),
+        };
+
+        Object.keys(numPages).forEach((key) => {
+            const category = MEDIA_CATEGORIES[key];
+            const nbPages = numPages[key];
+            console.log(nbPages);
+            console.log(category);
+            Array.from({length: nbPages}).forEach((_, i) => {
+                createPage({
+                    path: i === 0 ? category.path : `${category.path}${i + 1}`,
+                    component: blogTemplate,
+                    context: {
+                        limit: postsPerPage,
+                        skip: i * postsPerPage,
+                        numPages: nbPages,
+                        currentPage: i + 1,
+                        category: key,
+                        title: category.name
+                    },
+                });
             });
-            createPage({
-                path: i === 0 ? `/blog/films/` : `/blog/films/${i + 1}`,
-                component: blogTemplate,
-                context: {
-                    limit: postsPerPage,
-                    skip: i * postsPerPage,
-                    numPages,
-                    currentPage: i + 1,
-                    category: "movies",
-                    title: "Films"
-                },
-            });
-            createPage({
-                path: i === 0 ? `/blog/jeux-video/` : `/blog/jeux-video/${i + 1}`,
-                component: blogTemplate,
-                context: {
-                    limit: postsPerPage,
-                    skip: i * postsPerPage,
-                    numPages,
-                    currentPage: i + 1,
-                    category: "gaming",
-                    title: "Jeux vidéo"
-                }
-            });
-            createPage({
-                path: i === 0 ? `/blog/series-tv/` : `/blog/series-tv/${i + 1}`,
-                component: blogTemplate,
-                context: {
-                    limit: postsPerPage,
-                    skip: i * postsPerPage,
-                    numPages,
-                    currentPage: i + 1,
-                    category: "tv",
-                    title: "Séries TV"
-                }
-            });
-            createPage({
-                path: i === 0 ? `/blog/litterature/` : `/blog/litterature/${i + 1}`,
-                component: blogTemplate,
-                context: {
-                    limit: postsPerPage,
-                    skip: i * postsPerPage,
-                    numPages,
-                    currentPage: i + 1,
-                    category: "books",
-                    title: "Littérature"
-                }
-            });
-            createPage({
-                path: i === 0 ? `/blog/musique/` : `/blog/musique/${i + 1}`,
-                component: blogTemplate,
-                context: {
-                    limit: postsPerPage,
-                    skip: i * postsPerPage,
-                    numPages,
-                    currentPage: i + 1,
-                    category: "music",
-                    title: "Musique"
-                }
-            });
-        })
+            if (nbPages === 0) {
+                createPage({
+                    path: category.path,
+                    component: blogTemplate,
+                    context: {
+                        limit: 0,
+                        skip: 0,
+                        numPages: 1,
+                        currentPage: 1,
+                        category: key,
+                        title: category.name
+                    },
+                });
+            }
+        });
     })
 };

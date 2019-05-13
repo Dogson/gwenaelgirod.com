@@ -10,6 +10,7 @@ import styles from "./templates.module.scss";
 import {Helmet} from "react-helmet";
 import MediaFilters from "../components/mediaFilters/mediaFilters";
 import NoPosts from "../components/noPosts/noPosts";
+import {Link} from "@reach/router";
 
 const Posts = ({posts}) => {
     if (posts.edges.length) {
@@ -20,8 +21,13 @@ const Posts = ({posts}) => {
 };
 
 export default function BlogTemplate(props) {
+    const {data: {posts, allPosts}, pageContext: {category, currentPage, numPages}} = props;
     console.log(props);
-    const {data: {posts, allPosts}, pageContext: {category}} = props;
+    const pathname = MEDIA_CATEGORIES[category].path;
+    const isFirst = currentPage === 1;
+    const isLast = currentPage === numPages;
+    const prevPage = currentPage - 1 === 1 ? pathname : `${pathname}${(currentPage - 1).toString()}`;
+    const nextPage = `${pathname}${(currentPage + 1).toString()}`;
 
     const navigationItems = [
         {
@@ -61,6 +67,16 @@ export default function BlogTemplate(props) {
             <div className={styles.postsContainer}>
                 <Posts posts={category === "all" ? allPosts : posts}/>
             </div>
+            {!isFirst && (
+                <Link to={prevPage} rel="prev">
+                    ← Previous Page
+                </Link>
+            )}
+            {!isLast && (
+                <Link to={nextPage} rel="next">
+                    Next Page →
+                </Link>
+            )}
         </SectionLayout>
     </PageLayout>
 }

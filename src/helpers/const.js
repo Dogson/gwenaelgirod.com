@@ -34,7 +34,7 @@ export const MEDIA_CATEGORIES = {
     },
     all: {
         name: "Blog",
-        path: "/blog",
+        path: "/blog/",
         image: "/assets/categories/blog.jpg"
     }
 
