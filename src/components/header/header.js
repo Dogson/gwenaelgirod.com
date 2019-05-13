@@ -21,12 +21,27 @@ const Header = () => (
         <div className={styles.menuContainer}>
             <div className={styles.menuWrapper}>
                 <span className={styles.menuSocialIcons}>
-                    <SocialIcon target="_blank" rel="noopener noreferrer" url="https://facebook.com"
+                     <a className={styles.customIconContainer} href="https://www.senscritique.com/HDogson"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        <div className={styles.wrapper}>
+                            <img className={styles.icon} src={"/assets/logo/SensCritique.png"} alt="Malt"/>
+                        </div>
+                      </a>
+                    <SocialIcon target="_blank" rel="noopener noreferrer"
+                                url="https://github.com/Dogson"
                                 className={styles.socialIcon} bgColor="white" fgColor="transparent"
-                                style={{width: "25px", height: "25px"}}/>
-                    <SocialIcon target="_blank" rel="noopener noreferrer" url="https://twitter.com"
+                                style={{width: "30px", height: "30px"}}/>
+                    <SocialIcon target="_blank" rel="noopener noreferrer"
+                                url="https://soundcloud.com/gwena-l-dogson"
                                 className={styles.socialIcon} bgColor="white" fgColor="transparent"
-                                style={{width: "25px", height: "25px"}}/>
+                                style={{width: "30px", height: "30px"}}/>
+                    <SocialIcon target="_blank" rel="noopener noreferrer"
+                                url="https://www.linkedin.com/in/ggirod/"
+                                className={styles.socialIcon} bgColor="white" fgColor="transparent"
+                                style={{width: "30px", height: "30px"}}/>
+
+
                 </span>
                 <div className={styles.menuNav}>
                     <MenuLink route="/" name="Accueil"/>
