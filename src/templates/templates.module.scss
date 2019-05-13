@@ -3,34 +3,7 @@
 $otherNewsWidth: 250px;
 $newsInfosWidth: 240px;
 
-
-.noPosts {
-  font-weight: $weight-light;
-}
-
 .newsHeader {
-  height: 300px;
-  background-color: $background-secondary;
-  opacity: 1;
-  position: relative;
-  @extend .flexColumn;
-  @extend .flexCenter;
-
-  .newsSectionTitle {
-    @extend .sectionTitle;
-    align-self: center;
-    z-index: 3;
-  }
-
-  .backgroundImage {
-    position: absolute;
-    left: 0;
-    top: 0;
-    object-fit: cover;
-    opacity: 0.6;
-    z-index: 2;
-  }
-
   &.movies {
     .newsSectionTitle {
       background-color: $color-movies;
@@ -73,21 +46,46 @@ $newsInfosWidth: 240px;
 
     .newsPost {
       @extend .flexRow;
+      align-self: stretch;
 
       .newsInfosContainer {
         width: $newsInfosWidth;
         @extend .flexColumn;
 
         .dateContainer {
+          position: relative;
           @extend .flexColumn;
           @extend .flexCenter;
           @extend .flexAlignCenter;
-
+          padding: 20px 0;
+          box-sizing: border-box;
           height: 130px;
           width: 100%;
           background-color: $background-secondary;
           color: white;
           font-size: $size-small;
+
+          .category {
+            position: absolute;
+            top: 10px;
+
+            a {
+              @extend .flexRow;
+              @extend .flexAlignCenter;
+            }
+
+            .text {
+              font-size: $size-smaller;
+              padding: 3px;
+              color: white;
+            }
+
+            .icon {
+              font-size: 16px;
+              padding: 3px;
+              color: white;
+            }
+          }
         }
 
         .imgContainer {
@@ -118,11 +116,23 @@ $newsInfosWidth: 240px;
 
         .newsBody {
           flex: 1;
-          background-color: #EEEEEE;
           padding: 5px 30px;
           box-sizing: border-box;
           font-weight: $weight-light;
-          font-size: $size-small;
+          font-size: 17px;
+          line-height: 25px;
+
+          &> *:first-child {
+            margin-top: 0;
+          }
+
+          &> *:last-child {
+            margin-bottom: 0;
+          }
+
+          strong {
+            color: $color-primary;
+          }
 
           h1 {
             font-size: $size-bigger;
@@ -151,7 +161,7 @@ $newsInfosWidth: 240px;
                 font-size: 80px;
                 position: absolute;
                 left: 0;
-                top: -10px;
+                top: 20px;
                 color: #7a7a7a;
                 font-family: 'Montserrat', sans-serif;
               }
@@ -165,6 +175,46 @@ $newsInfosWidth: 240px;
           object-fit: cover;
         }
       }
+
+      &.gaming {
+        .newsInfosContainer {
+          .dateContainer {
+            background-color: $color-gaming;
+          }
+        }
+      }
+      &.movies {
+        .newsInfosContainer {
+          .dateContainer {
+            background-color: $color-movies;
+          }
+        }
+      }
+
+      &.tv {
+        .newsInfosContainer {
+          .dateContainer {
+            background-color: $color-tv;
+          }
+        }
+      }
+
+      &.music {
+        .newsInfosContainer {
+          .dateContainer {
+            background-color: $color-music;
+          }
+        }
+      }
+
+      &.books {
+        .newsInfosContainer {
+          .dateContainer {
+            background-color: $color-books;
+          }
+        }
+      }
+
     }
 
 
@@ -181,22 +231,11 @@ $newsInfosWidth: 240px;
         font-weight: $weight-light;
         font-size: $size-big;
         padding: 20px 0;
-
-        strong {
-          font-weight: $weight-regular;
-          color: $color-main;
-        }
       }
 
       .otherNewsList {
-        .item {
-          &:before {
-            content: "";
-            width: 150px;
-            display: block;
-            transition: all 0.2s ease-in-out;
-          }
 
+        .itemContainer {
           &:nth-child(even) {
             .content {
               background-color: white;
@@ -207,6 +246,15 @@ $newsInfosWidth: 240px;
             .content {
               background-color: rgba($background-secondary, 0.1);
             }
+          }
+        }
+
+        .item {
+          &:before {
+            content: "";
+            width: 150px;
+            display: block;
+            transition: all 0.2s ease-in-out;
           }
 
           &.gaming {
@@ -385,6 +433,49 @@ $newsInfosWidth: 240px;
 
 }
 
+.paginationContainer {
+  @extend .flexRow;
+  width: 100%;
+  font-size: $size-small;
+  position: relative;
+  margin: 20px 0;
+
+  .previousPage {
+    @extend .btnSecondary;
+    position: absolute;
+    left: 0;
+    @extend .flexRow;
+    @extend .flexAlignCenter;
+
+    .icon {
+      //color: $color-main;
+      padding: 0 5px;
+      font-size: $size-smaller;
+    }
+
+    .text {
+      //color: $color-main;
+    }
+  }
+
+  .nextPage {
+    @extend .btnSecondary;
+    position: absolute;
+    right: 0;
+    @extend .flexRow;
+    @extend .flexAlignCenter;
+
+    .icon {
+      //color: $color-main;
+      padding: 0 5px;
+      font-size: $size-smaller;
+    }
+
+    .text {
+      //color: $color-main;
+    }
+  }
+}
 
 @media #{$media-tablet} {
   .postsContainer {

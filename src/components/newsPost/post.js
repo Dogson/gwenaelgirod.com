@@ -4,6 +4,8 @@ import Dotdotdot from 'react-dotdotdot'
 import styles from "./post.module.scss"
 import cx from "classnames"
 import {MEDIA_CATEGORIES} from "../../helpers/const";
+import moment from "moment";
+import 'moment/locale/fr'
 
 class Post extends React.Component {
     constructor(props) {
@@ -17,6 +19,7 @@ class Post extends React.Component {
     }
 
     render() {
+        moment.locale('fr');
         const {post} = this.props;
         const newsCardContainerClass = cx(styles.newsCardContainer, styles[post.frontmatter.category]);
         const image = post.frontmatter.image ? withPrefix(post.frontmatter.image) : withPrefix(MEDIA_CATEGORIES[post.frontmatter.category].image);
@@ -45,7 +48,11 @@ class Post extends React.Component {
                                 <p>{summary}</p>
                             </Dotdotdot>
                         </div>
-                        <div className={styles.readMore}><span>Lire la suite > </span></div>
+                        <div className={styles.dateContainer}>{moment(post.frontmatter.date).format('LL')}</div>
+                        <div className={styles.readMore}>
+                            <span className={styles.dateContainer}>{moment(post.frontmatter.date).format('LL')}</span>
+                            <span className={styles.readMoreText}>Lire la suite > </span>
+                        </div>
                     </div>
                 </div>
             </Link>

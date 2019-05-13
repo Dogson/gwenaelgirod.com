@@ -2,9 +2,23 @@
 
 .mediaFiltersContainer {
   @extend .flexColumn;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+
+  .mediaFiltersHeader {
+    @extend .flexRow;
+    @extend .flexSpaceBetween;
+  }
+
+  .seeAllBtn {
+    @extend .btnSecondary;
+  }
+
+  .seeAllBtnActive {
+    display: none;
+  }
 
   .title {
+      font-weight: $weight-light;
   }
 
   .mediaFilters {
@@ -14,7 +28,7 @@
 
     .mediaFilter {
       position: relative;
-      @extend .btnSecondary;
+      @extend .btnPrimary;
       width: 100px;
       border: none;
 
@@ -23,7 +37,7 @@
         left: 70px;
         font-size: 24px;
         transition: all 0.2s ease-in-out;
-       bottom: 1px;
+        bottom: 1px;
       }
 
       .name {
@@ -58,6 +72,7 @@
 
       &:hover {
         background-color: transparent;
+
         .icon {
           font-size: $size-normal;
           transform: translateX(-62px);

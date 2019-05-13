@@ -68,22 +68,26 @@
 
   .postLink {
     flex: 1;
+
     &:hover {
       .readMore {
         height: 40px;
         transition: all 0.2s ease-in-out;
+
+        span {
+          opacity: 1;
+        }
       }
     }
   }
 
   .bodyContainer {
     margin: 10px 15px;
-    @extend .flexColumn;
 
     .titleContainer {
-
       font-size: $size-big;
       font-weight: $weight-bold;
+
 
       &:after {
         content: "";
@@ -100,6 +104,15 @@
       height: 50px;
     }
 
+    .dateContainer {
+      font-size: $size-smaller;
+      font-weight: $weight-light;
+      font-style: italic;
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+    }
+
     .readMore {
       height: 0;
       position: absolute;
@@ -111,12 +124,16 @@
       color: white;
       font-size: $size-small;
       text-align: right;
-
+      @extend .flexRow;
+      @extend .flexAlignCenter;
 
       span {
+        opacity: 0;
+      }
+
+      .readMoreText {
         position: absolute;
-        top: 12px;
-        right: 20px;
+        right: 15px;
       }
     }
   }
