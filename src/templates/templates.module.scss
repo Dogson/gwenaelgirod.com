@@ -122,11 +122,11 @@ $newsInfosWidth: 240px;
           font-size: 17px;
           line-height: 25px;
 
-          &> *:first-child {
+          & > *:first-child {
             margin-top: 0;
           }
 
-          &> *:last-child {
+          & > *:last-child {
             margin-bottom: 0;
           }
 
@@ -183,6 +183,7 @@ $newsInfosWidth: 240px;
           }
         }
       }
+
       &.movies {
         .newsInfosContainer {
           .dateContainer {
@@ -524,7 +525,8 @@ $newsInfosWidth: 240px;
     width: 100%;
 
     .newsPostContainer {
-      width: 400px;
+      max-width: 500px;
+      width: 100%;
       margin: auto;
 
       .newsPost {
@@ -537,6 +539,20 @@ $newsInfosWidth: 240px;
 
           .dateContainer {
             height: 25px;
+
+            .category {
+              left: 10px;
+              top: auto;
+
+              .text {
+                font-size: $size-small;
+              }
+            }
+
+            .date {
+              position: absolute;
+              right: 10px;
+            }
           }
         }
 
@@ -549,7 +565,7 @@ $newsInfosWidth: 240px;
           }
 
           .newsBody {
-
+            padding: 5px 5px;
           }
 
         }

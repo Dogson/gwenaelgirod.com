@@ -143,7 +143,7 @@ class ActuTemplate extends React.Component {
                                                 <span className={styles.text}>{MEDIA_CATEGORIES[frontmatter.category].name}</span>
                                                 </Link>
                                             </div>
-                                            <div>{moment(frontmatter.date).format('LL')}</div>
+                                            <div className={styles.date}>{moment(frontmatter.date).format('LL')}</div>
                                         </div>
                                         <div className={styles.imgContainer}>
                                             {this.renderBodyNewsImage()}
