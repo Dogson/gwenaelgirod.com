@@ -514,6 +514,12 @@ $newsInfosWidth: 240px;
 }
 
 @media #{$media-phone} {
+  .newsHeader {
+    .newsSectionTitle {
+      width: 75%;
+      margin-left: 0;
+    }
+  }
   .postsContainer {
     flex-wrap: wrap;
     display: flex;

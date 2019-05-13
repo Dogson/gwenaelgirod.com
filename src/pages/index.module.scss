@@ -215,6 +215,10 @@
 
     .descriptionTextContainer {
       margin: 0;
+
+      .body {
+        padding: 40px 5px;
+      }
     }
 
     .navigationPanelContainer {
@@ -225,7 +229,7 @@
         align-items: center;
 
         .btnPrimary {
-          width: 150px;
+          width: 90%;
           height: 30px;
           margin: 10px;
           align-items: center;
