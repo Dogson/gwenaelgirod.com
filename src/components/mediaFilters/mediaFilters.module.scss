@@ -18,7 +18,7 @@
   }
 
   .title {
-      font-weight: $weight-light;
+    font-weight: $weight-light;
   }
 
   .mediaFilters {
@@ -34,7 +34,7 @@
 
       .icon {
         position: absolute;
-        left: 70px;
+        left: 43%;
         font-size: 24px;
         transition: all 0.2s ease-in-out;
         bottom: 1px;
@@ -75,7 +75,7 @@
 
         .icon {
           font-size: $size-normal;
-          transform: translateX(-62px);
+          left: 8px;
           margin-bottom: 0;
           bottom: 5px;
         }
@@ -90,7 +90,7 @@
 
       .icon {
         font-size: $size-normal;
-        transform: translateX(-62px);
+        left: 8px;
         margin-bottom: 0;
         bottom: 5px;
       }
@@ -126,4 +126,54 @@
     }
   }
 
+}
+
+@media #{$media-tablet} {
+  .mediaFiltersContainer {
+    padding: 0 5px;
+    .mediaFilters {
+      flex-wrap: wrap;
+      .mediaFilter {
+        margin: 5px;
+        width: 70px;
+        background-color: transparent;
+
+        .icon {
+          font-size: $size-normal;
+          left: 8px;
+          margin-bottom: 0;
+          bottom: 5px;
+        }
+
+        .name {
+          font-size: $size-smaller;
+          font-weight: $weight-regular;
+          opacity: 1;
+        }
+
+      }
+    }
+  }
+}
+
+@media #{$media-phone} {
+  .mediaFiltersContainer {
+    .mediaFilters {
+      flex-direction: column;
+      align-items: center;
+
+        .mediaFilter {
+          margin: 5px;
+          width: 200px;
+          background-color: transparent;
+
+          .name {
+            font-size: $size-small;
+            font-weight: $weight-regular;
+            opacity: 1;
+          }
+
+        }
+    }
+  }
 }
