@@ -20,6 +20,7 @@ const Posts = ({posts}) => {
 };
 
 export default function BlogTemplate(props) {
+    console.log(props);
     const {data: {posts, allPosts}, pageContext: {category}} = props;
 
     const navigationItems = [
@@ -65,38 +66,46 @@ export default function BlogTemplate(props) {
 }
 
 export const blogCategoryQuery = graphql`
-query($category: String!) {
-    posts: allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}, filter: {frontmatter: {type: {eq: "post"}, category: {eq: $category}}}) {
-          edges {
-            node {            
-              id
-              excerpt(pruneLength: 250)
-              fileAbsolutePath
-              frontmatter {
-                date
-                title
-                summary
-                image
-                category
+query($category: String!, $skip: Int!, $limit: Int!) {
+    posts: allMarkdownRemark(
+          sort: {order: DESC, fields: [frontmatter___date]}, filter: {frontmatter: {type: {eq: "post"}, category: {eq: $category}}},
+          limit: $limit
+          skip: $skip
+          ) {
+              edges {
+                node {            
+                  id
+                  excerpt(pruneLength: 250)
+                  fileAbsolutePath
+                  frontmatter {
+                    date
+                    title
+                    summary
+                    image
+                    category
+                  }
+                }
               }
-            }
-          }
       },
-       allPosts: allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}, filter: {frontmatter: {type: {eq: "post"}}}) {
-          edges {
-            node {            
-              id
-              excerpt(pruneLength: 250)
-              fileAbsolutePath
-              frontmatter {
-                date
-                title
-                summary
-                image
-                category
+       allPosts: allMarkdownRemark(
+          sort: {order: DESC, fields: [frontmatter___date]}, filter: {frontmatter: {type: {eq: "post"}}},
+          limit: $limit
+          skip: $skip
+          ) {
+              edges {
+                node {            
+                  id
+                  excerpt(pruneLength: 250)
+                  fileAbsolutePath
+                  frontmatter {
+                    date
+                    title
+                    summary
+                    image
+                    category
+                  }
+                }
               }
-            }
-          }
       }
   }
 `;

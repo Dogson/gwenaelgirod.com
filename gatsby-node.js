@@ -19,48 +19,93 @@ exports.createPages = ({actions, graphql}) => {
 }
 
   `).then(result => {
-      const {errors, data} = result;
+        const {errors, data} = result;
         if (errors) {
             return Promise.reject(errors);
         }
         const {blogPosts} = data;
+        const postsPerPage = 3;
+        const numPages = Math.ceil(blogPosts.edges.length / postsPerPage);
         blogPosts.edges.forEach(({node}) => {
             createPage({
-                path: `/posts/${node.fileAbsolutePath.substring(node.fileAbsolutePath.lastIndexOf('/')+1).slice(0, -3)}`,
+                path: `/posts/${node.fileAbsolutePath.substring(node.fileAbsolutePath.lastIndexOf('/') + 1).slice(0, -3)}`,
                 component: actuTemplate,
                 context: {id: node.id}, // additional data can be passed via context
             })
         });
-        createPage({
-            path: "/blog/",
-            component: blogTemplate,
-            context: {category: "all", title: "Blog"}
-        });
-        createPage({
-            path: "/blog/films/",
-            component: blogTemplate,
-            context: {category: "movies", title: "Films"}
-        });
-        createPage({
-            path: "/blog/jeux-video/",
-            component: blogTemplate,
-            context: {category: "gaming", title: "Jeux vidéo"}
-        });
-        createPage({
-            path: "/blog/series-tv/",
-            component: blogTemplate,
-            context: {category: "tv", title: "Séries TV"}
-        });
-        createPage({
-            path: "/blog/litterature/",
-            component: blogTemplate,
-            context: {category: "books", title: "Littérature"}
-        });
-        createPage({
-            path: "/blog/musique/",
-            component: blogTemplate,
-            context: {category: "music", title: "Musique"}
-        });
-
+        Array.from({length: numPages}).forEach((_, i) => {
+            createPage({
+                path: i === 0 ? `/blog/` : `/blog/${i + 1}`,
+                component: blogTemplate,
+                context: {
+                    limit: postsPerPage,
+                    skip: i * postsPerPage,
+                    numPages,
+                    currentPage: i + 1,
+                    category: "all",
+                    title: "Blog"
+                },
+            });
+            createPage({
+                path: i === 0 ? `/blog/films/` : `/blog/films/${i + 1}`,
+                component: blogTemplate,
+                context: {
+                    limit: postsPerPage,
+                    skip: i * postsPerPage,
+                    numPages,
+                    currentPage: i + 1,
+                    category: "movies",
+                    title: "Films"
+                },
+            });
+            createPage({
+                path: i === 0 ? `/blog/jeux-video/` : `/blog/jeux-video/${i + 1}`,
+                component: blogTemplate,
+                context: {
+                    limit: postsPerPage,
+                    skip: i * postsPerPage,
+                    numPages,
+                    currentPage: i + 1,
+                    category: "gaming",
+                    title: "Jeux vidéo"
+                }
+            });
+            createPage({
+                path: i === 0 ? `/blog/series-tv/` : `/blog/series-tv/${i + 1}`,
+                component: blogTemplate,
+                context: {
+                    limit: postsPerPage,
+                    skip: i * postsPerPage,
+                    numPages,
+                    currentPage: i + 1,
+                    category: "tv",
+                    title: "Séries TV"
+                }
+            });
+            createPage({
+                path: i === 0 ? `/blog/litterature/` : `/blog/litterature/${i + 1}`,
+                component: blogTemplate,
+                context: {
+                    limit: postsPerPage,
+                    skip: i * postsPerPage,
+                    numPages,
+                    currentPage: i + 1,
+                    category: "books",
+                    title: "Littérature"
+                }
+            });
+            createPage({
+                path: i === 0 ? `/blog/musique/` : `/blog/musique/${i + 1}`,
+                component: blogTemplate,
+                context: {
+                    limit: postsPerPage,
+                    skip: i * postsPerPage,
+                    numPages,
+                    currentPage: i + 1,
+                    category: "music",
+                    title: "Musique"
+                }
+            });
+        })
     })
 };

@@ -18,11 +18,12 @@ const MediaFilters = () => {
                     if (key === "all") {
                         return null;
                     }
-                    return <div key={index}><Link className={classNames} activeClassName={styles.mediaFilterActive}
-                                                  to={details.path}>
-                        <span className={styles.icon}>{details.icon}</span>
-                        <span className={styles.name}>{details.name}</span>
-                    </Link>
+                    return <div key={index}>
+                        <Link className={classNames} activeClassName={styles.mediaFilterActive}
+                              to={details.path}>
+                            <span className={styles.icon}>{details.icon}</span>
+                            <span className={styles.name}>{details.name}</span>
+                        </Link>
                     </div>
                 }
             )}
