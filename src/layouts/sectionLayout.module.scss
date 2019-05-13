@@ -4,6 +4,7 @@
   background-color: $background-primary;
   @extend .flexRow;
   @extend .flexCenter;
+  flex: 1;
 
   .sectionTitle {
     margin-bottom: 30px;

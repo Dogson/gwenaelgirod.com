@@ -4,8 +4,7 @@
   @extend .flexRow;
   height: 210px;
   background: $color-main;
-  //width: 100%;
-  z-index: 2;
+  z-index: 3;
 
   .logoContainer {
     @extend .flexRow;

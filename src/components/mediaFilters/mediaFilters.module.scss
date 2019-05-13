@@ -1,0 +1,114 @@
+@import '../../styles/global';
+
+.mediaFiltersContainer {
+  @extend .flexColumn;
+  margin-bottom: 20px;
+
+  .title {
+  }
+
+  .mediaFilters {
+    margin: 10px 0;
+    @extend .flexRow;
+    @extend .flexSpaceBetween;
+
+    .mediaFilter {
+      position: relative;
+      @extend .btnSecondary;
+      width: 100px;
+      border: none;
+
+      .icon {
+        position: absolute;
+        left: 70px;
+        font-size: 24px;
+        transition: all 0.2s ease-in-out;
+       bottom: 1px;
+      }
+
+      .name {
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+      }
+
+      &.gaming {
+        color: $color-gaming;
+        border: 1px solid $color-gaming;
+      }
+
+      &.movies {
+        color: $color-movies;
+        border: 1px solid $color-movies;
+      }
+
+      &.music {
+        color: $color-music;
+        border: 1px solid $color-music;
+      }
+
+      &.tv {
+        color: $color-tv;
+        border: 1px solid $color-tv;
+      }
+
+      &.books {
+        color: $color-books;
+        border: 1px solid $color-books;
+      }
+
+      &:hover {
+        background-color: transparent;
+        .icon {
+          font-size: $size-normal;
+          transform: translateX(-62px);
+          margin-bottom: 0;
+          bottom: 5px;
+        }
+
+        .name {
+          opacity: 1;
+        }
+      }
+    }
+
+    .mediaFilterActive {
+
+      .icon {
+        font-size: $size-normal;
+        transform: translateX(-62px);
+        margin-bottom: 0;
+        bottom: 5px;
+      }
+
+      .name {
+        opacity: 1;
+      }
+
+      &.gaming {
+        color: white;
+        background-color: $color-gaming;
+      }
+
+      &.movies {
+        color: white;
+        background-color: $color-movies;
+      }
+
+      &.music {
+        color: white;
+        background-color: $color-music;
+      }
+
+      &.tv {
+        color: white;
+        background-color: $color-tv;
+      }
+
+      &.books {
+        color: white;
+        background-color: $color-books;
+      }
+    }
+  }
+
+}

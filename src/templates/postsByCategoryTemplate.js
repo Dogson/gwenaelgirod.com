@@ -8,12 +8,18 @@ import SectionLayout from "../layouts/sectionLayout"
 import Post from "../components/newsPost/post"
 import styles from "./templates.module.scss";
 import {Helmet} from "react-helmet";
+import MediaFilters from "../components/mediaFilters/mediaFilters";
+
+const Posts = ({posts}) => {
+    if (posts.edges.length) {
+        return posts.edges
+            .map((post, i) => <Post odd={i % 2} key={post.node.id} post={post.node}/>);
+    }
+    return <div className={styles.noPosts}>Aucun billet n'a encore été écrit dans cette catégorie.</div>
+};
 
 export default function PostsByCategoryTemplate(props) {
     const {data: {posts}, pageContext: {category}} = props;
-
-    const Posts = posts.edges
-        .map((post, i) => <Post odd={i % 2} key={post.node.id} post={post.node}/>);
 
     const navigationItems = [
         {
@@ -34,7 +40,7 @@ export default function PostsByCategoryTemplate(props) {
 
     return <PageLayout>
         <Helmet>
-            <meta charSet="utf-8" />
+            <meta charSet="utf-8"/>
             <title>GG - {MEDIA_CATEGORIES[category].name}</title>
         </Helmet>
         <div className={newsHeaderClasses}>
@@ -46,8 +52,9 @@ export default function PostsByCategoryTemplate(props) {
                  width="100%"/>
         </div>
         <SectionLayout navigationPath={navigationItems} noPaddingTop>
+            <MediaFilters/>
             <div className={styles.postsContainer}>
-                {Posts}
+                <Posts posts={posts}/>
             </div>
         </SectionLayout>
     </PageLayout>

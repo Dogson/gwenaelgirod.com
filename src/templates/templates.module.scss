@@ -3,6 +3,11 @@
 $otherNewsWidth: 250px;
 $newsInfosWidth: 240px;
 
+
+.noPosts {
+  font-weight: $weight-light;
+}
+
 .newsHeader {
   height: 300px;
   background-color: $background-secondary;
@@ -447,6 +452,7 @@ $newsInfosWidth: 240px;
         .newsContent {
           width: 100%;
           align-self: center;
+
           .newsTitle {
             display: none;
           }
