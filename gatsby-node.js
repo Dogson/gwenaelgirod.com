@@ -52,7 +52,7 @@ exports.createPages = ({actions, graphql}) => {
             throw errors;
         }
         const {blogPosts} = data;
-        const postsPerPage = 3;
+        const postsPerPage = 6;
         let nbPostsByCategory = {
             movies: 0,
             gaming: 0,

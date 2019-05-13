@@ -73,6 +73,10 @@
       .readMore {
         height: 40px;
         transition: all 0.2s ease-in-out;
+
+        span {
+          opacity: 1;
+        }
       }
     }
   }
@@ -83,13 +87,6 @@
     .titleContainer {
       font-size: $size-big;
       font-weight: $weight-bold;
-
-
-      .dateContainer {
-        font-size: $size-smaller;
-        font-weight: $weight-light;
-        font-style: italic;
-      }
 
 
       &:after {
@@ -107,6 +104,15 @@
       height: 50px;
     }
 
+    .dateContainer {
+      font-size: $size-smaller;
+      font-weight: $weight-light;
+      font-style: italic;
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+    }
+
     .readMore {
       height: 0;
       position: absolute;
@@ -118,12 +124,16 @@
       color: white;
       font-size: $size-small;
       text-align: right;
-
+      @extend .flexRow;
+      @extend .flexAlignCenter;
 
       span {
+        opacity: 0;
+      }
+
+      .readMoreText {
         position: absolute;
-        top: 12px;
-        right: 20px;
+        right: 15px;
       }
     }
   }

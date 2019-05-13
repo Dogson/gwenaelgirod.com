@@ -42,14 +42,17 @@ class Post extends React.Component {
                         <div className={styles.titleContainer}
                              ref={this.titleContainerRef}>
                             <div>{post.frontmatter.title}</div>
-                            <div className={styles.dateContainer}>{moment(post.frontmatter.date).format('LL')}</div>
                         </div>
                         <div className={styles.summary}>
                             <Dotdotdot clamp={`${this.state.summaryHeight}px`}>
                                 <p>{summary}</p>
                             </Dotdotdot>
                         </div>
-                        <div className={styles.readMore}><span>Lire la suite > </span></div>
+                        <div className={styles.dateContainer}>{moment(post.frontmatter.date).format('LL')}</div>
+                        <div className={styles.readMore}>
+                            <span className={styles.dateContainer}>{moment(post.frontmatter.date).format('LL')}</span>
+                            <span className={styles.readMoreText}>Lire la suite > </span>
+                        </div>
                     </div>
                 </div>
             </Link>
