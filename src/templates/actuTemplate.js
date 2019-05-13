@@ -71,7 +71,7 @@ class ActuTemplate extends React.Component {
                 {edges.map(({node}, i) => {
                         const linkClassName = cx(styles.item, styles[node.frontmatter.category]);
                         const categoryClassName = cx(styles.category, styles[node.frontmatter.category]);
-                        return <div key={i}>
+                        return <div key={i} className={styles.itemContainer}>
                             <Link className={linkClassName}
                                   to={`/posts/${node.fileAbsolutePath.substring(node.fileAbsolutePath.lastIndexOf('/') + 1).slice(0, -3)}`}>
                                 <div className={styles.content}>

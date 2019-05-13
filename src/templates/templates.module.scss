@@ -46,6 +46,7 @@ $newsInfosWidth: 240px;
 
     .newsPost {
       @extend .flexRow;
+      align-self: stretch;
 
       .newsInfosContainer {
         width: $newsInfosWidth;
@@ -96,6 +97,10 @@ $newsInfosWidth: 240px;
           box-sizing: border-box;
           font-weight: $weight-light;
           font-size: $size-small;
+
+          strong {
+            color: $color-primary;
+          }
 
           h1 {
             font-size: $size-bigger;
@@ -157,14 +162,8 @@ $newsInfosWidth: 240px;
       }
 
       .otherNewsList {
-        .item {
-          &:before {
-            content: "";
-            width: 150px;
-            display: block;
-            transition: all 0.2s ease-in-out;
-          }
 
+        .itemContainer {
           &:nth-child(even) {
             .content {
               background-color: white;
@@ -175,6 +174,15 @@ $newsInfosWidth: 240px;
             .content {
               background-color: rgba($background-secondary, 0.1);
             }
+          }
+        }
+
+        .item {
+          &:before {
+            content: "";
+            width: 150px;
+            display: block;
+            transition: all 0.2s ease-in-out;
           }
 
           &.gaming {
