@@ -97,6 +97,7 @@ class ActuTemplate extends React.Component {
         const {currentNewsPost} = this.props.data; // data.markdownRemark holds our post data
         const {frontmatter, html, fileAbsolutePath} = currentNewsPost;
         moment.locale('fr');
+        const classNames = cx(styles.newsPost, styles[frontmatter.category]);
         const navigationItems = [
             {
                 title: "Accueil",
@@ -120,7 +121,6 @@ class ActuTemplate extends React.Component {
             <PageLayout>
                 <Helmet>
                     <meta charSet="utf-8"/>
-                    z
                     <title>{frontmatter.title}</title>
                 </Helmet>
                 <div className={styles.newsHeader}>
@@ -133,11 +133,17 @@ class ActuTemplate extends React.Component {
                     <div className={styles.newsWrapper}>
                         <NavigationPath navigationItems={navigationItems}/>
                         <div className={styles.newsPostContainer}>
-                            <div className={styles.newsPost}>
+                            <div className={classNames}>
                                 <div className={styles.newsInfosContainer}>
                                     <div className={styles.newsInfos}>
                                         <div className={styles.dateContainer}>
-                                            {moment(frontmatter.date).format('LL')}
+                                            <div className={styles.category}>
+                                                <Link to={MEDIA_CATEGORIES[frontmatter.category].path}>
+                                                <span className={styles.icon}>{MEDIA_CATEGORIES[frontmatter.category].icon}</span>
+                                                <span className={styles.text}>{MEDIA_CATEGORIES[frontmatter.category].name}</span>
+                                                </Link>
+                                            </div>
+                                            <div>{moment(frontmatter.date).format('LL')}</div>
                                         </div>
                                         <div className={styles.imgContainer}>
                                             {this.renderBodyNewsImage()}
@@ -146,7 +152,6 @@ class ActuTemplate extends React.Component {
                                     {this.state.collapse ? this.renderOtherNewsPanel() : null}
                                 </div>
                                 <div className={styles.newsContent}>
-                                    <div className={styles.newsTitle}> {frontmatter.title} </div>
                                     <div className={styles.newsBody} dangerouslySetInnerHTML={{__html: html}}/>
                                 </div>
                             </div>

@@ -137,14 +137,28 @@ strong {
 }
 
 .btnSecondary {
+  position: relative;
   @extend .btnPrimary;
   border: none;
   font-weight: $weight-regular;
-  padding: 0;
+  padding: 0 0 10px 0;
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    height: 1px;
+    width: 0;
+    border-bottom: 1px solid $color-main;
+    transition: all 0.2s ease-in-out;
+  }
 
   &:hover {
     background-color: transparent;
     color: $color-main;
+
+    &:after {
+      width: 100%;
+    }
   }
 }
 
@@ -179,9 +193,9 @@ strong {
 }
 
 @media #{$media-phone} {
-    .sectionTitle {
-      padding: 8px 30px;
-      font-size: $size-big;
-      font-weight: $weight-regular;
-    }
+  .sectionTitle {
+    padding: 8px 30px;
+    font-size: $size-big;
+    font-weight: $weight-regular;
+  }
 }

@@ -11,7 +11,7 @@ export default ({children, title, action, odd, withBorders, noPaddingTop, naviga
 
     function SectionButton() {
         if (action) {
-            return <Link className={styles.btnPrimary} to={action.path}>{action.title}</Link>
+            return <Link className={styles.btnSecondary} to={action.path}>{action.title}</Link>
         }
         return null;
     }
