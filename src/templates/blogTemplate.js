@@ -11,6 +11,7 @@ import {Helmet} from "react-helmet";
 import MediaFilters from "../components/mediaFilters/mediaFilters";
 import NoPosts from "../components/noPosts/noPosts";
 import {Link} from "@reach/router";
+import {FaArrowLeft, FaArrowRight} from "react-icons/fa";
 
 const Posts = ({posts}) => {
     if (posts.edges.length) {
@@ -22,7 +23,6 @@ const Posts = ({posts}) => {
 
 export default function BlogTemplate(props) {
     const {data: {posts, allPosts}, pageContext: {category, currentPage, numPages}} = props;
-    console.log(props);
     const pathname = MEDIA_CATEGORIES[category].path;
     const isFirst = currentPage === 1;
     const isLast = currentPage === numPages;
@@ -67,16 +67,20 @@ export default function BlogTemplate(props) {
             <div className={styles.postsContainer}>
                 <Posts posts={category === "all" ? allPosts : posts}/>
             </div>
-            {!isFirst && (
-                <Link to={prevPage} rel="prev">
-                    ← Previous Page
-                </Link>
-            )}
-            {!isLast && (
-                <Link to={nextPage} rel="next">
-                    Next Page →
-                </Link>
-            )}
+            <div className={styles.paginationContainer}>
+                {!isFirst && (
+                    <Link className={styles.previousPage} to={prevPage} rel="prev">
+                        <FaArrowLeft className={styles.icon}/>
+                        <span className={styles.text}>Page précédente</span>
+                    </Link>
+                )}
+                {!isLast && (
+                    <Link className={styles.nextPage} to={nextPage} rel="next">
+                        <span className={styles.text}>Page suivante</span>
+                        <FaArrowRight className={styles.icon}/>
+                    </Link>
+                )}
+            </div>
         </SectionLayout>
     </PageLayout>
 }

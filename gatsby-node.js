@@ -47,9 +47,7 @@ exports.createPages = ({actions, graphql}) => {
     }
   }
   }`).then(result => {
-        console.log("bite");
         const {errors, data} = result;
-        console.log(data);
         if (errors) {
             throw errors;
         }
@@ -83,8 +81,6 @@ exports.createPages = ({actions, graphql}) => {
         Object.keys(numPages).forEach((key) => {
             const category = MEDIA_CATEGORIES[key];
             const nbPages = numPages[key];
-            console.log(nbPages);
-            console.log(category);
             Array.from({length: nbPages}).forEach((_, i) => {
                 createPage({
                     path: i === 0 ? category.path : `${category.path}${i + 1}`,
