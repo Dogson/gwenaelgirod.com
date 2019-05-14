@@ -46,11 +46,13 @@ $newsInfosWidth: 240px;
 
     .newsPost {
       @extend .flexRow;
+      flex: 1;
       align-self: stretch;
 
       .newsInfosContainer {
         width: $newsInfosWidth;
         @extend .flexColumn;
+        @extend .flexSpaceBetween;
 
         .dateContainer {
           position: relative;
@@ -98,7 +100,7 @@ $newsInfosWidth: 240px;
       }
 
       .newsContent {
-        width: calc(#{$containerWidth} - (#{$newsInfosWidth} + #{$otherNewsWidth}));
+        max-width: 600px;
         align-self: stretch;
         @extend .flexColumn;
 
@@ -223,10 +225,10 @@ $newsInfosWidth: 240px;
       border: 1px solid $background-secondary;
       border-radius: 5px;
       align-self: flex-end;
-      width: $otherNewsWidth;
       margin: 0 15px 0 15px;
       box-sizing: border-box;
       text-align: center;
+      width: 95%;
 
       .otherNewsTitle {
         font-weight: $weight-light;
@@ -504,11 +506,6 @@ $newsInfosWidth: 240px;
           max-width: 600px;
         }
       }
-
-      .otherNews {
-        align-self: center;
-        width: 95%;
-      }
     }
   }
 }
@@ -529,6 +526,7 @@ $newsInfosWidth: 240px;
 
   .newsWrapper {
     width: 100%;
+    padding: 0;
 
     .newsPostContainer {
       max-width: 500px;
@@ -572,6 +570,19 @@ $newsInfosWidth: 240px;
 
           .newsBody {
             padding: 5px 5px;
+
+            blockquote {
+              padding: 20px 0;
+
+              p {
+                width: auto;
+              }
+
+              &:before {
+                top: 0;
+                font-size: 60px;
+              }
+            }
           }
 
         }

@@ -30,7 +30,7 @@ class ActuTemplate extends React.Component {
 
 
     resize() {
-        let collapse = (window.innerWidth <= 1020 && window.innerWidth >= 600);
+        let collapse = (window.innerWidth >= 600);
         if (collapse !== this.state.collapse) {
             this.setState({collapse: collapse});
         }
