@@ -20,7 +20,7 @@ collections:
     create: true
     slug: "{{date}}_{{slug}}"
     fields:
-      - { name: "type", widget: "hidden", label: "Type", default: "posts" }
+      - { name: "type", widget: "hidden", label: "Type", default: "post" }
       - { name: date, label: Date de publication, widget: date, format: "YYYY-MM-DD" }
       - { name: category,
             label: "Catégorie",

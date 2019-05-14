@@ -1,5 +1,5 @@
 ---
-type: posts
+type: post
 date: '2019-05-14'
 category: music
 image: /assets/images/assumeform.jpg
