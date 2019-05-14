@@ -79,10 +79,9 @@ class DescriptionSection extends React.Component {
 
         return <span>
             <div className={classnames}>
-                 <div className={styles.obj}><strong>ob</strong></div>
-                <div className={styles.subj}><strong>sub</strong></div>
+                 <div className={styles.obj}><strong>objective</strong></div>
+                <div className={styles.subj}><strong>subjective</strong></div>
             </div>
-            <span><strong>jective</strong></span>
         </span>
     }
 
