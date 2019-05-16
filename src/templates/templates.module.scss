@@ -161,23 +161,26 @@ $newsInfosWidth: 240px;
           h1 {
             font-size: $size-bigger;
             font-weight: $weight-bold;
+            margin-top: 40px;
           }
 
           h2 {
             font-size: $size-big;
             font-weight: $weight-regular;
+            margin-top: 40px;
           }
 
           blockquote {
-            font-style: normal;
             margin: auto;
             padding: 10px 0 10px 10px;
             position: relative;
+            font-style: italic;
 
             p {
               width: 350px;
-              margin-left: 20px;
+              margin-left: 40px;
               margin-top: 0;
+              margin-bottom: 0;
 
               &:before {
                 display: block;
