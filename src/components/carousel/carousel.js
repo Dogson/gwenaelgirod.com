@@ -5,7 +5,7 @@ import styles from "./carousel.module.scss";
 import {Link} from "gatsby"
 import {MEDIA_CATEGORIES} from "../../helpers/const";
 
-const Carousel = ({items, settings}) => {
+const Carousel = ({items}) => {
     const config = {
         dots: true,
         infinite: true,
@@ -34,24 +34,23 @@ const Carousel = ({items, settings}) => {
     function CarouselItem({item}) {
         const classNames = cx(styles.carouselItemWrapper, styles[item.category]);
 
-        return <div className={classNames}>
-            <img className={styles.backgroundImage} src={item.image} alt={item.title} height="100%"
-                 width="100%"/>
-            <div className={styles.carouselItemContainer}>
-                <Link className={styles.titleContainer}
-                      to={`/posts/${item.path.substring(item.path.lastIndexOf('/') + 1).slice(0, -3)}`}>
-                    <div className={styles.tag}>
-                        <span className={styles.icon}>{MEDIA_CATEGORIES[item.category].icon}</span>
-                        <span className={styles.text}>{MEDIA_CATEGORIES[item.category].name}</span>
+        return <Link to={`/posts/${item.path.substring(item.path.lastIndexOf('/') + 1).slice(0, -3)}`}>
+            <div className={classNames}>
+                <img className={styles.backgroundImage} src={item.image} alt={item.title} height="100%"
+                     width="100%"/>
+                <div className={styles.carouselItemContainer}>
+                    <div className={styles.titleContainer}>
+                        <div className={styles.tag}>
+                            <span className={styles.icon}>{MEDIA_CATEGORIES[item.category].icon}</span>
+                            <span className={styles.text}>{MEDIA_CATEGORIES[item.category].name}</span>
+                        </div>
+                        <div className={styles.title}>
+                            <span>{item.title}</span>
+                        </div>
                     </div>
-                    <div className={styles.title}>
-                        <span>{item.title}</span>
-                        <span className={styles.details}>{settings.clickText}</span>
-                    </div>
-                </Link>
+                </div>
             </div>
-        </div>
-
+        </Link>
     }
 
     return (

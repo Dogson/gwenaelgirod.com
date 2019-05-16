@@ -42,10 +42,7 @@ const HomeCarousel = ({posts}) => {
             category: item.node.frontmatter.category
         };
     });
-    const settings = {
-        clickText: "Lire la suite >",
-    };
-    return <Carousel settings={settings} items={items}/>
+    return <Carousel items={items}/>
 };
 
 
