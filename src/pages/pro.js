@@ -9,73 +9,99 @@ import {SkillsCard} from "../components/SkillsCard/skillsCard";
 import {Helmet} from "react-helmet";
 
 
-const ProfessionalProfile = () => {
-    const navigationItems = [
-        {
-            title: "Accueil",
-            path: '/'
-        },
-        {
-            title: "Profil professionnel",
-            path: '/pro/'
+class ProfessionalProfile extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            mobile: true
         }
-    ];
-    return <PageLayout>
-        <Helmet>
-            <title>Gwenaël GIROD - Développeur web</title>
-        </Helmet>
-        <div className={styles.descriptionHeader}>
-            <div className={styles.descriptionSectionTitle}>
-                <span>Mon profil professionnel</span>
-            </div>
-            <img className={styles.descriptionBackgroundImage} src={"/assets/images/moi-cover.jpg"}
-                 alt="Je suis un paysage Casamançais" height="100%"
-                 width="100%"/>
-        </div>
-        <SectionLayout noPaddingTop navigationPath={navigationItems}>
-            <TrackVisibility once partialVisibility={true}>
-                <DescriptionContainer/>
-            </TrackVisibility>
-        </SectionLayout>
+    }
 
-        <SectionLayout odd title="Compétences">
-            <div className={styles.skillsContainer}>
-                <div className="wrapper">
-                    <SkillsBody/>
+    componentDidMount() {
+        window.addEventListener("resize", this.resize.bind(this));
+        this.resize();
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener("resize", this.resize.bind(this));
+    }
+
+    resize() {
+        let mobile = (window.innerWidth <= 600);
+        if (mobile !== this.state.mobile) {
+            this.setState({mobile});
+        }
+    }
+
+
+    render() {
+        const navigationItems = [
+            {
+                title: "Accueil",
+                path: '/'
+            },
+            {
+                title: "Profil professionnel",
+                path: '/pro/'
+            }
+        ];
+        return <PageLayout>
+            <Helmet>
+                <title>Gwenaël GIROD - Développeur web</title>
+            </Helmet>
+            <div className={styles.descriptionHeader}>
+                <div className={styles.descriptionSectionTitle}>
+                    <span>Mon profil professionnel</span>
                 </div>
+                <img className={styles.descriptionBackgroundImage} src={"/assets/images/moi-cover.jpg"}
+                     alt="Je suis un paysage Casamançais" height="100%"
+                     width="100%"/>
             </div>
-        </SectionLayout>
+            <SectionLayout noPaddingTop navigationPath={navigationItems}>
+                <TrackVisibility once partialVisibility={true}>
+                    <DescriptionContainer mobile={this.state.mobile}/>
+                </TrackVisibility>
+            </SectionLayout>
 
-        <SectionLayout title="Contact">
-            <div className={styles.skillsContainer}>
-                <div className="wrapper">
-                    <TrackVisibility once>
-                        <ContactBody/>
-                    </TrackVisibility>
+            <SectionLayout odd title="Compétences">
+                <div className={styles.skillsContainer}>
+                    <div className="wrapper">
+                        <SkillsBody mobile={this.state.mobile}/>
+                    </div>
                 </div>
-            </div>
-        </SectionLayout>
-    </PageLayout>
-};
+            </SectionLayout>
 
-const DescriptionContainer = ({isVisible}) => {
-    let classNames = cx(styles.descriptionContainer, {[styles.visible]: isVisible});
+            <SectionLayout title="Contact">
+                <div className={styles.skillsContainer}>
+                    <div className="wrapper">
+                        <TrackVisibility partialVisibility once>
+                            <ContactBody mobile={this.state.mobile}/>
+                        </TrackVisibility>
+                    </div>
+                </div>
+            </SectionLayout>
+        </PageLayout>
+    }
+}
+
+const DescriptionContainer = ({isVisible, mobile}) => {
+    let classNames = cx(styles.descriptionContainer, {[styles.visible]: isVisible || mobile});
     return <div className={classNames}>
         <div className={styles.descriptionWrapper}>
             <TrackVisibility once partialVisibility={true}>
-                <DescriptionLeftPanel/>
+                <DescriptionLeftPanel mobile={mobile}/>
             </TrackVisibility>
             <div style={{zIndex: 3, backgroundColor: 'white'}}>
                 <TrackVisibility once partialVisibility={true}>
-                    <DescriptionBody/>
+                    <DescriptionBody mobile={mobile}/>
                 </TrackVisibility>
             </div>
         </div>
     </div>
 };
 
-const DescriptionLeftPanel = ({isVisible}) => {
-    let classNames = cx(styles.descriptionLeftPanel, {[styles.visible]: isVisible});
+const DescriptionLeftPanel = ({isVisible, mobile}) => {
+    let classNames = cx(styles.descriptionLeftPanel, {[styles.visible]: isVisible || mobile});
     return <div className={classNames}>
         <div className={styles.title}>
             Présentation
@@ -86,8 +112,8 @@ const DescriptionLeftPanel = ({isVisible}) => {
 };
 
 
-const DescriptionBody = ({isVisible}) => {
-    let classNames = cx(styles.bodyWrapper, {[styles.visible]: isVisible});
+const DescriptionBody = ({isVisible, mobile}) => {
+    let classNames = cx(styles.bodyWrapper, {[styles.visible]: isVisible || mobile});
     return <div className={classNames}>
         <div className={styles.body}>
             <DescriptionSection1/>
@@ -143,38 +169,38 @@ const DescriptionSection2 = () => {
     </div>;
 };
 
-const SkillsBody = () => {
+const SkillsBody = ({mobile}) => {
     return <div className={styles.body}>
         <TrackVisibility once partialVisibility={true}>
-            <SkillsSection1/>
+            <SkillsSection1 mobile={mobile}/>
         </TrackVisibility>
         <TrackVisibility once partialVisibility={true}>
-            <SkillsSection2/>
+            <SkillsSection2 mobile={mobile}/>
         </TrackVisibility>
         <TrackVisibility once partialVisibility={true}>
-            <SkillsSection3/>
+            <SkillsSection3 mobile={mobile}/>
         </TrackVisibility>
     </div>
 };
 
-const SkillsSection1 = ({isVisible}) => {
-    let classNames = cx(styles.bodySection, styles.bodySection1, {[styles.visible]: isVisible});
+const SkillsSection1 = ({isVisible, mobile}) => {
+    let classNames = cx(styles.bodySection, styles.bodySection1, {[styles.visible]: isVisible || mobile});
     return <div className={classNames}>
         <SkillsCard title="javascript"
                     skills={["ReactJS + Redux", "React Native", "AngularJS", "NodeJS + Express", "TypeScript"]}/>
     </div>;
 };
 
-const SkillsSection2 = ({isVisible}) => {
-    let classNames = cx(styles.bodySection, styles.bodySection2, {[styles.visible]: isVisible});
+const SkillsSection2 = ({isVisible, mobile}) => {
+    let classNames = cx(styles.bodySection, styles.bodySection2, {[styles.visible]: isVisible || mobile});
     return <div className={classNames}>
         <SkillsCard title="web"
                     skills={["HTML 5 + SASS/LESS", "Firebase", "GraphQL", "MongoDB", "JAMstack"]}/>
     </div>;
 };
 
-const SkillsSection3 = ({isVisible}) => {
-    let classNames = cx(styles.bodySection, styles.bodySection3, {[styles.visible]: isVisible});
+const SkillsSection3 = ({isVisible, mobile}) => {
+    let classNames = cx(styles.bodySection, styles.bodySection3, {[styles.visible]: isVisible || mobile});
     return <div className={classNames}>
         <SkillsCard title="outils"
                     skills={["Git (& SVN)", "NPM", "Webpack", "Grunt", "Gatsby + CMS"]}/>
@@ -182,8 +208,8 @@ const SkillsSection3 = ({isVisible}) => {
 };
 
 
-const ContactBody = ({isVisible}) => {
-    let classNames = cx(styles.mainContactContainer, {[styles.visible]: isVisible});
+const ContactBody = ({isVisible, mobile}) => {
+    let classNames = cx(styles.mainContactContainer, {[styles.visible]: isVisible || mobile});
     return <div className={classNames}>
         <div className={styles.subtitle}>
             <span>Une suggestion ?</span> <span>Un projet ? </span>

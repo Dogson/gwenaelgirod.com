@@ -216,9 +216,12 @@
 
     .descriptionTextContainer {
       margin: 0;
-
+      .titleContainer {
+        top: auto;
+      }
       .body {
-        padding: 40px 5px;
+        padding: 15px 5px;
+        border: none;
       }
     }
 
