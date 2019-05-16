@@ -31,6 +31,7 @@ L’album enchaîne ensuite sur son quatrième acte. Sous le signe de l’espoir
 
 L’album se termine sur une berceuse directement adressée à sa conjointe insomniaque.
 
+
 ## Can’t believe the way it flows
 
 Et pourtant, si la construction thématique de l’album est intéressante, c’est surtout sa cohérence musicale qui frappe immédiatement. _Assume Form_ réussit un tour de force : il se fait passer pour un album minimaliste alors qu’il déborde de générosité. Dès les premières écoutes, on est immédiatement enveloppé dans cet univers brumeux, intimiste, mélancolique et optimiste. Les chansons s’enchaînent extrêmement bien, partageant toute une cohérence musicale tout en conservant une forte identité propre. Car l’album n’est pas minimaliste, c’est une oeuvre musicale travaillée et polie jusque dans ses moindres arrangements.
