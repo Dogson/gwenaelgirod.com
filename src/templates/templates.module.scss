@@ -3,7 +3,7 @@
 $otherNewsWidth: 250px;
 $newsInfosWidth: 240px;
 
-.newsHeader {
+.blogHeader {
   &.movies {
     .newsSectionTitle {
       background-color: $color-movies;
@@ -32,6 +32,28 @@ $newsInfosWidth: 240px;
     .newsSectionTitle {
       background-color: $color-music;
     }
+  }
+}
+
+.postHeader {
+  &.movies {
+    background-color: $color-movies;
+  }
+
+  &.gaming {
+    background-color: $color-gaming;
+  }
+
+  &.tv {
+    background-color: $color-tv;
+  }
+
+  &.books {
+    background-color: $color-books;
+  }
+
+  &.music {
+    background-color: $color-music;
   }
 }
 

@@ -97,7 +97,8 @@ class ActuTemplate extends React.Component {
         const {currentNewsPost} = this.props.data; // data.markdownRemark holds our post data
         const {frontmatter, html, fileAbsolutePath} = currentNewsPost;
         moment.locale('fr');
-        const classNames = cx(styles.newsPost, styles[frontmatter.category]);
+        const postClassNames = cx(styles.newsPost, styles[frontmatter.category]);
+        const headerClassNames = cx(styles.newsHeader, styles.postHeader, styles[frontmatter.category]);
         const navigationItems = [
             {
                 title: "Accueil",
@@ -123,7 +124,7 @@ class ActuTemplate extends React.Component {
                     <meta charSet="utf-8"/>
                     <title>{frontmatter.title}</title>
                 </Helmet>
-                <div className={styles.newsHeader}>
+                <div className={headerClassNames}>
                     <div className={styles.newsSectionTitle}>
                         <span>{frontmatter.title}</span>
                     </div>
@@ -133,7 +134,7 @@ class ActuTemplate extends React.Component {
                     <div className={styles.newsWrapper}>
                         <NavigationPath navigationItems={navigationItems}/>
                         <div className={styles.newsPostContainer}>
-                            <div className={classNames}>
+                            <div className={postClassNames}>
                                 <div className={styles.newsInfosContainer}>
                                     <div className={styles.newsInfos}>
                                         <div className={styles.dateContainer}>

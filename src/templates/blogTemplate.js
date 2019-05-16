@@ -47,7 +47,7 @@ export default function BlogTemplate(props) {
         })
     }
 
-    const newsHeaderClasses = cx(styles.newsHeader, styles[category]);
+    const newsHeaderClasses = cx(styles.newsHeader, styles.blogHeader, styles[category]);
 
     return <PageLayout>
         <Helmet>
