@@ -20,17 +20,17 @@ export const MEDIA_CATEGORIES = {
         image: "/assets/categories/tv.jpg",
         icon: <FaTv/>
     },
-    books: {
-        name: "Littérature",
-        path: "/blog/litterature/",
-        image: "/assets/categories/books.jpg",
-        icon: <FaBook/>
-    },
     music: {
         name: "Musique",
         path: "/blog/musique/",
         image: "/assets/categories/music.jpg",
         icon: <FaCompactDisc/>
+    },
+    books: {
+        name: "Littérature",
+        path: "/blog/litterature/",
+        image: "/assets/categories/books.jpg",
+        icon: <FaBook/>
     },
     all: {
         name: "Blog",
