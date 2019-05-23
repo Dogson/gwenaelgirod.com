@@ -136,10 +136,18 @@
           vertical-align: middle;
           margin: 0 2px;
 
-          button::before {
-            font-size: 10px;
-            color: $background-primary;
-            transform: skewX(20deg);
+          button {
+            &::before {
+              font-size: 10px;
+              color: $background-primary;
+              transform: skewX(20deg);
+            }
+
+            &:focus {
+              &::before {
+                opacity: 0.3;
+              }
+            }
           }
         }
       }

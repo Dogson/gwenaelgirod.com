@@ -199,3 +199,15 @@ strong {
     font-weight: $weight-regular;
   }
 }
+
+/** Workaround for carousel dot opacity after selection when autoscroll is active **/
+
+.slick-active {
+  button {
+    &:focus {
+      &::before {
+        opacity: 0.75 !important;
+      }
+    }
+  }
+}

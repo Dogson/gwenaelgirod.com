@@ -16,8 +16,8 @@ const Carousel = ({items}) => {
         dotsClass: "slick-dots slick-dots-custom",
         arrows: false,
         cssEase: "cubic-bezier(0.165, 0.840, 0.440, 1.000)",
-        // autoplay: true,
-        // autoPlaySpeed: 10000,
+        autoplay: true,
+        autoPlaySpeed: 10000,
         appendDots: dots => (
             <div>
                 <div className={styles.customDotsWrapper}>
