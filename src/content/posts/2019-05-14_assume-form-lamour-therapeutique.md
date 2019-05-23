@@ -3,7 +3,7 @@ type: post
 date: '2019-05-14'
 category: music
 image: /assets/images/assumeform.jpg
-title: Assume Form - L'Amour Thérapeutique
+title: Assume Form - L'amour thérapeutique
 summary: >-
   Assume Form est le quatrième album du mélancolique James Blake. Dans une
   magnifique fusion perfectionniste des genres, on plonge dans un univers
@@ -17,7 +17,7 @@ summary: >-
 
 > Il n’y a pas de grandes victoires dans la bravade et le machisme. La route de la bonne santé mentale et du bonheur \[...] est pavée d’honnêteté.
 
-C’est en se confiant, en expugnant nos peurs, nos doutes et nos espoirs que l’on peut apprendre à se connaître et à s’accepter. Blake a construit tout au long de ces albums un univers intimiste où il partage ses propres insécurités et sa lutte avec l’anxiété, la dépression et l’isolement. Aujourd’hui, Blake semble avoir évolué. Car même s’il conserve une aura mélancolique, Assume Form ne décrit pas les peurs inexorables de l’artiste. Il transmet surtout l’espoir, la lumière balayant peu à peu l’obscurité, la guérison progressive. Car Blake a trouvé son traitement thérapeutique : l’amour.
+C’est en se confiant, en expugnant nos peurs, nos doutes et nos espoirs que l’on peut apprendre à se connaître et à s’accepter. Blake a construit tout au long de ses albums un univers intimiste où il partage ses propres insécurités et sa lutte avec l’anxiété, la dépression et l’isolement. Aujourd’hui, Blake semble avoir évolué. Car même s’il conserve une aura mélancolique, Assume Form ne décrit pas les peurs inexorables de l’artiste. Il transmet surtout l’espoir, la lumière balayant peu à peu l’obscurité, la guérison progressive. Car Blake a trouvé son traitement thérapeutique : l’amour.
 
 L’album s’ouvre sur _Assume Form_, titre éponyme qui, en guise d’introduction, offre une synthèse thématique du reste de l’oeuvre : l’amour comme outil pour s’ouvrir et se connecter au monde, devenir un être tangible et sensitif en s’échappant de son isolement mental et de sa prison égotique. On suit ensuite tout au long de l’album l’histoire romantique de Blake, de sa peur d’aimer et de s’engager à sa guérison graduelle par l’apprentissage de la confiance en l’autre. 
 
@@ -42,6 +42,6 @@ Ces silences sont primordiaux, car ils caractérisent ce qui fait la force de _A
 
 Les quelques features vocales qui viennent accompagner Blake sont d’une justesse absolue. Travis Scott et son autotune offrent de riches mélodies vocales sur _Mile High_. André 3K signe un couplet d’une écriture puissante et d’une rythmique brute sur _Where’s The Catch_. La voix espagnole envoûtante de Rosalía et celle de Moses Sumney, plus soul, viennent accompagner délicatement celle naturellement plus folk de Blake sur _Barefoot In The Park_ et _Tell Them_.
 
-Ces featuring, et la voix de Blake ne sont pas au-dessus du reste de la production instrumentale, mais viennent au contraire compléter celle-ci. Blake signe des mélodies puissantes, riches en harmonies, qui prennent parti de sa tessiture et de la richesse de son timbre. Il alterne voix basse et voix aiguës, jouant de ses voix de têtes et de poitrine, les agrémentant parfois d’une autotune discrète, selon l’intensité des passages instrumentaux. 
+Ces featurings, et la voix de Blake ne sont pas au-dessus du reste de la production instrumentale, mais viennent au contraire compléter celle-ci. Blake signe des mélodies puissantes, riches en harmonies, qui prennent parti de sa tessiture et de la richesse de son timbre. Il alterne voix basse et voix aiguës, jouant de ses voix de têtes et de poitrine, les agrémentant parfois d’une autotune discrète, selon l’intensité des passages instrumentaux. 
 
 C’est un album aussi riche que discret, aussi grandiose qu’intimiste. Son propos accompagne avec brio l’univers musical présenté, et tous les éléments - voix, instruments, percussions, harmonies, rythmiques, mélodies, featurings, samples - sont travaillés à la perfection et sont au service d’une cohésion musicale et d’une construction individuelle généreuse et complexe pour chaque morceau. C’est un album de perfectionniste qui parvient à dégager une nouvelle palette d’émotions brutes sur chaque titre.
