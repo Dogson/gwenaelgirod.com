@@ -1,6 +1,7 @@
 import React from "react"
 import {graphql, Link, withPrefix} from "gatsby"
 import cx from 'classnames';
+import objectFitImages from 'object-fit-images';
 import {FaCode} from "react-icons/fa";
 import Post from "../components/newsPost/post"
 import Carousel from "../components/carousel/carousel";
@@ -19,6 +20,7 @@ import {Helmet} from "react-helmet";
  * @param {{edges:array}} news
  */
 const IndexPage = ({data: {posts}}) => {
+    objectFitImages();
     return <PageLayout>
         <Helmet>
             <meta charSet="utf-8" />
