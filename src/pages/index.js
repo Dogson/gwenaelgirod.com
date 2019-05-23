@@ -98,21 +98,15 @@ class DescriptionSection extends React.Component {
                         <span>Développer mon <strong>esprit d'analyse</strong></span>
                     </div>
                     <div className={styles.body}>
-                        <p>Je cherchais comment améliorer mon esprit d'analyse et mes compétences de rédaction. Je me
-                            suis
-                            dit que développer un bien joli site internet personnel m'obligerait à l'alimenter en
-                            contenu.
-                            Car un site internet vide, c'est moche, et un site rempli d'ipsem lorum parvient rarement à
-                            capter l'attention d’éventuels visiteurs.</p>
-
-                        <p> Voici donc mon site personnel de blogging, où l'on parlera médias culturels. J'analyserai
-                            des
-                            œuvres que j'affectionne dans les univers de jeux vidéo, cinéma, télévision, musique et
-                            littérature.</p>
-
+                        <p>Voici mon site personnel de blogging, où l'on parlera médias culturels, dans un environnement positif.
+                            Etant de nature optimiste, je mettrais plus en avant les œuvres qui m'ont marqué, hier et aujourd'hui,
+                            celles que j'affectionne dans les univers de jeux vidéo, cinéma, télévision, musique et littérature.</p>
                         <span> Et ce, bien sûr, de manière totalement {this.renderSubjObj()}</span>
+                        <p>L'idée est avant tout de développer mon esprit d'analyse et compétences de rédaction.
+                            Et si quelqu'un peut prendre du plaisir à me lire, c'est tout benef'.</p>
                         <p>Je suis également développeur web et mobile, spécialisé dans les technologies javascript
                             front-end (ReactJS & Native).</p>
+                        <p> À bon entendeur.</p>
                     </div>
                 </div>
                 <div className={styles.navigationPanelContainer}>
