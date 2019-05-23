@@ -13,7 +13,7 @@ class ProfessionalProfile extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            mobile: true
+            mobile: false
         }
     }
 
@@ -101,6 +101,7 @@ const DescriptionContainer = ({isVisible, mobile}) => {
 };
 
 const DescriptionLeftPanel = ({isVisible, mobile}) => {
+    console.log(isVisible || mobile);
     let classNames = cx(styles.descriptionLeftPanel, {[styles.visible]: isVisible || mobile});
     return <div className={classNames}>
         <div className={styles.title}>

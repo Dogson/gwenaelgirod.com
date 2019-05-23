@@ -95,7 +95,7 @@ class DescriptionSection extends React.Component {
             <div className={styles.descriptionContainer}>
                 <div className={styles.descriptionTextContainer}>
                     <div className={styles.titleContainer}>
-                        <span>Développer mon <strong>esprit d'analyse</strong></span>
+                        <span>Du <strong>blogging</strong> culturel positif</span>
                     </div>
                     <div className={styles.body}>
                         <p>Voici mon site personnel de blogging, où l'on parlera médias culturels, dans un environnement positif.
