@@ -22,7 +22,6 @@ const IndexPage = ({data: {posts}}) => {
     return <PageLayout>
         <Helmet>
             <meta charSet="utf-8" />
-            <meta name="google-site-verification" content="nsMerFpbzCTff_FPnIt8EyyXKDPhIO92HwW1wv4KJy8" />
             <title>GG - Gwenaël GIROD</title>
         </Helmet>
         <div className={styles.carouselContainer}><HomeCarousel posts={posts.edges.slice(0, 5)}/></div>
