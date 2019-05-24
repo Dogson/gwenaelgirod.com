@@ -3,7 +3,8 @@
 .pageContainer {
   width: 100%;
   min-height: 100vh;
-  @extend .flexColumn;
+  height: 0;
+  //@extend .flexColumn;
 
   .sidebarContainer {
     display: none;

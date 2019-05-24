@@ -19,7 +19,7 @@
     left: 0;
     top: 0;
     object-fit: cover;
-    font-family: 'object-fit: contain;';
+    font-family: 'object-fit: cover;';
     opacity: 0.6;
     z-index: 2;
   }
@@ -100,7 +100,7 @@
 
     .image {
       object-fit: cover;
-      font-family: 'object-fit: contain;';
+      font-family: 'object-fit: cover;';
     }
   }
 
