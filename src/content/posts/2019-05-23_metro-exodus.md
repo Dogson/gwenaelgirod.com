@@ -14,7 +14,7 @@ Plastiquement, _Metro Exodus_ est magnifique. C’est même probablement un des 
 
 Cette esthétique est sublimée par son interface utilisateur minimale. Le HUD n’apparaît que dans les situations où il est indispensable, et la plupart des informations sont données au joueur directement via une panoplie de gadgets incorporés au bracelet _high-tech_ du protagoniste (compteur Geiger, boussole, radar indicateur d’ennemis, durée du filtre du masque à gaz…). La carte de la zone et l’objectif actuel sont inscrits sur un porte-bloc, que l’on peut consulter en temps réel, à la manière d’un _Far Cry 2._ Résultat, aucune information superficielle ne vient interrompre l’immersion. 
 
-Pour parfaire le tableau, le _sound design_ est impeccable, qu’il s’agisse de bruits environnementaux (mentions spéciales aux _tumbleweeds_ qui manquent de me donner une crise cardiaque quand ils bruissent à côté de moi), du punch des armes à feu (malgré des armes silencieuses un poil trop bruyantes) ou des cris des mutants, tous uniques et identifiables.
+Pour parfaire le tableau, le _sound design_ est impeccable, qu’il s’agisse de bruits environnementaux (mention spéciale aux _tumbleweeds_ qui manquent de me donner une crise cardiaque quand ils bruissent à côté de moi), du punch des armes à feu (malgré des armes silencieuses un poil trop bruyantes) ou des cris des mutants, tous uniques et identifiables.
 
 ## **L’ouverture des portes**
 
