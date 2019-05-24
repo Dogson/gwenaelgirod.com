@@ -17,6 +17,7 @@
     "gatsby": "^2.3.16",
     "gatsby-plugin-netlify-cms": "^3.0.17",
     "gatsby-plugin-sass": "^2.0.11",
+    "gatsby-plugin-sitemap": "^2.1.0",
     "gatsby-source-filesystem": "^2.0.29",
     "gatsby-transformer-remark": "^2.3.8",
     "moment": "^2.24.0",

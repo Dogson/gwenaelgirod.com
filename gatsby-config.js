@@ -1,4 +1,7 @@
 module.exports = {
+    siteMetadata: {
+        siteUrl: `https://www.gwenaelgirod.com`,
+    },
     plugins: [
         `gatsby-plugin-netlify-cms`,
         {
@@ -14,6 +17,7 @@ module.exports = {
             // options: {
             //     includePaths: ["src/styles"]
             // }
-        }
+        },
+        `gatsby-plugin-sitemap`
     ]
 };
