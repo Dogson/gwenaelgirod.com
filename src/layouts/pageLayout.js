@@ -5,9 +5,13 @@ import styles from "./pageLayout.module.scss";
 import Sidebar from "react-sidebar";
 import {Link} from "gatsby";
 import {FaBars} from "react-icons/fa";
+import {Helmet} from "react-helmet";
 
 export default ({children}) => (
     <div className={styles.pageContainer}>
+        <Helmet>
+            <meta name="google-site-verification" content="nsMerFpbzCTff_FPnIt8EyyXKDPhIO92HwW1wv4KJy8"/>
+        </Helmet>
         <DrawerNav/>
         <Header/>
         {children}
@@ -38,7 +42,7 @@ class DrawerNav extends React.Component {
                 styles={{sidebar: {background: "white", zIndex: 30, height: "100%"}}}
             >
                 <div className={styles.sidebarButton} onClick={() => this.onSetSidebarOpen(true)}>
-                   <FaBars className={styles.icon}/>
+                    <FaBars className={styles.icon}/>
                 </div>
             </Sidebar>
         </div>
