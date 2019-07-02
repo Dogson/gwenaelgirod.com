@@ -13,7 +13,7 @@ const PageNotFound = () => (
         </Helmet>
         <SectionLayout>
             <div className={styles.pageNotFoundContainer}>
-                <img className={styles.image} src={"assets/logo/radioactive.png"} alt="404" height="200"/>
+                <img className={styles.image} src={"/assets/logo/radioactive.png"} alt="404" height="200"/>
                 <div className={styles.title}>Erreur <strong>404</strong></div>
                 <div className={styles.description}>La page demandée n'existe pas.</div>
                 <Link to={'/'} className={styles.btnSecondary}>(Faites demi-tour.)</Link>
