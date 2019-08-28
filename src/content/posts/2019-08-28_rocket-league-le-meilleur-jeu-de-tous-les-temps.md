@@ -10,8 +10,6 @@ summary: ''
 
 **Et pourtant, ainsi naquit Rocket League, l’un des meilleurs jeux vidéo de tous les temps, joué au total par plus de 60 millions de personnes, et qui parvient encore, quatre ans après sa sortie, à rassembler plusieurs centaines de milliers de joueurs simultanés à tout moment de la journée.**
 
-
-
 ## Jouer plus pour progresser plus
 
 J’ai commencé à jouer à Rocket League à peu près deux mois après sa sortie initiale sur PS4 et PC. Je me rappelle très bien mes premières parties : six voitures sur le terrain qui chasse la balle en essayant péniblement de la pousser dans le but adverse. On traverse le terrain à toute vitesse en essayant tant bien que mal de toucher la balle, qu’importent notre position et notre trajectoire. À ce stade, chaque match est un foutoir vidéoludique, un désordre exhilarant où la confusion est la source primaire d’amusement. 
@@ -26,7 +24,7 @@ _Ce dont j’étais assez fier pour enregistrer après deux mois de jeu_
 
 _Ce dont j’étais fier pour enregistrer après six mois de jeu_
 
-## FIFA Motorsport
+## FIFA Motorsport
 
 Pour que chaque match déclenche des petits shots de dopamine chez le joueur, il faut du plaisir immédiat. C’est bien là-dessus que Psyonix a effectué un travail remarquable, avec un degré de maîtrise impressionnant pour un si petit studio.
 
