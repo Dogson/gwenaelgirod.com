@@ -20,10 +20,6 @@ Cette sensation de progression naturelle, je l’ai ressentie pendant mes 200 pr
 
 Pour les joueurs en quête de progression perpétuelle, il arrivera inexorablement un stade où ils seront forcés d’aller visionner du tutoriel Youtube et d’enchaîner les entraînements solos pour parvenir à maîtriser des actions un peu plus complexes. Plus je me plonge dans le monde des vidéastes spécialisés dans Rocket League, plus je réalise l’infinité de la courbe de progression du jeu. C’en est vertigineux.
 
-_Ce dont j’étais assez fier pour enregistrer après deux mois de jeu_
-
-_Ce dont j’étais fier pour enregistrer après six mois de jeu_
-
 ## FIFA Motorsport
 
 Pour que chaque match déclenche des petits shots de dopamine chez le joueur, il faut du plaisir immédiat. C’est bien là-dessus que Psyonix a effectué un travail remarquable, avec un degré de maîtrise impressionnant pour un si petit studio.
