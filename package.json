@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
-    "gatsby": "^2.3.16",
+    "gatsby": "^2.14.1",
     "gatsby-cli": "^2.7.40",
     "gatsby-plugin-netlify-cms": "^3.0.17",
     "gatsby-plugin-sass": "^2.0.11",
