@@ -2,7 +2,7 @@ import React from "react"
 import PageLayout from "../layouts/pageLayout";
 import SectionLayout from "../layouts/sectionLayout"
 import TrackVisibility from 'react-on-screen';
-import {FaEnvelope, FaGithub, FaGlobeAfrica, FaLinkedin, FaReact} from 'react-icons/fa';
+import {FaEnvelope, FaGithub, FaDolly, FaLinkedin, FaReact} from 'react-icons/fa';
 import styles from "./pro.module.scss"
 import cx from "classnames";
 import {SkillsCard} from "../components/SkillsCard/skillsCard";
@@ -131,16 +131,15 @@ const DescriptionSection1 = () => {
         </div>
         <div>
             <p>
-                Je suis un développeur <strong>web</strong> et <strong>mobile</strong> spécialisé dans les
-                technologies <strong>Javascript</strong>
-                , en particulier ReactJS
-                & React Native.
+                Je suis un développeur web <strong>fullstack</strong> passionné par les technologies Javascript.
+
+                Je m’intéresse aux <strong>projets de toute envergure</strong>, qu’il s’agisse de vitrines marketing
+                avec CMS en Jamstack ou d’applications web plus complexes avec API dédiée.
             </p>
             <p>
-                Depuis 3 ans, je m'aventure dans l'écosystème <strong>front-end</strong> Javascript
-                afin de découvrir et maîtriser de
-                nouvelles façons de <strong>concevoir</strong> et <strong>développer</strong> des applications web et
-                mobiles modernes.
+                Depuis 3 ans, je m'aventure dans <strong>l'écosystème fullstack Javascript</strong> afin de découvrir et
+                maîtriser de
+                nouvelles façons de <strong>construire des applications web modernes</strong>.
             </p>
         </div>
         <div className={styles.transparent}>
@@ -152,21 +151,22 @@ const DescriptionSection1 = () => {
 const DescriptionSection2 = () => {
     let classNames = cx(styles.bodySection, styles.bodySection2);
     return <div className={classNames}>
-        <div className={styles.transparent}><FaGlobeAfrica className={styles.descriptionIcon}/></div>
+        <div className={styles.transparent}><FaDolly className={styles.descriptionIcon}/></div>
         <div><p>
-            <strong>Aventurier</strong> en informatique, mais pas seulement. Passioné de voyage depuis
-            toujours, je
-            suis actuellement en résidence à <strong>Dakar, Sénégal</strong>.
+            Aujourd'hui <strong>freelance</strong> basé à Paris, je souhaite préserver mon indépendance et continuer à apporter mon
+            <strong>expertise technique
+                et métier</strong> en participant activement au <strong>développement</strong> mais également à
+            la <strong>conception</strong> de vos produits.
 
         </p>
             <p>
                 Etant résolument <strong>autonome</strong> et très <strong>organisé</strong>, je suis à même d'évoluer
-                sur des projets <strong>à distance</strong>, tout en
+                sur des projets <strong>chez le client</strong>, mais aussi <strong>à distance</strong> en
                 restant <strong>virtuellement disponible</strong> à 100% pour participer activement aux
                 processus de <strong>gestion de projet</strong> qui
                 vous conviennent. </p>
         </div>
-        <div><FaGlobeAfrica className={styles.descriptionIcon}/></div>
+        <div><FaDolly className={styles.descriptionIcon}/></div>
     </div>;
 };
 
