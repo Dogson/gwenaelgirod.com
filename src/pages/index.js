@@ -154,7 +154,7 @@ class DescriptionSection extends React.Component {
 
 
 /**
- * SECTION 2: ACTUALITES
+ * SECTION 2: ARTICLES
  */
 const BlogSection = ({posts}) => {
     const Posts = posts

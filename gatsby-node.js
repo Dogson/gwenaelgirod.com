@@ -30,7 +30,7 @@ const path = require("path");
 exports.createPages = ({actions, graphql}) => {
     const {createPage} = actions;
 
-    const actuTemplate = path.resolve(`src/templates/actuTemplate.js`);
+    const articleTemplate = path.resolve(`src/templates/articleTemplate.js`);
     const blogTemplate = path.resolve(`src/templates/blogTemplate.js`);
 
     return graphql(`
@@ -64,7 +64,7 @@ exports.createPages = ({actions, graphql}) => {
             nbPostsByCategory[node.frontmatter.category]++;
             createPage({
                 path: `/posts/${node.fileAbsolutePath.substring(node.fileAbsolutePath.lastIndexOf('/') + 1).slice(0, -3)}`,
-                component: actuTemplate,
+                component: articleTemplate,
                 context: {id: node.id}, // additional data can be passed via context
             })
         });

@@ -13,7 +13,7 @@ slug:
   clean_accents: true
 
 collections:
-  #  Actualités
+  #  Articles
   - name: post
     label: Posts
     folder: src/content/posts
@@ -34,7 +34,7 @@ collections:
       - { name: title, label: Titre, pattern: ["^.{0,80}$", "Le titre ne doit pas excéder 80 caractères."] }
       - { name: summary,
           label: Résumé,
-          hint: "Ce texte apparaitra en tant que résumé de l'actualité dans la listes des actualités sur la page d'accueil. Les sauts de ligne ne sont pas pris en compte.",
+          hint: "Ce texte apparaitra en tant que résumé de l'article dans la listes des articles sur la page d'accueil. Les sauts de ligne ne sont pas pris en compte.",
           widget: text,
           pattern: ["^(.|\\s){0,300}$", "Le résumé ne doit pas excéder 300 caractères."],
           required: false}

@@ -10,7 +10,7 @@ import NavigationPath from "../components/navigationPath/navigationPath";
 import {MEDIA_CATEGORIES} from "../helpers/const";
 import {Helmet} from "react-helmet";
 
-class ActuTemplate extends React.Component {
+class ArticleTemplate extends React.Component {
     constructor(props) {
         super(props);
 
@@ -166,7 +166,7 @@ class ActuTemplate extends React.Component {
     }
 }
 
-export default ActuTemplate;
+export default ArticleTemplate;
 
 // noinspection JSUnusedGlobalSymbols
 export const pageQuery = graphql`
