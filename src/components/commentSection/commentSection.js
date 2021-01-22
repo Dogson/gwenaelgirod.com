@@ -8,17 +8,22 @@ const CommentSection = ({pageSlug}) => {
     const [comment, setComment] = useState();
     const [error, setError] = useState(false);
     const [success, setSuccess] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     function _handleSubmit(e) {
         e.preventDefault();
         setError(false);
         setSuccess(false);
+        setLoading(true);
         postComment(username, comment, pageSlug)
             .then(() => {
                 setSuccess(true);
             })
             .catch(() => {
                 setError(true)
+            })
+            .finally(() => {
+                setLoading(true);
             })
     }
 
@@ -49,7 +54,10 @@ const CommentSection = ({pageSlug}) => {
                               placeholder="Votre commentaire"
                               required/>
 
-                    <input type="submit" className={styles.btnPrimary} value="Envoyer"/>
+                    <input type="submit"
+                           className={styles.btnPrimary}
+                           value="Envoyer"
+                           disabled={loading}/>
                     {error &&
                     <span className={styles.errorMsg}>Une erreur est survenue lors de l'envoi du commentaire.</span>}
                 </form>
