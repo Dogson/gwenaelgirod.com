@@ -9,6 +9,7 @@ import styles from "./templates.module.scss";
 import NavigationPath from "../components/navigationPath/navigationPath";
 import {MEDIA_CATEGORIES} from "../helpers/const";
 import {Helmet} from "react-helmet";
+import CommentSection from "../components/commentSection/commentSection";
 
 class ArticleTemplate extends React.Component {
     constructor(props) {
@@ -30,7 +31,7 @@ class ArticleTemplate extends React.Component {
 
 
     resize() {
-        let collapse = (window.innerWidth >= 600);
+        let collapse = (window.innerWidth >= 700);
         if (collapse !== this.state.collapse) {
             this.setState({collapse: collapse});
         }
@@ -96,6 +97,7 @@ class ArticleTemplate extends React.Component {
     render() {
         const {currentNewsPost} = this.props.data; // data.markdownRemark holds our post data
         const {frontmatter, html, fileAbsolutePath} = currentNewsPost;
+        const articlePath = fileAbsolutePath.substring(fileAbsolutePath.lastIndexOf('/') + 1).slice(0, -3);
         moment.locale('fr');
         const postClassNames = cx(styles.newsPost, styles[frontmatter.category]);
         const headerClassNames = cx(styles.newsHeader, styles.postHeader, styles[frontmatter.category]);
@@ -114,7 +116,7 @@ class ArticleTemplate extends React.Component {
             },
             {
                 title: frontmatter.title,
-                path: `/posts/${fileAbsolutePath.substring(fileAbsolutePath.lastIndexOf('/') + 1).slice(0, -3)}`
+                path: `/posts/${articlePath}`
             }
         ];
 
@@ -160,6 +162,7 @@ class ArticleTemplate extends React.Component {
                             {!this.state.collapse ? this.renderOtherNewsPanel() : null}
                         </div>
                     </div>
+                    <CommentSection pageSlug={articlePath}/>
                 </SectionLayout>
             </PageLayout>
         )

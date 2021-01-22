@@ -41,7 +41,7 @@ $color-books: #5f91c8;
 
 //media sizes
 $media-tablet: "screen and (max-width : 1020px)";
-$media-phone: "screen and (max-width : 600px)";
+$media-phone: "screen and (max-width : 700px)";
 
 html {
   font-family: 'Roboto', sans-serif;
@@ -115,6 +115,29 @@ strong {
   align-self: flex-start;
   padding: 15px 60px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+  &.small {
+    font-size: $size-big;
+    padding: 10px 40px;
+  }
+}
+
+form {
+  @extend .flexColumn;
+
+  input[type="text"], textarea {
+    outline: none;
+    padding: 12px 15px;
+    box-shadow: none;
+    border: 1px solid lightgray;
+    font-family: 'Roboto', sans-serif;
+    font-size: $size-small;
+    border-radius: 5px;
+
+    &:focus {
+      outline: 1px solid $color-main;
+    }
+  }
 }
 
 .btnPrimary {
@@ -185,6 +208,14 @@ strong {
     opacity: 0.6;
     z-index: 2;
   }
+}
+
+.errorMsg {
+  color: red;
+}
+
+.successMsg {
+  color: $color-main;
 }
 
 @media #{$media-tablet} {

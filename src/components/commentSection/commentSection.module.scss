@@ -1,0 +1,52 @@
+@import '../../styles/global';
+
+.commentSectionContainer {
+  @extend .flexRow;
+  @extend .flexCenter;
+  width: $containerWidth;
+  margin-top: 30px;
+
+  .commentSectionWrapper {
+    @extend .flexColumn;
+    @extend .flexCenter;
+    justify-content: flex-start;
+    margin-left: 210px;
+    padding: 0 30px;
+
+    width: 100%;
+    max-width: 600px;
+
+    .sectionTitle {
+      align-self: center;
+      margin-bottom: 30px;
+    }
+
+    form {
+      width: 100%;
+
+      input, textarea {
+        margin: 5px 0;
+      }
+    }
+
+  }
+}
+@media #{$media-tablet} {
+  .commentSectionContainer {
+    width: 100%;
+  }
+}
+
+@media #{$media-phone} {
+  .commentSectionContainer {
+    .commentSectionWrapper {
+      margin-left: 0;
+
+      .newsPostContainer {
+        max-width: 500px;
+        width: 100%;
+        margin: auto;
+      }
+    }
+  }
+}
