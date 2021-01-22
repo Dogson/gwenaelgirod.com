@@ -142,8 +142,10 @@ class ArticleTemplate extends React.Component {
                                         <div className={styles.dateContainer}>
                                             <div className={styles.category}>
                                                 <Link to={MEDIA_CATEGORIES[frontmatter.category].path}>
-                                                <span className={styles.icon}>{MEDIA_CATEGORIES[frontmatter.category].icon}</span>
-                                                <span className={styles.text}>{MEDIA_CATEGORIES[frontmatter.category].name}</span>
+                                                    <span
+                                                        className={styles.icon}>{MEDIA_CATEGORIES[frontmatter.category].icon}</span>
+                                                    <span
+                                                        className={styles.text}>{MEDIA_CATEGORIES[frontmatter.category].name}</span>
                                                 </Link>
                                             </div>
                                             <div className={styles.date}>{moment(frontmatter.date).format('LL')}</div>
@@ -162,7 +164,7 @@ class ArticleTemplate extends React.Component {
                             {!this.state.collapse ? this.renderOtherNewsPanel() : null}
                         </div>
                     </div>
-                    <CommentSection pageSlug={articlePath}/>
+                    {process.env.SHOW_COMMENTS === "show" && <CommentSection pageSlug={articlePath}/>}
                 </SectionLayout>
             </PageLayout>
         )
