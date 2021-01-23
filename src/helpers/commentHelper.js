@@ -10,7 +10,7 @@ export async function postComment(name, message, slug, avatar) {
 
     return axios({
         method: 'POST',
-        url: process.env.STATICMAN_POST_URL,
+        url: process.env.GATSBY_STATICMAN_POST_URL,
         data: bodyFormData,
         headers: {'Content-Type': 'application/x-www-form-urlencoded'},
     })

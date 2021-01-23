@@ -165,7 +165,7 @@ class ArticleTemplate extends React.Component {
                         </div>
                     </div>
                     {
-                        process.env.SHOW_COMMENTS === "show" &&
+                        process.env.GATSBY_SHOW_COMMENTS === "show" &&
                         <CommentSection pageSlug={articlePath}
                                         comments={comments.edges}
                                         avatars={avatars.edges}
