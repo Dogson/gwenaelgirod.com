@@ -24,6 +24,10 @@
       @extend .flexColumn;
       @extend .flexAlignCenter;
 
+      .btnPrimary {
+        width: 100%;
+      }
+
       form {
         width: 100%;
 
