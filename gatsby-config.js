@@ -7,6 +7,62 @@ module.exports = {
         `gatsby-transformer-sharp`,
         `gatsby-plugin-netlify-cms`,
         {
+            resolve: `gatsby-plugin-feed`,
+            options: {
+                query: `
+                  {
+                    site {
+                      siteMetadata {
+                        siteUrl
+                      }
+                    }
+                  }
+                `,
+                feeds: [
+                    {
+                        serialize: ({query: {site, allMarkdownRemark}}) => {
+                            return allMarkdownRemark.edges.map(edge => {
+                                const slug = edge.node.fileAbsolutePath.substring(edge.node.fileAbsolutePath.lastIndexOf('/') + 1).slice(0, -3);
+                                return Object.assign({}, edge.node.frontmatter, {
+                                    title: edge.node.frontmatter.title,
+                                    description: edge.node.frontmatter.summary,
+                                    date: edge.node.frontmatter.date,
+                                    url: site.siteMetadata.siteUrl + "/posts/" + slug,
+                                    guid: slug,
+                                    custom_elements: [{'content:encoded': edge.node.html}],
+                                });
+                            });
+                        },
+                        query: `
+                          {
+                            allMarkdownRemark(
+                              limit: 1000,
+                              sort: { order: DESC, fields: [frontmatter___date] },
+                              filter: {frontmatter: {type: {eq: "post"}}},
+                            ) {
+                             edges {
+                                node {
+                                  html
+                                  fileAbsolutePath  
+                                  frontmatter {
+                                    title
+                                    date
+                                    summary
+                                  }
+                                }
+                              }
+                            }
+                          }
+        `,
+                        output: '/rss.xml',
+                        title: "gwenaelgirod.com",
+                        description: "Flux RSS des articles de gwenaelgirod.com",
+                        link: "https://gwenaelgirod.com/"
+                    },
+                ],
+            },
+        },
+        {
             resolve: `gatsby-source-filesystem`,
             options: {
                 path: `${__dirname}/src/content/posts`,

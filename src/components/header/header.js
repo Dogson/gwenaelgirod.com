@@ -40,6 +40,11 @@ const Header = () => (
                                 url="https://www.linkedin.com/in/ggirod/"
                                 className={styles.socialIcon} bgColor="white" fgColor="transparent"
                                 style={{width: "30px", height: "30px"}}/>
+                    <SocialIcon target="_blank" rel="noopener noreferrer"
+                                url="https://gwenaelgirod.com/rss.xml"
+                                network="rss"
+                                className={styles.socialIcon} bgColor="white" fgColor="transparent"
+                                style={{width: "30px", height: "30px"}}/>
 
 
                 </span>
