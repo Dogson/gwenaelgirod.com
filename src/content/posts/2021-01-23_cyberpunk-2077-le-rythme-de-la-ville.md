@@ -2,7 +2,7 @@
 type: post
 date: 2021-01-23
 category: gaming
-image: assets/images/cyberpunk-2077.jpg
+image: /assets/images/cyberpunk-2077.jpg
 title: Cyberpunk 2077 - Le rythme de la ville
 ---
 **Annoncé en 2012, entré en production seulement quatre en plus tard, *Cyberpunk 2077* a souffert d’un développement dont la difficulté n’a eu d’égale que l’arrogance de sa campagne de communication. Alors que l’on nous couvrait de promesses absurdes qui chantaient les louanges du jeu de rôle ultime, beaucoup se sont surpris à y croire. En rétrospective, l’évidence est là : n’en déplaise à la culture du crunch et aux studios de quintuple-A, ce jeu n’existe pas, et n'existera jamais. Une perfection artistique et technique, une liberté totale d’action dans un environnement systémique, une narration irréprochable dans sa gestion des causes et conséquences, un univers riche, détaillé et crédible ; tout cela peut exister dans le jeu vidéo, certes, mais jamais dans UN seul jeu vidéo.**
