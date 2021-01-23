@@ -61,11 +61,17 @@ exports.createPages = ({actions, graphql}) => {
             books: 0,
         };
         blogPosts.edges.forEach(({node}) => {
+            const slug = node.fileAbsolutePath.substring(node.fileAbsolutePath.lastIndexOf('/') + 1).slice(0, -3);
+
             nbPostsByCategory[node.frontmatter.category]++;
             createPage({
                 path: `/posts/${node.fileAbsolutePath.substring(node.fileAbsolutePath.lastIndexOf('/') + 1).slice(0, -3)}`,
                 component: articleTemplate,
-                context: {id: node.id}, // additional data can be passed via context
+                context: {
+                    id: node.id,
+                    slug,
+                    category: `avatars_${node.frontmatter.category}`
+                }, // additional data can be passed via context
             })
         });
 

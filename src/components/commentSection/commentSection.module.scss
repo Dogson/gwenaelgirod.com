@@ -12,25 +12,91 @@
     justify-content: flex-start;
     margin-left: 210px;
     padding: 0 30px;
-
     width: 100%;
     max-width: 600px;
 
-    .sectionTitle {
+    .h2 {
       align-self: center;
       margin-bottom: 30px;
     }
 
-    form {
-      width: 100%;
+    .commentFormContainer {
+      @extend .flexColumn;
+      @extend .flexAlignCenter;
 
-      input, textarea {
-        margin: 5px 0;
+      form {
+        width: 100%;
+
+        input, textarea, .loadingButton {
+          margin: 5px 0;
+        }
+
+        .loadingButton {
+          box-sizing: border-box;
+          height: 39px;
+          @extend .flexColumn;
+          @extend .flexAlignCenter;
+          @extend .flexCenter;
+        }
+
+        .errorMsg, .successMsg {
+          padding: 0 10px;
+        }
+      }
+    }
+
+    .commentsListContainer {
+      @extend .flexColumn;
+
+      .commentContainer {
+        font-weight: $weight-light;
+
+        .commentHeader {
+          @extend .flexRow;
+
+          .commentInfos {
+            @extend .flexColumn;
+            @extend .flexCenter;
+
+            .name {
+              color: rgba($color-primary, 0.6);
+              font-size: $size-small;
+              font-weight: $weight-regular;
+              padding: 3px 0;
+            }
+
+            .date {
+              color: rgba($color-primary, 0.5);
+              font-size: $size-smaller;
+              padding: 3px 0;
+            }
+          }
+
+          .avatar {
+            border-radius: 10px;
+            margin: 0 10px;
+          }
+        }
+
+        .commentBody {
+          font-size: $size-small;
+          margin: 0 10px;
+        }
+
+        &:after {
+          content: '';
+          display: block;
+          width: 100%;
+          margin: 20px 10px;
+          border-bottom: 1px solid rgba($color-primary, 0.3);
+        }
+
       }
     }
 
   }
 }
+
 @media #{$media-tablet} {
   .commentSectionContainer {
     width: 100%;

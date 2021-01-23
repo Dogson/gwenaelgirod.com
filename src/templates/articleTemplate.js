@@ -95,7 +95,7 @@ class ArticleTemplate extends React.Component {
     }
 
     render() {
-        const {currentNewsPost} = this.props.data; // data.markdownRemark holds our post data
+        const {currentNewsPost, comments, avatars} = this.props.data; // data.markdownRemark holds our post data
         const {frontmatter, html, fileAbsolutePath} = currentNewsPost;
         const articlePath = fileAbsolutePath.substring(fileAbsolutePath.lastIndexOf('/') + 1).slice(0, -3);
         moment.locale('fr');
@@ -164,7 +164,13 @@ class ArticleTemplate extends React.Component {
                             {!this.state.collapse ? this.renderOtherNewsPanel() : null}
                         </div>
                     </div>
-                    {process.env.SHOW_COMMENTS === "show" && <CommentSection pageSlug={articlePath}/>}
+                    {
+                        process.env.SHOW_COMMENTS === "show" &&
+                        <CommentSection pageSlug={articlePath}
+                                        comments={comments.edges}
+                                        avatars={avatars.edges}
+                                        category={frontmatter.category}/>
+                    }
                 </SectionLayout>
             </PageLayout>
         )
@@ -175,7 +181,7 @@ export default ArticleTemplate;
 
 // noinspection JSUnusedGlobalSymbols
 export const pageQuery = graphql`
-  query($id: String!) {
+  query($id: String!, $slug: String!, $category: String!) {
     currentNewsPost: markdownRemark(id: { eq: $id }) {
       fileAbsolutePath
       html
@@ -197,6 +203,33 @@ export const pageQuery = graphql`
               }
             }
           }
+      }
+      comments: allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}, filter: {frontmatter: {slug: {eq: $slug}}}) {
+        edges {
+            node {
+                html
+                frontmatter {
+                    date,
+                    name,
+                    _id,
+                    avatar {
+                      childImageSharp {
+                        fixed(width: 60, height: 60) {
+                          ...GatsbyImageSharpFixed
+                        }
+                      }
+                    }
+                }
+            }
+        }
+      }
+      avatars: allFile(filter: {extension: {regex: "/(jpg)|(jpeg)|(png)/"}, sourceInstanceName: { eq: $category }}) {
+        edges {
+            node {
+                id,
+                relativePath    
+            }
+        }
       }
   }
 `;

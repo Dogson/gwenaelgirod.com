@@ -1,13 +1,13 @@
 import axios from "axios";
 
-export async function postComment(name, message, slug) {
+export async function postComment(name, message, slug, avatar) {
     const bodyFormData = new URLSearchParams();
     bodyFormData.append('fields[name]', name);
     bodyFormData.append('fields[slug]', slug);
+    bodyFormData.append('fields[avatar]', avatar);
     bodyFormData.append('options[slug]', slug);
     bodyFormData.append('fields[message]', message);
 
-    console.log(process.env.STATICMAN_POST_URL)
     return axios({
         method: 'POST',
         url: process.env.STATICMAN_POST_URL,

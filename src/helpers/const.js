@@ -6,31 +6,31 @@ export const MEDIA_CATEGORIES = {
         name: "Films",
         path: "/blog/films/",
         image: "/assets/categories/movies.jpg",
-        icon: <FaFilm/>
+        icon: <FaFilm/>,
     },
     gaming: {
         name: "Jeux vidéo",
         path: "/blog/jeux-video/",
         image: "/assets/categories/gaming.jpg",
-        icon: <FaGamepad/>
+        icon: <FaGamepad/>,
     },
     tv: {
         name: "Séries TV",
         path: "/blog/series-tv/",
         image: "/assets/categories/tv.jpg",
-        icon: <FaTv/>
+        icon: <FaTv/>,
     },
     music: {
         name: "Musique",
         path: "/blog/musique/",
         image: "/assets/categories/music.jpg",
-        icon: <FaCompactDisc/>
+        icon: <FaCompactDisc/>,
     },
     books: {
         name: "Littérature",
         path: "/blog/litterature/",
         image: "/assets/categories/books.jpg",
-        icon: <FaBook/>
+        icon: <FaBook/>,
     },
     all: {
         name: "Blog",
