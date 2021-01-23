@@ -7,6 +7,10 @@ import ReactLoading from 'react-loading';
 import cx from "classnames";
 
 const CommentSection = ({pageSlug, comments, avatars, category}) => {
+
+    console.log(process.env.SHOW_COMMENTS);
+    console.log(process.env.GATSBY_SITE_URL);
+
     const [showForm, setShowForm] = useState(false);
     const [username, setUsername] = useState();
     const [comment, setComment] = useState();
