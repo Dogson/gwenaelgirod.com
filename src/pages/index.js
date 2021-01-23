@@ -21,7 +21,7 @@ import {Helmet} from "react-helmet";
 const IndexPage = ({data: {posts}}) => {
     return <PageLayout>
         <Helmet>
-            <meta charSet="utf-8" />
+            <meta charSet="utf-8"/>
             <title>GG - Gwenaël GIROD</title>
         </Helmet>
         <div className={styles.carouselContainer}><HomeCarousel posts={posts.edges.slice(0, 5)}/></div>
@@ -98,15 +98,14 @@ class DescriptionSection extends React.Component {
                         <span>Du <strong>blogging</strong> culturel positif</span>
                     </div>
                     <div className={styles.body}>
-                        <p>Voici mon site personnel de blogging, où l'on parlera médias culturels, dans un environnement positif.
-                            Etant de nature optimiste, je mettrais plus en avant les œuvres qui m'ont marqué, hier et aujourd'hui,
-                            celles que j'affectionne dans les univers de jeux vidéo, cinéma, télévision, musique et littérature.</p>
-                        <span> Et ce, bien sûr, de manière totalement {this.renderSubjObj()}</span>
-                        <p>L'idée est avant tout de développer mon esprit d'analyse et compétences de rédaction.
-                            Et si quelqu'un peut prendre du plaisir à me lire, c'est tout benef'.</p>
-                        <p>Je suis également développeur web et mobile, spécialisé dans les technologies javascript
-                            front-end (ReactJS & Native).</p>
-                        <p> À bon entendeur.</p>
+                        <p>Bienvenue sur mon site personnel de blogging, où l'on parlera de médias culturels : jeux
+                            vidéo, films, séries TV, albums de musique & livres. </p>
+                        <p>On parlera surtout des oeuvres que j'affectionne, et qui m'ont marqué.</p>
+                        <p>Je développe également le site <a href="https://desjeuxetdesmots.com" target="_blank"
+                                                             rel="noopener noreferrer"><strong>Des jeux et des mots</strong></a>, une
+                            plateforme recensant et triant les podcasts et vidéastes traitant intelligemment de jeux
+                            vidéo.</p>
+                        <p> Bonne visite :) </p>
                     </div>
                 </div>
                 <div className={styles.navigationPanelContainer}>
