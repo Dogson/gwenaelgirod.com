@@ -1,10 +1,10 @@
 ---
 type: post
-date: '2019-05-23'
+date: 2019-05-23
 category: gaming
 image: /assets/images/metroexodus.jpg
 title: Metro Exodus - S.T.A.L.K.E.R 2 est en avance
-summary: ''
+summary: ""
 ---
 **Les deux premiers jeux de la saga post-apocalyptique _Metro_ étaient des FPS ultra linéaires, dont le plus grand défaut était de se cantonner quasi exclusivement à un environnement souterrain répétitif et peu inspiré. 6 ans après le dernier opus, les développeurs de 4A Games se sont probablement dit que la Russie avait d’autres choses à montrer que des rames de métro abandonnés. Et ils ont eu raison, parce que la Russie du futur, c’est aussi un _wasteland_ irradié infesté de mutants, de cannibales, de sectes et d’esclavagistes. Vivement 2036.**
 
@@ -16,7 +16,7 @@ Cette esthétique est sublimée par son interface utilisateur minimale. Le HUD n
 
 Pour parfaire le tableau, le _sound design_ est impeccable, qu’il s’agisse de bruits environnementaux (mention spéciale aux _tumbleweeds_ qui manquent de me donner une crise cardiaque quand ils bruissent à côté de moi), du punch des armes à feu (malgré des armes silencieuses un poil trop bruyantes) ou des cris des mutants, tous uniques et identifiables.
 
-## **L’ouverture des portes**
+## L’ouverture des portes
 
 _Metro 2033_ et _Metro Last Light_ aussi étaient beaux. Mais ils étaient aussi répétitifs et très mal rythmés. Les gars de 4A Games ont dû s’en apercevoir, et après avoir réalisé (comme nous tous) que _S.T.A.L.K.E.R. 2_ ne sortira jamais, ils se sont dit qu’il y avait peut-être un bon coup à jouer. 
 
