@@ -253,221 +253,225 @@ $newsInfosWidth: 240px;
       }
 
     }
+  }
 
+}
 
-    .otherNews {
-      border: 1px solid $background-secondary;
-      border-radius: 5px;
-      align-self: flex-end;
-      margin: 0 15px 0 15px;
-      box-sizing: border-box;
-      text-align: center;
-      width: 95%;
+.otherNews {
+  border: 1px solid $background-secondary;
+  border-radius: 5px;
+  align-self: flex-end;
+  margin: 0 15px 0 15px;
+  box-sizing: border-box;
+  text-align: center;
+  width: 95%;
 
-      .otherNewsTitle {
-        font-weight: $weight-light;
-        font-size: $size-big;
-        padding: 20px 0;
+  &.fixed {
+    position: sticky;
+    bottom: 30px;
+  }
+
+  .otherNewsTitle {
+    font-weight: $weight-light;
+    font-size: $size-big;
+    padding: 20px 0;
+  }
+
+  .otherNewsList {
+
+    .itemContainer {
+      &:nth-child(even) {
+        .content {
+          background-color: white;
+        }
       }
 
-      .otherNewsList {
+      &:nth-child(odd) {
+        .content {
+          background-color: rgba($background-secondary, 0.1);
+        }
+      }
+    }
 
-        .itemContainer {
-          &:nth-child(even) {
-            .content {
-              background-color: white;
-            }
-          }
+    .item {
+      &:before {
+        content: "";
+        width: 150px;
+        display: block;
+        transition: all 0.2s ease-in-out;
+      }
 
-          &:nth-child(odd) {
-            .content {
-              background-color: rgba($background-secondary, 0.1);
-            }
-          }
+      &.gaming {
+
+        .readMore {
+          color: $color-gaming;
         }
 
-        .item {
-          &:before {
-            content: "";
-            width: 150px;
-            display: block;
-            transition: all 0.2s ease-in-out;
+        &:before {
+          border-bottom: 3px solid $color-gaming;
+        }
+      }
+
+      &.movies {
+
+        .readMore {
+          color: $color-movies;
+        }
+
+        &:before {
+          border-bottom: 3px solid $color-movies;
+        }
+      }
+
+      &.tv {
+
+        .readMore {
+          color: $color-tv;
+        }
+
+        &:before {
+          border-bottom: 3px solid $color-tv;
+        }
+      }
+
+      &.music {
+
+        .readMore {
+          color: $color-music;
+        }
+
+        &:before {
+          border-bottom: 3px solid $color-music;
+        }
+      }
+
+      &.books {
+
+        .readMore {
+          color: $color-books;
+        }
+
+        &:before {
+          border-bottom: 3px solid $color-books;
+        }
+      }
+
+      .content {
+        padding: 15px 70px 15px 15px;
+        text-align: left;
+        position: relative;
+
+        .category {
+          @extend .flexRow;
+          @extend .flexAlignCenter;
+          cursor: pointer;
+          color: white;
+          font-weight: $weight-light;
+          opacity: 0.8;
+          font-size: $size-smaller;
+
+          .icon {
+            @extend .flexRow;
+            @extend .flexAlignCenter;
+            @extend .flexCenter;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            color: white;
+            font-size: 16px;
+            margin-right: 5px;
           }
 
           &.gaming {
+            color: $color-gaming;
 
-            .readMore {
-              color: $color-gaming;
-            }
-
-            &:before {
-              border-bottom: 3px solid $color-gaming;
+            .icon {
+              background-color: $color-gaming;
             }
           }
 
           &.movies {
+            color: $color-movies;
 
-            .readMore {
-              color: $color-movies;
-            }
-
-            &:before {
-              border-bottom: 3px solid $color-movies;
+            .icon {
+              background-color: $color-movies;
             }
           }
 
           &.tv {
+            color: $color-tv;
 
-            .readMore {
-              color: $color-tv;
-            }
-
-            &:before {
-              border-bottom: 3px solid $color-tv;
+            .icon {
+              background-color: $color-tv;
             }
           }
 
           &.music {
+            color: $color-music;
 
-            .readMore {
-              color: $color-music;
-            }
-
-            &:before {
-              border-bottom: 3px solid $color-music;
+            .icon {
+              background-color: $color-music;
             }
           }
 
           &.books {
+            color: $color-books;
 
-            .readMore {
-              color: $color-books;
-            }
-
-            &:before {
-              border-bottom: 3px solid $color-books;
+            .icon {
+              background-color: $color-books;
             }
           }
+        }
 
-          .content {
-            padding: 15px 70px 15px 15px;
-            text-align: left;
-            position: relative;
+        .title {
+          cursor: pointer;
+          padding: 15px 0;
+          font-size: $size-small;
+        }
+      }
 
-            .category {
-              @extend .flexRow;
-              @extend .flexAlignCenter;
-              cursor: pointer;
-              color: white;
-              font-weight: $weight-light;
-              opacity: 0.8;
-              font-size: $size-smaller;
+      &:hover {
+        .category {
+          opacity: 1;
+        }
 
-              .icon {
-                @extend .flexRow;
-                @extend .flexAlignCenter;
-                @extend .flexCenter;
-                width: 30px;
-                height: 30px;
-                border-radius: 50%;
-                color: white;
-                font-size: 16px;
-                margin-right: 5px;
-              }
+        &:before {
+          width: 100%;
+          transition: all 0.2s ease-in-out;
+        }
 
-              &.gaming {
-                color: $color-gaming;
+        .readMore {
+          opacity: 1;
+          transition: all 0.2s ease-in-out;
 
-                .icon {
-                  background-color: $color-gaming;
-                }
-              }
-
-              &.movies {
-                color: $color-movies;
-
-                .icon {
-                  background-color: $color-movies;
-                }
-              }
-
-              &.tv {
-                color: $color-tv;
-
-                .icon {
-                  background-color: $color-tv;
-                }
-              }
-
-              &.music {
-                color: $color-music;
-
-                .icon {
-                  background-color: $color-music;
-                }
-              }
-
-              &.books {
-                color: $color-books;
-
-                .icon {
-                  background-color: $color-books;
-                }
-              }
-            }
-
-            .title {
-              cursor: pointer;
-              padding: 15px 0;
-              font-size: $size-small;
-            }
-          }
-
-          &:hover {
-            .category {
-              opacity: 1;
-            }
-
-            &:before {
-              width: 100%;
-              transition: all 0.2s ease-in-out;
-            }
-
-            .readMore {
-              opacity: 1;
-              transition: all 0.2s ease-in-out;
-
-              span {
-                &:after {
-                  content: ">";
-                }
-              }
-            }
-          }
-
-          .readMore {
-            opacity: 0;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 60px;
-            transition: all 0.2s ease-in-out;
-            font-size: $size-small;
-            @extend .flexColumn;
-            @extend .flexCenter;
-
-
-            span {
-              text-align: center;
-              font-size: $size-big;
+          span {
+            &:after {
+              content: ">";
             }
           }
         }
       }
+
+      .readMore {
+        opacity: 0;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 60px;
+        transition: all 0.2s ease-in-out;
+        font-size: $size-small;
+        @extend .flexColumn;
+        @extend .flexCenter;
+
+
+        span {
+          text-align: center;
+          font-size: $size-big;
+        }
+      }
     }
   }
-
 }
 
 .paginationContainer {

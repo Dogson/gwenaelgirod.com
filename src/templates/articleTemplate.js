@@ -10,30 +10,66 @@ import NavigationPath from "../components/navigationPath/navigationPath";
 import {MEDIA_CATEGORIES} from "../helpers/const";
 import {Helmet} from "react-helmet";
 import CommentSection from "../components/commentSection/commentSection";
+import {isInViewport} from "../helpers/viewportHelper";
 
 class ArticleTemplate extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            collapse: false
+            collapse: false,
+            areCommentsInViewPort: false,
+            otherNewsClass: '',
+            otherNewsMarginBottom: 0
         }
+
+        this.commentsRef = React.createRef();
     }
 
     componentDidMount() {
         window.addEventListener("resize", this.resize.bind(this));
+        window.addEventListener('scroll', this.handleScroll.bind(this));
         this.resize();
+        this.setState({
+            areCommentsInViewPort: isInViewport(this.commentsRef),
+            otherNewsMarginBottom: this.state.collapse ? this.commentsRef.current.clientHeight + 30 : 0
+        });
     }
 
     componentWillUnmount() {
         window.removeEventListener("resize", this.resize.bind(this));
+        window.removeEventListener('scroll', this.handleScroll.bind(this));
     }
 
+    handleScroll() {
+        const isInViewPort = isInViewport(this.commentsRef);
+        if (isInViewPort !== this.state.areCommentsInViewPort && this.state.collapse) {
+            this.setState({areCommentsInViewPort: isInViewPort});
+            if (isInViewPort) {
+                this.setState({
+                    otherNewsClass: styles.fixed,
+                    otherNewsMarginBottom: 0
+                });
+            } else {
+                this.setState({
+                    otherNewsClass: '',
+                    otherNewsMarginBottom: this.commentsRef.current.clientHeight + 30
+                });
+            }
+        }
+    }
 
     resize() {
         let collapse = (window.innerWidth >= 700);
         if (collapse !== this.state.collapse) {
             this.setState({collapse: collapse});
+
+            if (!collapse) {
+                this.setState({
+                    otherNewsMarginBottom: 0,
+                    otherNewsClass: ''
+                });
+            }
         }
     }
 
@@ -61,8 +97,8 @@ class ArticleTemplate extends React.Component {
     renderOtherNewsPanel() {
         const {otherNews} = this.props.data; // data.markdownRemark holds our post data
         const {edges} = otherNews;
-
-        return <div className={styles.otherNews}>
+        return <div className={cx(styles.otherNews, this.state.otherNewsClass)}
+                    style={{marginBottom: this.state.otherNewsMarginBottom}}>
             <div className={styles.otherNewsTitle}>
                 <strong>Un dernier billet</strong>
                 <br/>
@@ -156,21 +192,25 @@ class ArticleTemplate extends React.Component {
                                     </div>
                                     {this.state.collapse ? this.renderOtherNewsPanel() : null}
                                 </div>
-                                <div className={styles.newsContent}>
-                                    <div className={styles.newsBody} dangerouslySetInnerHTML={{__html: html}}/>
+                                <div>
+                                    <div className={styles.newsContent}>
+                                        <div className={styles.newsBody} dangerouslySetInnerHTML={{__html: html}}/>
+                                    </div>
+                                    <div ref={this.commentsRef}>
+                                        {
+                                            process.env.GATSBY_SHOW_COMMENTS === "show" &&
+                                            <CommentSection pageSlug={articlePath}
+                                                            comments={comments.edges}
+                                                            avatars={avatars.edges}
+                                                            category={frontmatter.category}/>
+                                        }
+                                    </div>
                                 </div>
                             </div>
 
                             {!this.state.collapse ? this.renderOtherNewsPanel() : null}
                         </div>
                     </div>
-                    {
-                        process.env.GATSBY_SHOW_COMMENTS === "show" &&
-                        <CommentSection pageSlug={articlePath}
-                                        comments={comments.edges}
-                                        avatars={avatars.edges}
-                                        category={frontmatter.category}/>
-                    }
                 </SectionLayout>
             </PageLayout>
         )

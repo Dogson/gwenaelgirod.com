@@ -3,14 +3,13 @@
 .commentSectionContainer {
   @extend .flexRow;
   @extend .flexCenter;
-  width: $containerWidth;
+  width: 100%;
   margin-top: 30px;
 
   .commentSectionWrapper {
     @extend .flexColumn;
     @extend .flexCenter;
     justify-content: flex-start;
-    margin-left: 210px;
     padding: 0 30px;
     width: 100%;
     max-width: 600px;
