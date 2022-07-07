@@ -27,7 +27,7 @@
     "gatsby-source-filesystem": "^2.10.0",
     "gatsby-transformer-remark": "^2.15.0",
     "gatsby-transformer-sharp": "^2.11.0",
-    "moment": "^2.29.1",
+    "moment": "^2.29.4",
     "netlify-cms": "^2.10.84",
     "node-sass": "^4.11.0",
     "object-fit-images": "^3.2.4",
