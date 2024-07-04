@@ -305,9 +305,9 @@ const SkillsSection1 = ({ isVisible, mobile }) => {
         title="javascript"
         skills={[
           "Typescript",
-          "ReactJS",
+          "ReactJS + Redux / Context",
           "React Native",
-          "Redux",
+          "Next",
           "NodeJS + NestJS",
         ]}
       />
