@@ -304,11 +304,11 @@ const SkillsSection1 = ({ isVisible, mobile }) => {
       <SkillsCard
         title="javascript"
         skills={[
-          "ReactJS + Redux",
+          "Typescript",
+          "ReactJS",
           "React Native",
-          "AngularJS",
-          "NodeJS + Express",
-          "TypeScript",
+          "Redux",
+          "NodeJS + NestJS",
         ]}
       />
     </div>
@@ -324,11 +324,11 @@ const SkillsSection2 = ({ isVisible, mobile }) => {
       <SkillsCard
         title="web"
         skills={[
-          "HTML 5 + SASS/LESS",
-          "Firebase",
-          "GraphQL",
+          "HTML 5",
+          "CSS3 / Tailwind",
           "MongoDB",
-          "JAMstack",
+          "JAMstack (Gatsby)",
+          "API REST",
         ]}
       />
     </div>
@@ -343,7 +343,7 @@ const SkillsSection3 = ({ isVisible, mobile }) => {
     <div className={classNames}>
       <SkillsCard
         title="outils"
-        skills={["Git (& SVN)", "NPM", "Webpack", "Grunt", "Gatsby + CMS"]}
+        skills={["Git", "NPM", "vite", "Storybook", "Jest"]}
       />
     </div>
   )
